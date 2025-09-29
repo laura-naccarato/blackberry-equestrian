@@ -347,4 +347,8 @@ Build a professional Hunter/Jumper boarding facility website for Blackberry Eque
 - Backup and recovery tested
 - Staff training completed
 
+
+## Rules
+- Review docs in .prompt/doc to ensure best practices set by other agenst are followed
+
 This agent system ensures systematic development with clear responsibilities, measurable outcomes, and collaborative workflows focused on delivering a professional equestrian website that meets all business and technical requirements.
