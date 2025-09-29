@@ -1,0 +1,31 @@
+{
+  "siteTitle": "Blackberry Equestrian",
+  "siteDescription": "Premier Hunter/Jumper boarding, training, and sales facility in Newtonville, Ontario. Professional instruction, quality horses, and exceptional care.",
+  "logo": "/images/logo.png",
+  "favicon": "/images/favicon.ico",
+  "business": {
+    "name": "Blackberry Equestrian",
+    "established": 2003,
+    "registration": "ON-BUS-123456",
+    "tax_id": "123456789RT0001"
+  },
+  "contact": {
+    "phone": "(905) 555-0123",
+    "phone_secondary": "(905) 555-0124",
+    "email": "info@blackberryequestrian.com",
+    "address": "1234 Concession Road 3",
+    "city": "Newtonville",
+    "province": "Ontario",
+    "postal_code": "L1B 1L9",
+    "country": "Canada",
+    "hours": "Monday-Sunday: 7:00 AM - 9:00 PM\nOffice Hours: Monday-Friday 9:00 AM - 5:00 PM"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BlackberryEquestrian/",
+    "instagram": "https://www.instagram.com/black.berryequestrian/",
+    "twitter": "",
+    "youtube": "https://www.youtube.com/channel/BlackberryEquestrian",
+    "tiktok": "",
+    "linkedin": ""
+  }
+}

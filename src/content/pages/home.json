@@ -1,0 +1,62 @@
+{
+  "title": "Welcome to Blackberry Equestrian",
+  "hero": {
+    "title": "Premier Hunter/Jumper Facility in Durham Region",
+    "subtitle": "Experience excellence in horse care, training, and instruction at our state-of-the-art equestrian facility in Newtonville, Ontario.",
+    "image": "/images/uploads/hero-facility.jpg",
+    "cta_text": "Explore Our Services",
+    "cta_link": "/services"
+  },
+  "welcome": {
+    "title": "Welcome to Blackberry Equestrian",
+    "content": "For over 20 years, Blackberry Equestrian has been Durham Region's trusted destination for exceptional horse care and training. Our full-service facility offers everything from beginner lessons to competitive show training, all in a supportive and professional environment.\n\nWhether you're looking for a safe place to board your horse, seeking quality instruction, or searching for your next equine partner, we're here to help you achieve your equestrian goals.",
+    "image": "/images/uploads/welcome-barn.jpg"
+  },
+  "features": [
+    {
+      "title": "Full-Service Boarding",
+      "description": "Premium care in our modern facility with indoor arena, outdoor rings, and extensive turnout.",
+      "icon": "home",
+      "link": "/services/boarding"
+    },
+    {
+      "title": "Professional Training",
+      "description": "Expert training programs for horses and riders at all levels, from beginner to Grand Prix.",
+      "icon": "academic-cap",
+      "link": "/services/training"
+    },
+    {
+      "title": "Quality Horses",
+      "description": "Carefully selected horses for sale and lease, matched to your riding goals and experience.",
+      "icon": "heart",
+      "link": "/horses"
+    },
+    {
+      "title": "Lesson Programs",
+      "description": "Comprehensive instruction for all ages and abilities in hunters, jumpers, and equitation.",
+      "icon": "star",
+      "link": "/services/lessons"
+    },
+    {
+      "title": "Show Team",
+      "description": "Active competition program with coaching at local and rated shows throughout Ontario.",
+      "icon": "trophy",
+      "link": "/services/showing"
+    },
+    {
+      "title": "Safe Environment",
+      "description": "Fully insured facility with experienced staff prioritizing safety and horse welfare.",
+      "icon": "shield-check",
+      "link": "/about"
+    }
+  ],
+  "cta_section": {
+    "title": "Ready to Start Your Equestrian Journey?",
+    "description": "Join our community of passionate riders and experience the Blackberry difference. Schedule a tour today!",
+    "button_text": "Contact Us",
+    "button_link": "/contact",
+    "bg_image": "/images/uploads/cta-background.jpg"
+  },
+  "meta_description": "Blackberry Equestrian - Premier hunter/jumper boarding, training, and lesson facility in Newtonville, Ontario. Indoor arena, quality horses, professional instruction.",
+  "keywords": ["equestrian facility", "horse boarding", "Durham Region", "hunter jumper", "riding lessons", "Newtonville Ontario"]
+}

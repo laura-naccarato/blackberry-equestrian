@@ -1,0 +1,731 @@
+# Decap CMS Configuration for Blackberry Equestrian
+# Complete content management system for equestrian facility
+
+# For local testing, use test-repo backend
+# Switch to github backend for production
+backend:
+  name: test-repo # Using test backend for local development
+  # For production, uncomment below and comment out test-repo:
+  # name: github
+  # repo: # USER/REPO - to be configured (e.g., username/blackberry-equestrian)
+  # branch: main
+  # commit_messages:
+  #   create: 'Create {{collection}} "{{slug}}"'
+  #   update: 'Update {{collection}} "{{slug}}"'
+  #   delete: 'Delete {{collection}} "{{slug}}"'
+  #   uploadMedia: 'Upload "{{path}}"'
+  #   deleteMedia: 'Delete "{{path}}"'
+
+# Media folders configuration
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Media library configuration for better organization
+media_library:
+  name: uploadcare
+  config:
+    publicKey: # Add Uploadcare public key if using
+    multiple: true
+    tabs: 'file url'
+    imagesOnly: false
+    previewStep: true
+
+# Site configuration
+site_url: http://localhost:5173/blackberry-equestrian
+local_backend: true # Enable local backend for development
+display_url: https://YOUR_USERNAME.github.io/blackberry-equestrian
+logo_url: /images/logo.png
+
+# Enable editorial workflow for content approval
+publish_mode: editorial_workflow
+
+# Locale settings
+locale: 'en'
+
+# Editor configuration
+editor:
+  preview: true
+
+# Collections Configuration
+collections:
+  # ========================================
+  # HORSES COLLECTION - Sales and Lease Listings
+  # ========================================
+  - name: "horses"
+    label: "🐴 Horses for Sale/Lease"
+    label_singular: "Horse"
+    folder: "src/content/horses"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.name}}"
+    summary: "{{fields.name}} - {{fields.status}} ({{fields.type}})"
+    sortable_fields: ['date', 'name', 'status', 'price']
+    view_filters:
+      - label: "Available Horses"
+        field: status
+        pattern: "Available"
+      - label: "Featured Horses"
+        field: featured
+        pattern: true
+    view_groups:
+      - label: "Status"
+        field: status
+      - label: "Type"
+        field: type
+    editor:
+      preview: true
+    fields:
+      # Basic Information
+      - {label: "Horse Name", name: "name", widget: "string", required: true, hint: "Enter the horse's barn name or registered name"}
+      - {label: "Featured Horse", name: "featured", widget: "boolean", default: false, hint: "Show this horse on the homepage"}
+      - {label: "Date Listed", name: "date", widget: "datetime", default: "", required: true}
+      
+      # Status and Type
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: 
+          - {label: "Available", value: "Available"}
+          - {label: "Pending", value: "Pending"}
+          - {label: "Sold", value: "Sold"}
+          - {label: "Leased", value: "Leased"}
+        default: "Available"
+        required: true
+      
+      - label: "Listing Type"
+        name: "type"
+        widget: "select"
+        options: 
+          - {label: "For Sale", value: "Sale"}
+          - {label: "For Lease", value: "Lease"}
+          - {label: "Sale or Lease", value: "Both"}
+        default: "Sale"
+        required: true
+      
+      # Horse Details
+      - label: "Basic Information"
+        name: "basic_info"
+        widget: "object"
+        collapsed: false
+        fields:
+          - {label: "Age", name: "age", widget: "number", min: 0, max: 40, required: true, hint: "Horse's age in years"}
+          - {label: "Height", name: "height", widget: "string", required: true, hint: "e.g., 16.2 hands"}
+          - label: "Gender"
+            name: "gender"
+            widget: "select"
+            options: ["Mare", "Gelding", "Stallion"]
+            required: true
+          - {label: "Breed", name: "breed", widget: "string", required: true, hint: "e.g., Warmblood, Thoroughbred, Quarter Horse"}
+          - {label: "Color", name: "color", widget: "string", required: true, hint: "e.g., Bay, Chestnut, Black"}
+          - {label: "Registration", name: "registration", widget: "string", required: false, hint: "Registration number if registered"}
+      
+      # Training and Performance
+      - label: "Training & Performance"
+        name: "performance"
+        widget: "object"
+        collapsed: false
+        fields:
+          - label: "Primary Discipline"
+            name: "discipline"
+            widget: "select"
+            options: 
+              - "Hunter"
+              - "Jumper"
+              - "Hunter/Jumper"
+              - "Equitation"
+              - "Dressage"
+              - "Eventing"
+              - "Western"
+              - "Trail"
+              - "All-Around"
+            required: true
+          
+          - label: "Suitable For Level"
+            name: "level"
+            widget: "select"
+            options: 
+              - {label: "Beginner Safe", value: "Beginner"}
+              - {label: "Intermediate Rider", value: "Intermediate"}
+              - {label: "Advanced Rider", value: "Advanced"}
+              - {label: "Professional", value: "Professional"}
+            required: true
+          
+          - {label: "Show Experience", name: "show_experience", widget: "text", required: false, hint: "Brief description of competition history"}
+          - {label: "Training Notes", name: "training_notes", widget: "text", required: false, hint: "Special training or skills"}
+      
+      # Pricing
+      - label: "Pricing Information"
+        name: "pricing"
+        widget: "object"
+        collapsed: false
+        fields:
+          - {label: "Sale Price", name: "sale_price", widget: "number", required: false, hint: "Price in CAD (leave blank if lease only)"}
+          - {label: "Lease Price (Monthly)", name: "lease_price", widget: "number", required: false, hint: "Monthly lease price in CAD"}
+          - {label: "Price Note", name: "price_note", widget: "string", required: false, hint: "e.g., 'Negotiable', 'Includes tack'"}
+      
+      # Media
+      - {label: "Main Photo", name: "main_image", widget: "image", required: true, hint: "Primary photo for listings (high quality)"}
+      
+      - label: "Photo Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        hint: "Add multiple photos of the horse"
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      
+      - {label: "Video URL", name: "video_url", widget: "string", required: false, hint: "YouTube or Vimeo URL for horse video"}
+      
+      # Description
+      - {label: "Short Description", name: "excerpt", widget: "text", required: true, hint: "Brief description for listing previews (2-3 sentences)"}
+      - {label: "Full Description", name: "body", widget: "markdown", required: true, hint: "Detailed description including temperament, training, and ideal home"}
+      
+      # Contact
+      - label: "Contact Information"
+        name: "contact"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Contact Person", name: "person", widget: "string", default: "Blackberry Equestrian"}
+          - {label: "Contact Email", name: "email", widget: "string", default: "info@blackberryequestrian.com"}
+          - {label: "Contact Phone", name: "phone", widget: "string", default: "(905) 555-0123"}
+      
+      # SEO
+      - {label: "Meta Description", name: "meta_description", widget: "text", required: false, pattern: ['.{50,160}', "Must be between 50-160 characters"], hint: "SEO description (50-160 characters)"}
+      - {label: "Keywords", name: "keywords", widget: "list", required: false, hint: "SEO keywords"}
+
+  # ========================================
+  # SERVICES COLLECTION
+  # ========================================
+  - name: "services"
+    label: "💼 Services"
+    label_singular: "Service"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{service_category}}"
+    sortable_fields: ['order', 'title']
+    editor:
+      preview: true
+    fields:
+      - {label: "Service Name", name: "title", widget: "string", required: true}
+      - {label: "Display Order", name: "order", widget: "number", default: 0, hint: "Lower numbers appear first"}
+      - {label: "Featured Service", name: "featured", widget: "boolean", default: false, hint: "Highlight this service"}
+      
+      - label: "Service Category"
+        name: "service_category"
+        widget: "select"
+        options:
+          - {label: "Boarding Services", value: "boarding"}
+          - {label: "Training Programs", value: "training"}
+          - {label: "Lesson Programs", value: "lessons"}
+          - {label: "Additional Services", value: "additional"}
+        required: true
+      
+      - {label: "Featured Image", name: "image", widget: "image", required: true, hint: "High-quality image representing this service"}
+      - {label: "Short Description", name: "excerpt", widget: "text", required: true, hint: "Brief description for service cards"}
+      
+      # Pricing Options
+      - label: "Pricing Options"
+        name: "pricing_options"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Option Name", name: "name", widget: "string", hint: "e.g., 'Full Board', 'Half Lease'"}
+          - {label: "Price", name: "price", widget: "number", hint: "Price in CAD"}
+          - label: "Billing Period"
+            name: "period"
+            widget: "select"
+            options: ["Monthly", "Weekly", "Per Lesson", "One-time", "Custom"]
+          - {label: "Price Note", name: "note", widget: "string", required: false, hint: "Additional pricing information"}
+          - label: "Included Features"
+            name: "features"
+            widget: "list"
+            field: {label: "Feature", name: "feature", widget: "string"}
+      
+      # Service Details
+      - label: "Service Includes"
+        name: "includes"
+        widget: "list"
+        required: false
+        hint: "List what's included in this service"
+        field: {label: "Item", name: "item", widget: "string"}
+      
+      - label: "Requirements"
+        name: "requirements"
+        widget: "list"
+        required: false
+        hint: "Any requirements or prerequisites"
+        field: {label: "Requirement", name: "requirement", widget: "string"}
+      
+      - {label: "Full Description", name: "body", widget: "markdown", required: true}
+      
+      # Call to Action
+      - {label: "CTA Button Text", name: "cta_text", widget: "string", default: "Learn More", hint: "Button text for this service"}
+      - {label: "Booking Available", name: "booking_available", widget: "boolean", default: true}
+      
+      # SEO
+      - {label: "Meta Description", name: "meta_description", widget: "text", required: false, hint: "SEO description"}
+
+  # ========================================
+  # TEAM MEMBERS COLLECTION
+  # ========================================
+  - name: "team"
+    label: "👥 Team Members"
+    label_singular: "Team Member"
+    folder: "src/content/team"
+    create: true
+    slug: "{{fields.name}}"
+    summary: "{{name}} - {{position}}"
+    sortable_fields: ['order', 'name']
+    editor:
+      preview: true
+    fields:
+      - {label: "Full Name", name: "name", widget: "string", required: true}
+      - {label: "Position/Title", name: "position", widget: "string", required: true, hint: "e.g., Head Trainer, Barn Manager"}
+      - {label: "Display Order", name: "order", widget: "number", default: 0, hint: "Lower numbers appear first"}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage"}
+      
+      - {label: "Profile Photo", name: "photo", widget: "image", required: true, hint: "Professional headshot or action photo"}
+      
+      # Professional Information
+      - {label: "Years of Experience", name: "experience_years", widget: "number", required: false}
+      
+      - label: "Specialties"
+        name: "specialties"
+        widget: "list"
+        required: false
+        hint: "Areas of expertise"
+        field: {label: "Specialty", name: "specialty", widget: "string"}
+      
+      - label: "Certifications"
+        name: "certifications"
+        widget: "list"
+        required: false
+        hint: "Professional certifications and qualifications"
+        fields:
+          - {label: "Certification Name", name: "name", widget: "string"}
+          - {label: "Issuing Organization", name: "organization", widget: "string", required: false}
+          - {label: "Year", name: "year", widget: "number", required: false}
+      
+      - label: "Competition Achievements"
+        name: "achievements"
+        widget: "list"
+        required: false
+        hint: "Notable competition results or achievements"
+        field: {label: "Achievement", name: "achievement", widget: "string"}
+      
+      - {label: "Biography", name: "bio", widget: "markdown", required: true, hint: "Full biography including background and philosophy"}
+      
+      # Contact & Availability
+      - {label: "Available for Lessons", name: "available_lessons", widget: "boolean", default: false}
+      - {label: "Email", name: "email", widget: "string", required: false, hint: "Professional email (optional)"}
+      - {label: "Phone", name: "phone", widget: "string", required: false, hint: "Professional phone (optional)"}
+      
+      # Social Media
+      - label: "Social Media"
+        name: "social"
+        widget: "object"
+        collapsed: true
+        required: false
+        fields:
+          - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - {label: "Facebook", name: "facebook", widget: "string", required: false}
+          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+
+  # ========================================
+  # BLOG COLLECTION
+  # ========================================
+  - name: "blog"
+    label: "📝 Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: "Published Posts"
+        field: draft
+        pattern: false
+      - label: "Draft Posts"
+        field: draft
+        pattern: true
+    editor:
+      preview: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Author", name: "author", widget: "string", required: true, default: "Blackberry Equestrian"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false, hint: "Set to true to save as draft"}
+      
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - {label: "Facility News", value: "news"}
+          - {label: "Horse Care Tips", value: "care"}
+          - {label: "Training Tips", value: "training"}
+          - {label: "Show Results", value: "shows"}
+          - {label: "Student Spotlights", value: "students"}
+          - {label: "Industry News", value: "industry"}
+          - {label: "Seasonal Updates", value: "seasonal"}
+        required: true
+      
+      - {label: "Featured Image", name: "image", widget: "image", required: true, hint: "Blog post hero image"}
+      - {label: "Image Caption", name: "image_caption", widget: "string", required: false}
+      
+      - {label: "Excerpt", name: "excerpt", widget: "text", required: true, hint: "Brief summary for blog listings (2-3 sentences)"}
+      
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Add relevant tags for this post"
+        field: {label: "Tag", name: "tag", widget: "string"}
+      
+      - {label: "Content", name: "body", widget: "markdown", required: true}
+      
+      # SEO
+      - {label: "Meta Description", name: "meta_description", widget: "text", required: false, hint: "SEO description"}
+      - {label: "Keywords", name: "keywords", widget: "list", required: false}
+
+  # ========================================
+  # FACILITIES COLLECTION
+  # ========================================
+  - name: "facilities"
+    label: "🏛️ Facilities"
+    label_singular: "Facility"
+    folder: "src/content/facilities"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{facility_type}}"
+    sortable_fields: ['order', 'title']
+    editor:
+      preview: true
+    fields:
+      - {label: "Facility Name", name: "title", widget: "string", required: true}
+      - {label: "Display Order", name: "order", widget: "number", default: 0}
+      
+      - label: "Facility Type"
+        name: "facility_type"
+        widget: "select"
+        options:
+          - {label: "Indoor Arena", value: "indoor_arena"}
+          - {label: "Outdoor Arena", value: "outdoor_arena"}
+          - {label: "Barn/Stables", value: "barn"}
+          - {label: "Paddocks", value: "paddocks"}
+          - {label: "Trails", value: "trails"}
+          - {label: "Amenity", value: "amenity"}
+          - {label: "Other", value: "other"}
+        required: true
+      
+      - {label: "Featured Image", name: "main_image", widget: "image", required: true}
+      
+      # Facility Details
+      - {label: "Size/Dimensions", name: "dimensions", widget: "string", required: false, hint: "e.g., '200ft x 80ft'"}
+      - {label: "Surface/Footing", name: "footing", widget: "string", required: false, hint: "e.g., 'Premium sand blend'"}
+      
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        hint: "List key features of this facility"
+        field: {label: "Feature", name: "feature", widget: "string"}
+      
+      - label: "Photo Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      
+      - {label: "Description", name: "body", widget: "markdown", required: true}
+      
+      # Availability
+      - {label: "Available for Events", name: "available_events", widget: "boolean", default: false}
+      - {label: "Available for Lessons", name: "available_lessons", widget: "boolean", default: true}
+      - {label: "Booking Required", name: "booking_required", widget: "boolean", default: false}
+
+  # ========================================
+  # TESTIMONIALS COLLECTION
+  # ========================================
+  - name: "testimonials"
+    label: "⭐ Testimonials"
+    label_singular: "Testimonial"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.client_name}}"
+    summary: "{{client_name}} - {{service_type}}"
+    sortable_fields: ['date', 'client_name']
+    editor:
+      preview: false
+    fields:
+      - {label: "Client Name", name: "client_name", widget: "string", required: true}
+      - {label: "Client Photo", name: "client_photo", widget: "image", required: false}
+      - {label: "Date", name: "date", widget: "date", required: true}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage"}
+      
+      - label: "Client Type"
+        name: "client_type"
+        widget: "select"
+        options:
+          - {label: "Horse Owner (Boarder)", value: "boarder"}
+          - {label: "Student", value: "student"}
+          - {label: "Parent", value: "parent"}
+          - {label: "Horse Buyer", value: "buyer"}
+          - {label: "Training Client", value: "training"}
+        required: true
+      
+      - label: "Service Type"
+        name: "service_type"
+        widget: "select"
+        options:
+          - {label: "Boarding", value: "boarding"}
+          - {label: "Training", value: "training"}
+          - {label: "Lessons", value: "lessons"}
+          - {label: "Horse Purchase/Lease", value: "horse_transaction"}
+          - {label: "Multiple Services", value: "multiple"}
+        required: true
+      
+      - {label: "Testimonial Text", name: "testimonial", widget: "text", required: true}
+      - {label: "Rating", name: "rating", widget: "number", min: 1, max: 5, default: 5}
+      
+      - {label: "Permission to Display", name: "permission", widget: "boolean", default: true, hint: "Client has given permission to display this testimonial"}
+
+  # ========================================
+  # PAGES COLLECTION - Static Pages
+  # ========================================
+  - name: "pages"
+    label: "📄 Pages"
+    label_singular: "Page"
+    files:
+      # Home Page
+      - label: "Home Page"
+        name: "home"
+        file: "src/content/pages/home.json"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Welcome to Blackberry Equestrian"}
+          
+          # Hero Section
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "title", widget: "string", required: true}
+              - {label: "Hero Subtitle", name: "subtitle", widget: "text", required: true}
+              - {label: "Hero Image", name: "image", widget: "image", required: true}
+              - {label: "CTA Button Text", name: "cta_text", widget: "string", default: "Explore Our Services"}
+              - {label: "CTA Button Link", name: "cta_link", widget: "string", default: "/services"}
+          
+          # Welcome Section
+          - label: "Welcome Section"
+            name: "welcome"
+            widget: "object"
+            fields:
+              - {label: "Section Title", name: "title", widget: "string", default: "Welcome to Blackberry Equestrian"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+          
+          # Features/Highlights
+          - label: "Feature Highlights"
+            name: "features"
+            widget: "list"
+            max: 6
+            fields:
+              - {label: "Feature Title", name: "title", widget: "string"}
+              - {label: "Feature Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string", hint: "Icon name from icon library"}
+              - {label: "Link", name: "link", widget: "string", required: false}
+          
+          # Call to Action
+          - label: "Call to Action Section"
+            name: "cta_section"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
+              - {label: "Background Image", name: "bg_image", widget: "image", required: false}
+          
+          # SEO
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+          - {label: "Keywords", name: "keywords", widget: "list"}
+      
+      # About Page
+      - label: "About Page"
+        name: "about"
+        file: "src/content/pages/about.json"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "About Blackberry Equestrian"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          
+          # Main Content
+          - label: "Our Story"
+            name: "story"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Our Story"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+          
+          # Mission & Values
+          - label: "Mission & Values"
+            name: "mission"
+            widget: "object"
+            fields:
+              - {label: "Mission Statement", name: "mission_statement", widget: "text"}
+              - label: "Core Values"
+                name: "values"
+                widget: "list"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          
+          # History Timeline
+          - label: "History Timeline"
+            name: "timeline"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Milestone", name: "milestone", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+          
+          # SEO
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      
+      # Contact Page
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/content/pages/contact.json"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Contact Us"}
+          
+          # Contact Information
+          - label: "Contact Details"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+              - {label: "Hours", name: "hours", widget: "text"}
+              - {label: "Emergency Contact", name: "emergency", widget: "string", required: false}
+          
+          # Location
+          - label: "Location"
+            name: "location"
+            widget: "object"
+            fields:
+              - {label: "Map Embed Code", name: "map_embed", widget: "text", hint: "Google Maps embed code"}
+              - {label: "Directions", name: "directions", widget: "markdown", required: false}
+          
+          # Form Settings
+          - label: "Contact Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - {label: "Form Title", name: "title", widget: "string", default: "Send Us a Message"}
+              - {label: "Success Message", name: "success_message", widget: "text"}
+              - {label: "Email Recipient", name: "recipient", widget: "string"}
+          
+          # SEO
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+
+  # ========================================
+  # SETTINGS COLLECTION - Site Configuration
+  # ========================================
+  - name: "settings"
+    label: "⚙️ Settings"
+    files:
+      # General Settings
+      - label: "General Settings"
+        name: "general"
+        file: "src/content/settings/general.json"
+        fields:
+          - {label: "Site Title", name: "siteTitle", widget: "string", required: true}
+          - {label: "Site Description", name: "siteDescription", widget: "text", required: true}
+          - {label: "Logo", name: "logo", widget: "image", required: false}
+          - {label: "Favicon", name: "favicon", widget: "image", required: false}
+          
+          # Business Information
+          - label: "Business Information"
+            name: "business"
+            widget: "object"
+            fields:
+              - {label: "Business Name", name: "name", widget: "string", default: "Blackberry Equestrian"}
+              - {label: "Established Year", name: "established", widget: "number"}
+              - {label: "Registration Number", name: "registration", widget: "string", required: false}
+              - {label: "Tax ID", name: "tax_id", widget: "string", required: false}
+          
+          # Contact Information
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Primary Phone", name: "phone", widget: "string", required: true}
+              - {label: "Secondary Phone", name: "phone_secondary", widget: "string", required: false}
+              - {label: "Email", name: "email", widget: "string", required: true}
+              - {label: "Address", name: "address", widget: "text", required: true}
+              - {label: "City", name: "city", widget: "string", default: "Newtonville"}
+              - {label: "Province", name: "province", widget: "string", default: "Ontario"}
+              - {label: "Postal Code", name: "postal_code", widget: "string"}
+              - {label: "Country", name: "country", widget: "string", default: "Canada"}
+              - {label: "Hours of Operation", name: "hours", widget: "text"}
+          
+          # Social Media
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "Facebook URL", name: "facebook", widget: "string", required: false, default: "https://www.facebook.com/BlackberryEquestrian/"}
+              - {label: "Instagram URL", name: "instagram", widget: "string", required: false, default: "https://www.instagram.com/black.berryequestrian/"}
+              - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
+              - {label: "YouTube URL", name: "youtube", widget: "string", required: false}
+              - {label: "TikTok URL", name: "tiktok", widget: "string", required: false}
+              - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
+      
+      # SEO Settings
+      - label: "SEO Settings"
+        name: "seo"
+        file: "src/content/settings/seo.json"
+        fields:
+          - {label: "Default Meta Title", name: "default_title", widget: "string"}
+          - {label: "Default Meta Description", name: "default_description", widget: "text"}
+          - {label: "Site Keywords", name: "keywords", widget: "list"}
+          
+          # Analytics
+          - label: "Analytics"
+            name: "analytics"
+            widget: "object"
+            fields:
+              - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
+              - {label: "Google Tag Manager ID", name: "gtm_id", widget: "string", required: false}
+              - {label: "Facebook Pixel ID", name: "facebook_pixel", widget: "string", required: false}
+          
+          # Open Graph
+          - label: "Open Graph / Social Sharing"
+            name: "og"
+            widget: "object"
+            fields:
+              - {label: "Default OG Image", name: "default_image", widget: "image"}
+              - {label: "Twitter Handle", name: "twitter_handle", widget: "string", required: false}
+              - {label: "Facebook App ID", name: "fb_app_id", widget: "string", required: false}
+          
+          # Structured Data
+          - label: "Structured Data"
+            name: "structured_data"
+            widget: "object"
+            fields:
+              - {label: "Business Type", name: "type", widget: "string", default: "LocalBusiness"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$$"}
+              - {label: "Latitude", name: "latitude", widget: "string", required: false}
+              - {label: "Longitude", name: "longitude", widget: "string", required: false}
+
+# Slug configuration for clean URLs
+slug:
+  encoding: "unicode"
+  clean_accents: true
+  sanitize_replacement: "-"

@@ -1,0 +1,57 @@
+{
+  "title": "Full Board",
+  "order": 1,
+  "featured": true,
+  "service_category": "boarding",
+  "image": "/images/uploads/full-board-service.jpg",
+  "excerpt": "Premium full-care boarding in our state-of-the-art facility with indoor and outdoor arenas, daily turnout, and professional care.",
+  "pricing_options": [
+    {
+      "name": "Indoor Stall - Full Board",
+      "price": 1200,
+      "period": "Monthly",
+      "note": "12x12 matted stall with automatic waterers",
+      "features": [
+        "Daily stall cleaning",
+        "Premium hay 3x daily",
+        "Grain 2x daily",
+        "Daily turnout (weather permitting)",
+        "Blanketing service",
+        "Basic grooming before turnout"
+      ]
+    },
+    {
+      "name": "Paddock Board",
+      "price": 900,
+      "period": "Monthly",
+      "note": "Individual paddock with run-in shelter",
+      "features": [
+        "24/7 turnout with shelter",
+        "Premium hay 3x daily",
+        "Grain 2x daily",
+        "Daily wellness check",
+        "Blanketing service",
+        "Access to all facilities"
+      ]
+    }
+  ],
+  "includes": [
+    "Use of indoor and outdoor arenas",
+    "Access to trails",
+    "Tack storage",
+    "Heated viewing lounge",
+    "Wash stalls with hot/cold water",
+    "On-site supervision",
+    "Emergency veterinary coordination"
+  ],
+  "requirements": [
+    "Current Coggins test",
+    "Proof of vaccinations (EWT/WNV, Rabies)",
+    "Liability insurance",
+    "Signed boarding agreement"
+  ],
+  "body": "## Experience Premium Horse Care at Blackberry Equestrian\n\nOur full board program provides complete care for your horse in a professional, caring environment. With over 20 years of experience, we understand that every horse is unique and deserves individual attention.\n\n### Facility Features\n\n- **Indoor Arena**: 200' x 80' heated arena with premium footing\n- **Outdoor Arena**: 180' x 90' sand ring with jumps\n- **Stabling**: Bright, airy 12x12 stalls with rubber mats\n- **Turnout**: Individual and group paddocks totaling 30 acres\n- **Trails**: Direct access to scenic trail system\n\n### Daily Care Routine\n\nOur experienced staff follows a consistent daily routine:\n- Morning feed and wellness check (7:00 AM)\n- Turnout (8:00 AM - 4:00 PM, weather permitting)\n- Afternoon feed (4:00 PM)\n- Evening feed and night check (8:00 PM)\n\n### Why Choose Blackberry Equestrian?\n\n- Professional, experienced staff\n- Excellent facility maintenance\n- Flexible care options\n- Competitive show atmosphere\n- Supportive community\n- Convenient location in Durham Region",
+  "cta_text": "Schedule a Tour",
+  "booking_available": true,
+  "meta_description": "Premium full board horse boarding in Newtonville, Ontario. Indoor arena, daily turnout, professional care. Starting at $900/month."
+}

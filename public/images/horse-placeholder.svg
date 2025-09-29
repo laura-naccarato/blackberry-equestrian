@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#FAF7F0"/>
+  <g opacity="0.5">
+    <path d="M200 80c-22.091 0-40 17.909-40 40v40c0 11.046 8.954 20 20 20h10v40c0 5.523 4.477 10 10 10s10-4.477 10-10v-40h10c11.046 0 20-8.954 20-20v-40c0-22.091-17.909-40-40-40z" fill="#8B7D7B"/>
+    <circle cx="180" cy="120" r="5" fill="#36454F"/>
+    <circle cx="220" cy="120" r="5" fill="#36454F"/>
+    <path d="M160 100c0-5.523 4.477-10 10-10s10 4.477 10 10M220 100c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#8B7D7B" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="200" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#8B7D7B">Horse Image</text>
+</svg>

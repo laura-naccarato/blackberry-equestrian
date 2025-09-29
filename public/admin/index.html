@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager - Blackberry Equestrian</title>
+  
+  <!-- Custom styles for CMS -->
+  <style>
+    /* Custom branding for CMS */
+    .nc-githubAuthenticationPage-logo {
+      background-image: url('/images/logo.png');
+      background-size: contain;
+    }
+    
+    /* Improve CMS UI */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    /* Custom toolbar styling */
+    [data-slate-editor] {
+      min-height: 300px;
+    }
+    
+    /* Better image preview in editor */
+    .nc-imageControl-image {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Improve list view */
+    .nc-entryListing-cardList {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    /* Collection sidebar icons */
+    [href="#/collections/horses"]::before { content: "🐴 "; }
+    [href="#/collections/services"]::before { content: "💼 "; }
+    [href="#/collections/team"]::before { content: "👥 "; }
+    [href="#/collections/blog"]::before { content: "📝 "; }
+    [href="#/collections/facilities"]::before { content: "🏛️ "; }
+    [href="#/collections/testimonials"]::before { content: "⭐ "; }
+    [href="#/collections/pages"]::before { content: "📄 "; }
+    [href="#/collections/settings"]::before { content: "⚙️ "; }
+    
+    /* Status badges */
+    .status-available { color: #10b981; font-weight: 600; }
+    .status-pending { color: #f59e0b; font-weight: 600; }
+    .status-sold { color: #ef4444; font-weight: 600; }
+    .status-leased { color: #6366f1; font-weight: 600; }
+    
+    /* Featured badge */
+    .featured-badge {
+      display: inline-block;
+      background: #fbbf24;
+      color: #78350f;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+    
+    /* Help text styling */
+    .nc-controlPane-widget .nc-fieldControl-hint {
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    
+    /* Required field indicator */
+    .nc-fieldControl.nc-fieldControl-required label::after {
+      content: " *";
+      color: #ef4444;
+    }
+    
+    /* Improve markdown editor */
+    .nc-markdownControlPane-rawEditor {
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 14px;
+    }
+    
+    /* Loading spinner */
+    .nc-loader-root {
+      background: rgba(255, 255, 255, 0.95);
+    }
+    
+    /* Success notifications */
+    .nc-toast-success {
+      background: #10b981 !important;
+    }
+    
+    /* Error notifications */
+    .nc-toast-error {
+      background: #ef4444 !important;
+    }
+    
+    /* Media library improvements */
+    .nc-mediaLibrary-card {
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    
+    .nc-mediaLibrary-card:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Workflow card styling */
+    .nc-workflow-card {
+      border-left: 4px solid #065f46;
+    }
+    
+    .nc-workflow-card-editButton {
+      background: #065f46 !important;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    // Initialize CMS when ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Register custom preview styles
+      if (window.CMS) {
+        CMS.registerPreviewStyle(`
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            padding: 20px;
+          }
+          h1 { font-size: 2rem; font-weight: 700; margin: 1.5rem 0 1rem; }
+          h2 { font-size: 1.5rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+          h3 { font-size: 1.25rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+          h4 { font-size: 1.125rem; font-weight: 500; margin: 1rem 0 0.5rem; }
+          p { margin: 0.75rem 0; }
+          img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+          }
+          ul, ol {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+          }
+          li { margin: 0.25rem 0; }
+          pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.875rem;
+          }
+          code {
+            background: #f4f4f4;
+            padding: 0.125rem 0.25rem;
+            border-radius: 2px;
+            font-size: 0.875rem;
+          }
+          blockquote {
+            border-left: 4px solid #065f46;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #4b5563;
+            font-style: italic;
+          }
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+          }
+          th, td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: left;
+          }
+          th {
+            background: #f9fafb;
+            font-weight: 600;
+          }
+          hr {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 2rem 0;
+          }
+          a {
+            color: #065f46;
+            text-decoration: underline;
+          }
+          a:hover {
+            color: #047857;
+          }
+        `);
+        
+        // Register YouTube embed component
+        try {
+          CMS.registerEditorComponent({
+            id: "youtube",
+            label: "YouTube Video",
+            fields: [
+              { name: 'id', label: 'YouTube Video ID', widget: 'string' },
+              { name: 'title', label: 'Title (for accessibility)', widget: 'string' }
+            ],
+            pattern: /^youtube (\S+)$/,
+            fromBlock: function(match) {
+              return {
+                id: match[1],
+                title: ''
+              };
+            },
+            toBlock: function(obj) {
+              return 'youtube ' + obj.id;
+            },
+            toPreview: function(obj) {
+              return (
+                '<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">' +
+                '<iframe src="https://www.youtube.com/embed/' + obj.id + '" ' +
+                'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" ' +
+                'allowfullscreen title="' + (obj.title || 'YouTube video') + '"></iframe></div>'
+              );
+            }
+          });
+        } catch (e) {
+          console.log('Could not register YouTube component:', e);
+        }
+        
+        // Register button component
+        try {
+          CMS.registerEditorComponent({
+            id: "button",
+            label: "Call-to-Action Button",
+            fields: [
+              { name: 'text', label: 'Button Text', widget: 'string' },
+              { name: 'url', label: 'URL', widget: 'string' },
+              { name: 'style', label: 'Style', widget: 'select', options: ['primary', 'secondary', 'outline'], default: 'primary' }
+            ],
+            pattern: /^button "([^"]*)" "([^"]*)" "([^"]*)"$/,
+            fromBlock: function(match) {
+              return {
+                text: match[1],
+                url: match[2],
+                style: match[3] || 'primary'
+              };
+            },
+            toBlock: function(obj) {
+              return 'button "' + obj.text + '" "' + obj.url + '" "' + obj.style + '"';
+            },
+            toPreview: function(obj) {
+              const styles = {
+                primary: 'background: #065f46; color: white;',
+                secondary: 'background: #f3f4f6; color: #1f2937;',
+                outline: 'background: white; color: #065f46; border: 2px solid #065f46;'
+              };
+              return (
+                '<a href="' + obj.url + '" style="display: inline-block; padding: 12px 24px; ' +
+                'border-radius: 6px; text-decoration: none; font-weight: 500; ' +
+                (styles[obj.style] || styles.primary) + '">' + obj.text + '</a>'
+              );
+            }
+          });
+        } catch (e) {
+          console.log('Could not register button component:', e);
+        }
+        
+        console.log('Decap CMS initialized successfully');
+        
+        // Load preview templates after CMS is initialized
+        setTimeout(function() {
+          const loadScript = function(src) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onerror = function() { 
+              console.warn('Failed to load preview template:', src); 
+            };
+            script.onload = function() {
+              console.log('Loaded preview template:', src);
+            };
+            document.body.appendChild(script);
+          };
+          
+          // Load preview templates
+          loadScript('/admin/preview-templates/horse-preview.js');
+          loadScript('/admin/preview-templates/service-preview.js');
+        }, 500);
+      } else {
+        console.error('CMS object not found');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "client_name": "Jennifer Smith",
+  "client_photo": "/images/uploads/testimonial-jennifer.jpg",
+  "date": "2024-01-10",
+  "featured": true,
+  "client_type": "boarder",
+  "service_type": "boarding",
+  "testimonial": "We've been boarding at Blackberry Equestrian for over 5 years, and it truly feels like a second home. The care my horse receives is exceptional - Sarah and her team treat every horse as if it were their own. The facilities are always immaculate, the indoor arena is a blessing during winter months, and the sense of community among boarders is wonderful. I couldn't imagine keeping my horse anywhere else!",
+  "rating": 5,
+  "permission": true
+}

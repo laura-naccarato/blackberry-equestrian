@@ -1,0 +1,36 @@
+{
+  "title": "Indoor Arena",
+  "order": 1,
+  "facility_type": "indoor_arena",
+  "main_image": "/images/uploads/indoor-arena-main.jpg",
+  "dimensions": "200ft x 80ft",
+  "footing": "Premium GGT footing blend with rubber and fiber",
+  "features": [
+    "Heated facility for year-round comfort",
+    "LED lighting for optimal visibility",
+    "Full jump course available",
+    "Viewing lounge with panoramic windows",
+    "Sound system for lessons and clinics",
+    "Dust-free watering system",
+    "Emergency exits and safety equipment",
+    "Wheelchair accessible viewing area"
+  ],
+  "gallery": [
+    {
+      "image": "/images/uploads/indoor-arena-jumps.jpg",
+      "caption": "Full course set up for hunter/jumper training"
+    },
+    {
+      "image": "/images/uploads/indoor-arena-lesson.jpg",
+      "caption": "Group lesson in progress"
+    },
+    {
+      "image": "/images/uploads/indoor-arena-viewing.jpg",
+      "caption": "Heated viewing lounge"
+    }
+  ],
+  "body": "## Premier Indoor Training Facility\n\nOur state-of-the-art indoor arena is the centerpiece of Blackberry Equestrian, providing riders with a safe, comfortable environment for year-round training and competition preparation.\n\n### Exceptional Footing\n\nWe've invested in premium GGT footing, a carefully engineered blend of sand, rubber, and fiber that provides:\n- Consistent, cushioned surface that reduces stress on horses' legs\n- Excellent drainage and dust control\n- Optimal traction in all gaits\n- Regular maintenance ensures perfect riding conditions\n\n### Climate Controlled Comfort\n\nOur heating system ensures comfortable riding conditions even in the coldest Ontario winters. The arena maintains a consistent temperature, allowing horses to work without the stress of extreme temperatures.\n\n### Professional Amenities\n\n- **Full Jump Course**: Complete selection of jumps, standards, and poles\n- **Dressage Letters**: Permanently installed for accurate schooling\n- **Mirror Wall**: 60ft mirror for position work and dressage training\n- **Sound System**: Wireless microphone system for instruction\n\n### Viewing Lounge\n\nOur heated viewing lounge features:\n- Panoramic windows overlooking the entire arena\n- Comfortable seating for 30+ spectators\n- Coffee and refreshment area\n- WiFi access\n- Direct arena access\n\n### Safety Features\n\n- Multiple emergency exits\n- First aid station\n- Fire extinguishers and emergency equipment\n- Non-slip surfaces in high-traffic areas\n- Security cameras for monitoring\n\n### Availability\n\nThe indoor arena is available for:\n- Regular lessons and training\n- Private clinics and workshops\n- Schooling shows and events\n- Special occasions and demonstrations\n\n### Booking Information\n\nArena time is primarily reserved for lessons and boarder use. Limited availability for:\n- Haul-in lessons\n- Arena rentals\n- Private events\n\nContact us for availability and rates.",
+  "available_events": true,
+  "available_lessons": true,
+  "booking_required": true
+}

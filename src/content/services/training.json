@@ -1,0 +1,54 @@
+{
+  "title": "Training Programs",
+  "order": 2,
+  "featured": true,
+  "service_category": "training",
+  "image": "/images/uploads/training-service.jpg",
+  "excerpt": "Professional training for horses and riders at all levels, from green horses to Grand Prix competitors.",
+  "pricing_options": [
+    {
+      "name": "Full Training",
+      "price": 800,
+      "period": "Monthly",
+      "note": "5 training rides per week",
+      "features": [
+        "Professional riding 5x weekly",
+        "Customized training program",
+        "Competition preparation",
+        "Progress reports",
+        "Exercise scheduling",
+        "Owner lesson included weekly"
+      ]
+    },
+    {
+      "name": "Partial Training",
+      "price": 500,
+      "period": "Monthly",
+      "note": "3 training rides per week",
+      "features": [
+        "Professional riding 3x weekly",
+        "Skill development focus",
+        "Groundwork included",
+        "Monthly evaluation",
+        "Owner participation encouraged"
+      ]
+    }
+  ],
+  "includes": [
+    "Experienced professional trainers",
+    "Individualized programs",
+    "Show preparation available",
+    "Young horse development",
+    "Problem solving and rehabilitation",
+    "Regular progress updates"
+  ],
+  "requirements": [
+    "Horse must be boarded at facility",
+    "Current health records",
+    "Training agreement"
+  ],
+  "body": "## Develop Your Horse's Full Potential\n\nOur comprehensive training programs are designed to bring out the best in every horse, whether starting a youngster or fine-tuning a seasoned competitor.\n\n### Training Philosophy\n\nWe believe in:\n- Building confidence through positive reinforcement\n- Systematic progression of skills\n- Clear communication between horse and rider\n- Individualized approaches for each horse\n\n### Programs Offered\n\n- **Young Horse Development**: Starting under saddle, basic training\n- **Hunter Training**: Equitation, movement, and jumping style\n- **Jumper Training**: Technical skills, adjustability, and scope\n- **Competition Preparation**: Show readiness and ring experience\n- **Rehabilitation**: Retraining and confidence building\n\n### Why Choose Our Training?\n\n- Proven track record of success\n- Experienced, certified trainers\n- Safe, progressive methods\n- Regular communication with owners\n- Flexible programs to meet your goals",
+  "cta_text": "Start Training",
+  "booking_available": true,
+  "meta_description": "Professional horse training programs in Newtonville, Ontario. Full and partial training for hunters, jumpers, and young horses."
+}
