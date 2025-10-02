@@ -1,6 +1,13 @@
 <template>
   <div id="app">
     <SiteHeader />
+    <!-- Work in Progress Notice -->
+    <BaseAlert
+      variant="warning"
+      title="Work in Progress"
+      message="This site is under development. Information displayed may not be accurate."
+      dismissible
+    />
     <main class="main-content">
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
@@ -16,6 +23,7 @@
 import { RouterView } from 'vue-router'
 import SiteHeader from './components/layout/SiteHeader.vue'
 import SiteFooter from './components/layout/SiteFooter.vue'
+import BaseAlert from './components/ui/BaseAlert.vue'
 </script>
 
 <style>

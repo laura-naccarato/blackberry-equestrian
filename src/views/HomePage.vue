@@ -1,13 +1,5 @@
 <template>
   <div class="home-page">
-    <!-- Work in Progress Notice -->
-    <BaseAlert
-      variant="warning"
-      title="Work in Progress"
-      message="This site is under development. Information displayed may not be accurate."
-      dismissible
-    />
-
     <!-- Hero Section -->
     <HeroSection :hero-data="pageData?.hero" />
     
@@ -90,7 +82,6 @@ import { loadPage, loadHorses, getFeaturedContent } from '@/utils/contentLoader'
 import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import FeaturedServices from '@/components/sections/FeaturedServices.vue'
-import BaseAlert from '@/components/ui/BaseAlert.vue'
 
 const pageData = ref(null)
 const featuredHorses = ref([])
