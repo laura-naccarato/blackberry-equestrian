@@ -83,11 +83,6 @@
                 Meet the Team
               </RouterLink>
             </li>
-            <li>
-              <RouterLink to="/blog" class="footer-link">
-                Blog & News
-              </RouterLink>
-            </li>
           </ul>
         </div>
 

@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import {
   loadServices,
   loadTeamMembers,
-  loadBlogPosts,
   loadFacilities,
   loadTestimonials,
   loadPage,
@@ -14,7 +13,6 @@ export const useContentStore = defineStore('content', () => {
   // State
   const services = ref([])
   const teamMembers = ref([])
-  const blogPosts = ref([])
   const facilities = ref([])
   const testimonials = ref([])
   const pages = ref({})
@@ -39,44 +37,7 @@ export const useContentStore = defineStore('content', () => {
     return teamMembers.value.filter(member => member.featured)
   })
 
-  const recentBlogPosts = computed(() => {
-    return [...blogPosts.value]
-      .filter(post => !post.draft)
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 3)
-  })
 
-  const publishedBlogPosts = computed(() => {
-    return blogPosts.value.filter(post => !post.draft)
-  })
-
-  const blogPostsByCategory = computed(() => {
-    const categoryMap = {}
-    blogPosts.value.forEach(post => {
-      if (!post.draft && post.category) {
-        if (!categoryMap[post.category]) {
-          categoryMap[post.category] = []
-        }
-        categoryMap[post.category].push(post)
-      }
-    })
-    return categoryMap
-  })
-
-  const blogPostsByTag = computed(() => {
-    const tagMap = {}
-    blogPosts.value.forEach(post => {
-      if (!post.draft && post.tags && Array.isArray(post.tags)) {
-        post.tags.forEach(tag => {
-          if (!tagMap[tag]) {
-            tagMap[tag] = []
-          }
-          tagMap[tag].push(post)
-        })
-      }
-    })
-    return tagMap
-  })
 
   const featuredTestimonials = computed(() => {
     return testimonials.value.filter(testimonial => testimonial.featured)
@@ -94,9 +55,7 @@ export const useContentStore = defineStore('content', () => {
         case 'team':
           teamMembers.value = await loadTeamMembers()
           break
-        case 'blog':
-          blogPosts.value = await loadBlogPosts()
-          break
+
         case 'facilities':
           facilities.value = await loadFacilities()
           break
@@ -151,12 +110,7 @@ export const useContentStore = defineStore('content', () => {
     })
   }
 
-  const getBlogPostBySlug = (slug) => {
-    return blogPosts.value.find(post => {
-      const postSlug = post.slug || `${post.date?.split('T')[0]}-${post.title?.toLowerCase().replace(/\s+/g, '-')}`
-      return postSlug === slug
-    })
-  }
+
 
   const getTeamMemberBySlug = (slug) => {
     return teamMembers.value.find(member => {
@@ -176,7 +130,6 @@ export const useContentStore = defineStore('content', () => {
     // State
     services,
     teamMembers,
-    blogPosts,
     facilities,
     testimonials,
     pages,
@@ -189,16 +142,11 @@ export const useContentStore = defineStore('content', () => {
     featuredServices,
     sortedTeamMembers,
     featuredTeamMembers,
-    recentBlogPosts,
-    publishedBlogPosts,
-    blogPostsByCategory,
-    blogPostsByTag,
     featuredTestimonials,
     
     // Methods
     loadContent,
     getServiceBySlug,
-    getBlogPostBySlug,
     getTeamMemberBySlug,
     getFacilityBySlug
   }

@@ -144,7 +144,6 @@ const navigation = [
   { name: 'Services', path: '/services', icon: SparklesIcon },
   { name: 'Horses', path: '/horses', icon: HeartIcon },
   { name: 'Facilities', path: '/facilities', icon: BuildingOffice2Icon },
-  { name: 'Blog', path: '/blog', icon: NewspaperIcon },
   { name: 'Contact', path: '/contact', icon: ChatBubbleLeftRightIcon }
 ]
 </script>

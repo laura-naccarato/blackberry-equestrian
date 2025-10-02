@@ -1,10 +1,11 @@
 <template>
   <section class="hero-section">
     <div class="hero-background">
-      <img 
-        :src="heroData?.image || '/images/hero-bg.jpg'" 
+      <img
+        :src="heroData?.image || PLACEHOLDER_IMAGE"
         :alt="heroData?.title || 'Blackberry Equestrian'"
         class="hero-image"
+        @error="handleImageError($event, PLACEHOLDER_IMAGE)"
       >
       <div class="hero-overlay"></div>
     </div>
@@ -71,6 +72,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
 
 defineProps({
   heroData: {

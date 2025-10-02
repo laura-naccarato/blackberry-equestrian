@@ -34,10 +34,11 @@
             class="service-card"
           >
             <div class="service-header">
-              <img 
-                :src="service.image || '/images/horse-placeholder.svg'" 
+              <img
+                :src="service.image || PLACEHOLDER_IMAGE"
                 :alt="service.title"
                 class="service-image"
+                @error="handleImageError($event, PLACEHOLDER_IMAGE)"
               >
               <span v-if="service.featured" class="featured-badge">Featured</span>
             </div>
@@ -111,6 +112,7 @@ import { ref, computed, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseLoading from '@/components/ui/BaseLoading.vue'
 import { loadServices } from '@/utils/contentLoader'
+import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
 
 const services = ref([])
 const loading = ref(true)
@@ -162,7 +164,7 @@ onMounted(async () => {
 /* Page Header */
 .page-header {
   background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)),
-              url('/images/services-hero.jpg') center/cover;
+              url('/images/placeholder.svg') center/cover;
   padding: 6rem 0;
   text-align: center;
   color: white;

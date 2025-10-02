@@ -9,10 +9,11 @@
   >
     <template #image>
       <div class="relative overflow-hidden">
-        <img 
-          :src="horse.main_image || '/images/horse-placeholder.svg'" 
+        <img
+          :src="horse.main_image || HORSE_PLACEHOLDER"
           :alt="horse.name"
           class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          @error="handleImageError($event, HORSE_PLACEHOLDER)"
         >
         <div v-if="horse.featured" class="absolute top-4 right-4">
           <span class="bg-warm-gold text-rich-brown px-3 py-1 rounded-full text-sm font-semibold shadow-medium">
@@ -90,6 +91,7 @@
 import BaseCard from '@/components/ui/BaseCard.vue'
 import { TrophyIcon, ChartBarIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
 import { formatPrice } from '@/utils/contentLoader'
+import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 
 const props = defineProps({
   horse: {

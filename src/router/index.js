@@ -61,28 +61,10 @@ const routes = [
     meta: {
       title: 'Facilities - Blackberry Equestrian',
       description: 'Tour our indoor arena, outdoor rings, and boarding facilities'
-    }
-  },
-
-  {
-    path: '/blog',
-    name: 'blog',
-    component: () => import('@/views/BlogPage.vue'),
-    meta: {
-      title: 'Blog - Blackberry Equestrian',
-      description: 'News, tips, and updates from the barn'
-    }
-  },
-  {
-    path: '/blog/:slug',
-    name: 'blog-post',
-    component: () => import('@/views/BlogPostPage.vue'),
-    meta: {
-      title: 'Blog Post - Blackberry Equestrian'
-    }
-  },
-  {
-    path: '/contact',
+     }
+   },
+   {
+     path: '/contact',
     name: 'contact',
     component: () => import('@/views/ContactPage.vue'),
     meta: {

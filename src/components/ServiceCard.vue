@@ -8,10 +8,11 @@
     <div class="p-6 flex flex-col h-full">
       <!-- Icon or Image -->
       <div v-if="service.image" class="mb-4 -mx-6 -mt-6">
-        <img 
-          :src="service.image" 
+        <img
+          :src="service.image"
           :alt="service.title"
           class="w-full h-48 object-cover"
+          @error="handleImageError($event, PLACEHOLDER_IMAGE)"
         >
       </div>
       <div v-else class="mb-4">
@@ -64,6 +65,7 @@
 import BaseCard from '@/components/ui/BaseCard.vue'
 import { HomeModernIcon, CheckIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
 import { formatPrice } from '@/utils/contentLoader'
+import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
 
 const props = defineProps({
   service: {

@@ -23,14 +23,14 @@
     "lease_price": 1500,
     "price_note": "Includes recent vetting and x-rays"
   },
-  "main_image": "/images/uploads/midnight-star-main.jpg",
+  "main_image": "/images/horse-placeholder.svg",
   "gallery": [
     {
-      "image": "/images/uploads/midnight-star-jumping.jpg",
+      "image": "/images/placeholder.svg",
       "caption": "Competing at the Royal Winter Fair"
     },
     {
-      "image": "/images/uploads/midnight-star-conformation.jpg",
+      "image": "/images/placeholder.svg",
       "caption": "Conformation shot"
     }
   ],

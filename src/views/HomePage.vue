@@ -48,7 +48,7 @@
         <h2>Featured Horses</h2>
         <div class="horses-grid">
           <RouterLink v-for="horse in featuredHorses" :key="horse.slug" :to="`/horses/${horse.slug}`" class="horse-card">
-            <img :src="horse.main_image || '/images/horse-placeholder.jpg'" :alt="horse.name">
+            <img :src="horse.main_image || HORSE_PLACEHOLDER" :alt="horse.name" @error="handleImageError($event, HORSE_PLACEHOLDER)">
             <div class="horse-info">
               <h3>{{ horse.name }}</h3>
               <p>{{ horse.basic_info?.breed }} • {{ horse.basic_info?.height }}</p>
@@ -79,6 +79,7 @@ import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { marked } from 'marked'
 import { loadPage, loadHorses, getFeaturedContent } from '@/utils/contentLoader'
+import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import FeaturedServices from '@/components/sections/FeaturedServices.vue'
 

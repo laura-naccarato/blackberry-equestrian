@@ -68,10 +68,11 @@
         >
           <template #image>
             <div class="relative">
-              <img 
-                :src="horse.main_image || '/images/horse-placeholder.svg'" 
+              <img
+                :src="horse.main_image || HORSE_PLACEHOLDER"
                 :alt="horse.name"
                 class="w-full h-64 object-cover"
+                @error="handleImageError($event, HORSE_PLACEHOLDER)"
               >
               <div v-if="horse.featured" class="absolute top-4 right-4">
                 <span class="bg-warm-gold text-rich-brown px-3 py-1 rounded-full text-sm font-semibold">
@@ -127,6 +128,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { loadHorses, formatPrice } from '@/utils/contentLoader'
+import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseLoading from '@/components/ui/BaseLoading.vue'
 import BaseAlert from '@/components/ui/BaseAlert.vue'

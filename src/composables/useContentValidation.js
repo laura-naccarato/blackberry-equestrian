@@ -188,53 +188,7 @@ export function useContentValidation() {
     }
   }
 
-  // Validate blog post
-  const validateBlogPost = (post) => {
-    errors.value = []
-    warnings.value = []
 
-    if (!post.title) {
-      errors.value.push('Title is required')
-    }
-    
-    if (!post.date) {
-      errors.value.push('Publish date is required')
-    }
-    
-    if (!post.author) {
-      errors.value.push('Author is required')
-    }
-    
-    if (!post.category) {
-      errors.value.push('Category is required')
-    }
-    
-    if (!post.image) {
-      errors.value.push('Featured image is required')
-    }
-    
-    if (!post.excerpt) {
-      errors.value.push('Excerpt is required')
-    } else if (post.excerpt.length < 50 || post.excerpt.length > 200) {
-      warnings.value.push('Excerpt should be between 50-200 characters')
-    }
-    
-    if (!post.body) {
-      errors.value.push('Content is required')
-    } else if (post.body.length < 300) {
-      warnings.value.push('Blog posts should be at least 300 characters')
-    }
-    
-    if (!post.tags || post.tags.length === 0) {
-      warnings.value.push('At least one tag recommended for SEO')
-    }
-    
-    return {
-      isValid: errors.value.length === 0,
-      errors: errors.value,
-      warnings: warnings.value
-    }
-  }
 
   // Validate facility
   const validateFacility = (facility) => {
@@ -323,8 +277,7 @@ export function useContentValidation() {
         return validateService(content)
       case 'team':
         return validateTeamMember(content)
-      case 'blog':
-        return validateBlogPost(content)
+
       case 'facility':
         return validateFacility(content)
       case 'testimonial':
@@ -387,7 +340,6 @@ export function useContentValidation() {
     validateHorseListing,
     validateService,
     validateTeamMember,
-    validateBlogPost,
     validateFacility,
     validateTestimonial,
     validateContent,

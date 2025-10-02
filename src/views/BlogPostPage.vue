@@ -1,1 +1,0 @@
-<template><div class="page"><div class="container"><h1>Blog Post</h1><p>Content coming soon.</p></div></div></template><style scoped>.page{padding:2rem 0;min-height:60vh;}h1{color:#2c5530;margin-bottom:1rem;}</style>

@@ -256,7 +256,7 @@ const handleTeamImageError = (event) => {
 /* Page Header */
 .page-header {
   background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)),
-              url('/images/about-hero.jpg') center/cover;
+              url('/images/placeholder.svg') center/cover;
   padding: 6rem 0;
   text-align: center;
   color: white;

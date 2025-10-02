@@ -60,16 +60,7 @@ export async function loadTeamMembers() {
   }
 }
 
-// Load blog posts
-export async function loadBlogPosts() {
-  try {
-    const posts = await loadContentFromDirectory('/blog/')
-    return posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-  } catch (error) {
-    console.error('Error loading blog posts:', error)
-    return []
-  }
-}
+
 
 // Load facilities
 export async function loadFacilities() {
@@ -196,7 +187,6 @@ export default {
   loadHorses,
   loadServices,
   loadTeamMembers,
-  loadBlogPosts,
   loadFacilities,
   loadTestimonials,
   loadPage,

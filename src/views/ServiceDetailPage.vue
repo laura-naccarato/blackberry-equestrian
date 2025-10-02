@@ -104,10 +104,11 @@
 
             <!-- Hero Image -->
             <div v-if="service.image" class="relative rounded-lg overflow-hidden shadow-2xl">
-              <img 
-                :src="service.image" 
+              <img
+                :src="service.image"
                 :alt="service.title"
                 class="w-full h-64 md:h-96 object-cover"
+                @error="handleImageError($event, PLACEHOLDER_IMAGE)"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
@@ -272,10 +273,11 @@
                   class="relative rounded-lg overflow-hidden shadow-md cursor-pointer group"
                   @click="openLightbox(index)"
                 >
-                  <img 
-                    :src="image.src" 
+                  <img
+                    :src="image.src"
                     :alt="image.caption || `Facility photo ${index + 1}`"
                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    @error="handleImageError($event, PLACEHOLDER_IMAGE)"
                   />
                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                     <MagnifyingGlassIcon class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -380,10 +382,11 @@
                 </blockquote>
                 <div class="flex items-center">
                   <div v-if="featuredTestimonial.photo" class="w-10 h-10 rounded-full overflow-hidden mr-3">
-                    <img 
-                      :src="featuredTestimonial.photo" 
+                    <img
+                      :src="featuredTestimonial.photo"
                       :alt="featuredTestimonial.author"
                       class="w-full h-full object-cover"
+                      @error="handleImageError($event, PLACEHOLDER_IMAGE)"
                     />
                   </div>
                   <div>
@@ -645,6 +648,7 @@
             :src="facilityImages[currentImageIndex]?.src"
             :alt="facilityImages[currentImageIndex]?.caption || 'Facility photo'"
             class="max-w-full max-h-[80vh] object-contain"
+            @error="handleImageError($event, PLACEHOLDER_IMAGE)"
           />
         </div>
         
@@ -685,6 +689,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { loadServices } from '@/utils/contentLoader'
+import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
 
 // UI Components
 import BaseCard from '@/components/ui/BaseCard.vue'
@@ -810,10 +815,10 @@ const tomorrow = computed(() => {
 const facilityImages = computed(() => {
   // Mock facility images - in production, these would come from the service data
   return [
-    { src: '/images/indoor-arena.jpg', caption: 'Indoor Arena - 200\' x 80\' heated' },
-    { src: '/images/outdoor-arena.jpg', caption: 'Outdoor Arena - Premium footing' },
-    { src: '/images/barn-aisle.jpg', caption: 'Bright, airy barn aisles' },
-    { src: '/images/stalls.jpg', caption: '12x12 matted stalls' }
+    { src: '/images/placeholder.svg', caption: 'Indoor Arena - 200\' x 80\' heated' },
+    { src: '/images/placeholder.svg', caption: 'Outdoor Arena - Premium footing' },
+    { src: '/images/placeholder.svg', caption: 'Bright, airy barn aisles' },
+    { src: '/images/placeholder.svg', caption: '12x12 matted stalls' }
   ]
 })
 
@@ -830,7 +835,7 @@ const featuredTestimonial = computed(() => {
     text: "The care and attention my horse receives here is exceptional. The facilities are top-notch and the staff truly cares about every horse.",
     author: "Sarah Mitchell",
     role: "Boarder for 5+ years",
-    photo: "/images/testimonial-1.jpg"
+    photo: "/images/placeholder.svg"
   }
 })
 

@@ -25,8 +25,11 @@ export function getImageUrl(path, fallback = PLACEHOLDER_IMAGE) {
  * @param {string} fallback - Fallback image path
  */
 export function handleImageError(event, fallback = PLACEHOLDER_IMAGE) {
-  if (event.target.src !== fallback) {
-    event.target.src = fallback
+  const img = event.target
+  // Prevent infinite loops by checking if we're already trying to load the fallback
+  if (img.src !== fallback && !img.dataset.fallbackAttempted) {
+    img.dataset.fallbackAttempted = 'true'
+    img.src = fallback
   }
 }
 

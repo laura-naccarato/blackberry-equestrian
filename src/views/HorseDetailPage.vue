@@ -93,11 +93,12 @@
             <!-- Image Gallery -->
             <BaseCard variant="elevated" class="overflow-hidden">
               <div class="relative">
-                <img 
-                  :src="currentImage.src || currentImage" 
+                <img
+                  :src="currentImage.src || currentImage"
                   :alt="`${horse.name} - Main view`"
                   class="w-full h-96 md:h-[500px] object-cover cursor-pointer"
                   @click="openLightbox(currentImageIndex)"
+                  @error="handleImageError($event, HORSE_PLACEHOLDER)"
                 />
                 
                 <!-- Image Navigation -->
@@ -141,10 +142,11 @@
                     ]"
                     :aria-label="`Select image ${index + 1}`"
                   >
-                    <img 
-                      :src="img.src || img" 
+                    <img
+                      :src="img.src || img"
                       :alt="`${horse.name} - Thumbnail ${index + 1}`"
                       class="w-full h-20 object-cover"
+                      @error="handleImageError($event, HORSE_PLACEHOLDER)"
                     />
                   </button>
                 </div>
@@ -589,6 +591,7 @@
             :alt="`${horse?.name} - Photo ${currentImageIndex + 1}`"
             class="max-w-full max-h-[80vh] object-contain"
             @load="handleImageLoad"
+            @error="handleImageError($event, HORSE_PLACEHOLDER)"
           />
         </div>
         
@@ -630,6 +633,7 @@ import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useHorsesStore } from '@/stores/horses'
 import { formatPrice } from '@/utils/contentLoader'
+import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 
 // UI Components
 import BaseCard from '@/components/ui/BaseCard.vue'

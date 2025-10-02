@@ -353,13 +353,14 @@
     <!-- Photo Gallery Modal -->
     <BaseModal v-model:show="showGallery" :title="currentGalleryTitle">
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img 
-          v-for="(image, index) in currentGalleryImages" 
+        <img
+          v-for="(image, index) in currentGalleryImages"
           :key="index"
-          :src="image.url" 
+          :src="image.url"
           :alt="image.caption"
           class="rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
           @click="viewFullImage(image)"
+          @error="handleImgError($event, PLACEHOLDER_IMAGE)"
         >
       </div>
     </BaseModal>

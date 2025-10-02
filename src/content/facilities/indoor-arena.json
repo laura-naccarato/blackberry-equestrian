@@ -2,7 +2,7 @@
   "title": "Indoor Arena",
   "order": 1,
   "facility_type": "indoor_arena",
-  "main_image": "/images/uploads/indoor-arena-main.jpg",
+  "main_image": "/images/placeholder.svg",
   "dimensions": "200ft x 80ft",
   "footing": "Premium GGT footing blend with rubber and fiber",
   "features": [
@@ -17,15 +17,15 @@
   ],
   "gallery": [
     {
-      "image": "/images/uploads/indoor-arena-jumps.jpg",
+      "image": "/images/placeholder.svg",
       "caption": "Full course set up for hunter/jumper training"
     },
     {
-      "image": "/images/uploads/indoor-arena-lesson.jpg",
+      "image": "/images/placeholder.svg",
       "caption": "Group lesson in progress"
     },
     {
-      "image": "/images/uploads/indoor-arena-viewing.jpg",
+      "image": "/images/placeholder.svg",
       "caption": "Heated viewing lounge"
     }
   ],
