@@ -21,37 +21,21 @@
       <!-- Filters -->
       <div v-else-if="horses.length > 0" class="mb-8 bg-white rounded-xl shadow-soft p-6">
         <div class="grid md:grid-cols-3 gap-4">
-          <div>
-            <label class="form-label">Status</label>
-            <select v-model="filters.status" class="form-input">
-              <option value="">All Statuses</option>
-              <option value="Available">Available</option>
-              <option value="Pending">Pending</option>
-              <option value="Sold">Sold</option>
-              <option value="Leased">Leased</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label">Type</label>
-            <select v-model="filters.type" class="form-input">
-              <option value="">All Types</option>
-              <option value="Sale">For Sale</option>
-              <option value="Lease">For Lease</option>
-              <option value="Both">Sale or Lease</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label">Discipline</label>
-            <select v-model="filters.discipline" class="form-input">
-              <option value="">All Disciplines</option>
-              <option value="Hunter">Hunter</option>
-              <option value="Jumper">Jumper</option>
-              <option value="Hunter/Jumper">Hunter/Jumper</option>
-              <option value="Equitation">Equitation</option>
-              <option value="Dressage">Dressage</option>
-              <option value="Eventing">Eventing</option>
-            </select>
-          </div>
+          <BaseSelect
+            v-model="filters.status"
+            label="Status"
+            :options="statusOptions"
+          />
+          <BaseSelect
+            v-model="filters.type"
+            label="Type"
+            :options="typeOptions"
+          />
+          <BaseSelect
+            v-model="filters.discipline"
+            label="Discipline"
+            :options="disciplineOptions"
+          />
         </div>
       </div>
       
@@ -132,6 +116,7 @@ import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 import BaseCard from '@/components/ui/BaseCard.vue'
 import BaseLoading from '@/components/ui/BaseLoading.vue'
 import BaseAlert from '@/components/ui/BaseAlert.vue'
+import BaseSelect from '@/components/ui/BaseSelect.vue'
 
 const router = useRouter()
 
@@ -144,6 +129,31 @@ const filters = ref({
   type: '',
   discipline: ''
 })
+
+const statusOptions = [
+  { value: '', label: 'All Statuses' },
+  { value: 'Available', label: 'Available' },
+  { value: 'Pending', label: 'Pending' },
+  { value: 'Sold', label: 'Sold' },
+  { value: 'Leased', label: 'Leased' }
+]
+
+const typeOptions = [
+  { value: '', label: 'All Types' },
+  { value: 'Sale', label: 'For Sale' },
+  { value: 'Lease', label: 'For Lease' },
+  { value: 'Both', label: 'Sale or Lease' }
+]
+
+const disciplineOptions = [
+  { value: '', label: 'All Disciplines' },
+  { value: 'Hunter', label: 'Hunter' },
+  { value: 'Jumper', label: 'Jumper' },
+  { value: 'Hunter/Jumper', label: 'Hunter/Jumper' },
+  { value: 'Equitation', label: 'Equitation' },
+  { value: 'Dressage', label: 'Dressage' },
+  { value: 'Eventing', label: 'Eventing' }
+]
 
 const filteredHorses = computed(() => {
   return horses.value.filter(horse => {

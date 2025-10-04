@@ -22,6 +22,22 @@
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
+
+  /* Extended typography scale */
+  .text-2xs {
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+  }
+
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 /* Base Styles */

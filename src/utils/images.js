@@ -34,14 +34,22 @@ export function handleImageError(event, fallback = PLACEHOLDER_IMAGE) {
 }
 
 /**
- * Preload images for better performance
+ * Preload images for better performance (connection-aware)
  * @param {string[]} urls - Array of image URLs to preload
  */
 export function preloadImages(urls) {
-  urls.forEach(url => {
-    const img = new Image()
-    img.src = url
-  })
+  const { enableProgressiveEnhancement, preloadCriticalImages } = usePerformance()
+
+  if (enableProgressiveEnhancement.value) {
+    preloadCriticalImages(urls)
+  } else {
+    // Fallback for slow connections - only preload essential images
+    const essentialUrls = urls.slice(0, 2)
+    essentialUrls.forEach(url => {
+      const img = new Image()
+      img.src = url
+    })
+  }
 }
 
 /**

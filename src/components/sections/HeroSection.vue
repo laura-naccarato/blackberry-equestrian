@@ -43,21 +43,23 @@
           </div>
         </div>
         
-        <div class="hero-actions animate-slide-up">
-          <RouterLink 
-            :to="heroData?.cta_link || '/services'" 
-            class="btn btn-primary"
-          >
-            {{ heroData?.cta_text || 'Explore Our Services' }}
-          </RouterLink>
-          
-          <RouterLink 
-            to="/contact" 
-            class="btn btn-secondary"
-          >
-            Schedule a Visit
-          </RouterLink>
-        </div>
+         <div class="hero-actions animate-slide-up">
+           <BaseButton
+             tag="router-link"
+             :to="heroData?.cta_link || '/services'"
+             variant="primary"
+           >
+             {{ heroData?.cta_text || 'Explore Our Services' }}
+           </BaseButton>
+
+           <BaseButton
+             tag="router-link"
+             to="/contact"
+             variant="secondary"
+           >
+             Schedule a Visit
+           </BaseButton>
+         </div>
       </div>
     </div>
     
@@ -73,6 +75,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
+import BaseButton from '@/components/ui/BaseButton.vue'
 
 defineProps({
   heroData: {
@@ -185,41 +188,7 @@ defineProps({
   animation-delay: 0.4s;
 }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 0.375rem;
-  transition: all 0.3s ease;
-}
 
-.btn-primary {
-  background-color: #8B4513;
-  color: white;
-  box-shadow: 0 4px 6px rgba(139, 69, 19, 0.3);
-}
-
-.btn-primary:hover {
-  background-color: #6B3410;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(139, 69, 19, 0.4);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #2c5530;
-  transform: translateY(-2px);
-}
 
 .hero-scroll {
   position: absolute;

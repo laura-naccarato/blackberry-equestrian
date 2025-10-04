@@ -3,6 +3,7 @@
     :is="tag"
     :type="tag === 'button' ? type : undefined"
     :class="buttonClasses"
+    :style="{ transitionDuration: `${transitionDuration.value}ms` }"
     :disabled="disabled || loading"
     :aria-disabled="disabled || loading"
     :aria-busy="loading"
@@ -52,6 +53,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { getAnimationDuration } from '@/utils/accessibility'
 
 const props = defineProps({
   variant: {
@@ -101,6 +103,8 @@ const handleClick = (event) => {
   }
 }
 
+const transitionDuration = computed(() => getAnimationDuration(200))
+
 const buttonClasses = computed(() => {
   const baseClasses = [
     'inline-flex',
@@ -108,7 +112,6 @@ const buttonClasses = computed(() => {
     'justify-center',
     'font-medium',
     'transition-all',
-    'duration-200',
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-offset-2',

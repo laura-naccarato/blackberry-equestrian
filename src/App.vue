@@ -18,6 +18,12 @@
       </RouterView>
     </main>
     <SiteFooter />
+
+    <!-- PWA Install Banner -->
+    <BasePWAInstall />
+
+    <!-- Connection Status Indicator -->
+    <BaseConnectionStatus />
   </div>
 </template>
 
@@ -27,6 +33,8 @@ import { RouterView } from 'vue-router'
 import SiteHeader from './components/layout/SiteHeader.vue'
 import SiteFooter from './components/layout/SiteFooter.vue'
 import BaseAlert from './components/ui/BaseAlert.vue'
+import BasePWAInstall from './components/ui/BasePWAInstall.vue'
+import BaseConnectionStatus from './components/ui/BaseConnectionStatus.vue'
 
 const showAlert = ref(false)
 

@@ -72,15 +72,17 @@
                 </ul>
               </div>
 
-              <!-- Simplified Actions -->
-              <div class="service-actions">
-                <RouterLink 
-                  :to="`/services/${service.slug || service.title.toLowerCase().replace(/\s+/g, '-')}`" 
-                  class="btn btn-primary btn-block"
-                >
-                  View Details & Pricing
-                </RouterLink>
-              </div>
+               <!-- Simplified Actions -->
+               <div class="service-actions">
+                 <BaseButton
+                   tag="router-link"
+                   :to="`/services/${service.slug || service.title.toLowerCase().replace(/\s+/g, '-')}`"
+                   variant="primary"
+                   fullWidth
+                 >
+                   View Details & Pricing
+                 </BaseButton>
+               </div>
             </div>
           </article>
         </div>
@@ -90,17 +92,17 @@
         <div class="services-cta">
           <h2>Ready to Join Blackberry Equestrian?</h2>
           <p>Schedule a tour to see our facilities and discuss how we can meet your equestrian needs.</p>
-          <div class="cta-actions">
-            <RouterLink to="/contact?subject=facility-tour" class="btn btn-primary btn-large">
-              Schedule a Facility Tour
-            </RouterLink>
-            <a href="tel:905-555-0123" class="btn btn-outline btn-large">
-              <svg class="phone-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call: 905-555-0123
-            </a>
-          </div>
+           <div class="cta-actions">
+             <BaseButton tag="router-link" to="/contact?subject=facility-tour" variant="primary" size="lg">
+               Schedule a Facility Tour
+             </BaseButton>
+             <BaseButton tag="a" href="tel:905-555-0123" variant="outline" size="lg">
+               <svg class="phone-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+               </svg>
+               Call: 905-555-0123
+             </BaseButton>
+           </div>
         </div>
       </div>
     </section>
@@ -111,6 +113,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseLoading from '@/components/ui/BaseLoading.vue'
+import BaseButton from '@/components/ui/BaseButton.vue'
 import { loadServices } from '@/utils/contentLoader'
 import { PLACEHOLDER_IMAGE, handleImageError } from '@/utils/images'
 
@@ -433,34 +436,7 @@ onMounted(async () => {
   padding-top: 1.5rem;
 }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-}
 
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-.btn-primary {
-  background-color: #8B4513;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #6B3410;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
-}
 
 /* CTA Section - Enhanced */
 .services-cta {
@@ -512,21 +488,7 @@ onMounted(async () => {
   position: relative;
 }
 
-.btn-large {
-  padding: 1.25rem 3rem;
-  font-size: 1.1rem;
-}
 
-.btn-outline {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: #2c5530;
-}
 
 .phone-icon {
   width: 1.25rem;

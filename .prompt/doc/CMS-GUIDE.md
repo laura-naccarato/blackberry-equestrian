@@ -2,10 +2,10 @@
 
 ## 📚 Table of Contents
 - [Getting Started](#getting-started)
+- [Editorial Workflow](#editorial-workflow)
 - [Managing Horses](#managing-horses)
 - [Managing Services](#managing-services)
 - [Managing Team Members](#managing-team-members)
-- [Managing Blog Posts](#managing-blog-posts)
 - [Managing Facilities](#managing-facilities)
 - [Managing Testimonials](#managing-testimonials)
 - [Managing Pages](#managing-pages)
@@ -15,181 +15,395 @@
 ## Getting Started
 
 ### Accessing the CMS
+
+#### Local Development (Recommended for Testing)
+1. Start the development server: `npm run dev`
+2. Navigate to `http://localhost:5173/admin/`
+3. No authentication required (uses test-repo backend)
+
+#### Production Access
 1. Navigate to `https://YOUR_USERNAME.github.io/blackberry-equestrian/admin/`
 2. Log in with your GitHub credentials
 3. You'll see the main dashboard with all content collections
 
 ### CMS Interface Overview
-- **Collections**: Different types of content (Horses, Services, Blog, etc.)
-- **Media Library**: Upload and manage images
-- **Workflow**: Review content before publishing (if enabled)
+- **Collections**: Different types of content (Horses, Services, Team, Facilities, etc.)
+- **Media Library**: Upload and manage images (currently configured for local storage)
+- **Editorial Workflow**: Content approval process before publishing
 - **Quick Add**: Create new content using the "New" button
+- **Preview**: See how content will look on the live site
+
+## Editorial Workflow
+
+The CMS uses an editorial workflow for content quality control:
+
+1. **Draft**: Save content for personal editing
+2. **In Review**: Submit content for administrator approval
+3. **Ready**: Content approved and ready to publish
+4. **Published**: Content live on the website
+
+### Workflow Process
+- **Content Editors**: Create and edit content, save as drafts, submit for review
+- **Administrators**: Review submitted content and approve for publication
+- **Published Content**: Automatically goes live once approved
 
 ## Managing Horses 🐴
 
 ### Adding a New Horse
-1. Click on "Horses for Sale/Lease" in the sidebar
+1. Click on "🐴 Horses for Sale/Lease" in the sidebar
 2. Click "New Horse" button
 3. Fill in the required fields:
-   - **Horse Name**: The horse's barn name or registered name
-   - **Status**: Available, Pending, Sold, or Leased
-   - **Type**: Sale, Lease, or Both
-   - **Basic Information**: Age, height, gender, breed, color
-   - **Training & Performance**: Discipline, suitable level, show experience
-   - **Pricing**: Sale price and/or lease price
-   - **Photos**: Main photo (required) and gallery images
-   - **Description**: Short excerpt and full description
+
+#### Basic Information
+- **Horse Name**: The horse's barn name or registered name
+- **Featured Horse**: Check to display on homepage
+- **Date Listed**: When the horse was listed (auto-populated)
+- **Status**: Available, Pending, Sold, or Leased
+- **Listing Type**: For Sale, For Lease, or Sale or Lease
+
+#### Horse Details
+- **Age**: Horse's age in years
+- **Height**: Height in hands (e.g., 16.2 hands)
+- **Gender**: Mare, Gelding, or Stallion
+- **Breed**: Horse breed
+- **Color**: Coat color
+- **Registration**: Registration number (if applicable)
+
+#### Training & Performance
+- **Primary Discipline**: Hunter, Jumper, Hunter/Jumper, etc.
+- **Suitable For Level**: Beginner, Intermediate, Advanced, or Professional
+- **Show Experience**: Brief description of competition history
+- **Training Notes**: Special training or skills
+
+#### Pricing Information
+- **Sale Price**: Price in CAD (leave blank if lease only)
+- **Lease Price**: Monthly lease price in CAD
+- **Price Note**: Additional pricing information
+
+#### Media
+- **Main Photo**: Primary photo (required, high quality)
+- **Photo Gallery**: Additional photos with captions
+- **Video URL**: YouTube or Vimeo link (optional)
+
+#### Description
+- **Short Description**: Brief description for listings (2-3 sentences)
+- **Full Description**: Detailed description including temperament and ideal home
+
+#### Contact Information
+- **Contact Person**: Usually "Blackberry Equestrian"
+- **Contact Email**: info@blackberryequestrian.com
+- **Contact Phone**: Professional phone number
 
 ### Best Practices for Horse Listings
 - Use high-quality photos (conformation shots, under saddle, jumping)
 - Include detailed training history and show record
-- Be specific about suitable rider level
+- Be specific about suitable rider level and discipline
 - Update status promptly when horse is sold or leased
 - Include recent vetting information if available
+- Write compelling descriptions that highlight the horse's personality
 
 ### Photo Guidelines
-- Main photo: Clear conformation shot, well-lit
-- Gallery: Include variety (ground work, under saddle, showing)
+- Main photo: Clear conformation shot, well-lit, high resolution
+- Gallery: Include variety (ground work, under saddle, showing, turnout)
 - Recommended size: 1200x800 pixels minimum
 - Format: JPEG or WebP for best quality/size balance
+- File size: Keep under 2MB per image for fast loading
 
 ## Managing Services 💼
 
 ### Service Categories
-- **Boarding Services**: Full board, pasture board, etc.
+- **Boarding Services**: Full board, training board, etc.
 - **Training Programs**: Professional training services
 - **Lesson Programs**: Group and private lessons
 - **Additional Services**: Clinics, camps, special programs
 
 ### Creating Service Pages
-1. Navigate to "Services" collection
+1. Navigate to "💼 Services" collection
 2. Click "New Service"
 3. Complete the fields:
-   - **Service Name**: Clear, descriptive title
-   - **Category**: Select appropriate category
-   - **Featured Image**: High-quality service photo
-   - **Pricing Options**: Add multiple pricing tiers if applicable
-   - **What's Included**: List all included features
-   - **Requirements**: Any prerequisites or requirements
+
+#### Basic Information
+- **Service Name**: Clear, descriptive title
+- **Display Order**: Lower numbers appear first (1, 2, 3...)
+- **Featured Service**: Check to highlight this service
+- **Service Category**: Boarding, Training, Lessons, or Additional
+
+#### Content
+- **Featured Image**: High-quality image representing the service
+- **Short Description**: Brief description for service cards
+- **Full Description**: Detailed service information
+
+#### Pricing Options
+Add multiple pricing tiers with:
+- **Option Name**: e.g., "Full Board", "Half Lease"
+- **Price**: Price in CAD
+- **Billing Period**: Monthly, Weekly, Per Lesson, One-time, or Custom
+- **Price Note**: Additional pricing information
+- **Included Features**: List what's included in this option
+
+#### Service Details
+- **Service Includes**: List all included features
+- **Requirements**: Any prerequisites or requirements
+
+#### Call to Action
+- **CTA Button Text**: Button text (default: "Learn More")
+- **Booking Available**: Check if this service can be booked
 
 ### Pricing Structure Tips
 - Offer multiple options (e.g., monthly, weekly, per lesson)
 - Clearly state what's included in each package
 - Note any additional fees separately
 - Update prices promptly when they change
+- Use clear, descriptive package names
 
 ## Managing Team Members 👥
 
 ### Adding Staff Profiles
-1. Go to "Team Members" collection
+1. Go to "👥 Team Members" collection
 2. Click "New Team Member"
 3. Fill in:
-   - **Full Name**: Staff member's complete name
-   - **Position**: Their role at the facility
-   - **Photo**: Professional headshot or action photo
-   - **Biography**: Background, experience, philosophy
-   - **Certifications**: Professional qualifications
-   - **Specialties**: Areas of expertise
+
+#### Basic Information
+- **Full Name**: Staff member's complete name
+- **Position/Title**: Their role (e.g., Head Trainer, Barn Manager)
+- **Display Order**: Lower numbers appear first
+- **Featured**: Check to show on homepage
+- **Profile Photo**: Professional headshot or action photo
+
+#### Professional Information
+- **Years of Experience**: Number of years in the industry
+- **Specialties**: Areas of expertise (add multiple)
+- **Certifications**: Professional qualifications with organization and year
+- **Competition Achievements**: Notable competition results
+- **Biography**: Full biography including background and philosophy
+
+#### Contact & Availability
+- **Available for Lessons**: Check if they offer lessons
+- **Email**: Professional email (optional)
+- **Phone**: Professional phone (optional)
+
+#### Social Media (Optional)
+- **Instagram**: Instagram profile URL
+- **Facebook**: Facebook profile URL
+- **LinkedIn**: LinkedIn profile URL
 
 ### Team Profile Best Practices
-- Use professional, friendly photos
+- Use professional, friendly photos that show personality
 - Highlight relevant experience and achievements
-- Include teaching philosophy or approach
-- Update certifications as renewed
-- Feature key instructors prominently
-
-## Managing Blog Posts 📝
-
-### Blog Categories
-- **Facility News**: Updates, announcements, events
-- **Horse Care Tips**: Educational content
-- **Training Tips**: Riding and training advice
-- **Show Results**: Competition updates
-- **Student Spotlights**: Feature achievements
-- **Seasonal Updates**: Weather-related information
-
-### Writing Effective Blog Posts
-1. Choose relevant category and tags
-2. Write engaging titles (50-60 characters)
-3. Include featured image (landscape orientation)
-4. Write clear excerpt (2-3 sentences)
-5. Structure content with headings and paragraphs
-6. Add relevant internal links
-7. Include call-to-action when appropriate
-
-### SEO Tips for Blog Posts
-- Use keywords naturally in title and content
-- Write meta descriptions (150-160 characters)
-- Include location mentions for local SEO
-- Add alt text to all images
-- Link to related content on site
+- Include teaching philosophy or training approach
+- Update certifications as they are renewed
+- Feature key instructors prominently on the homepage
+- Keep biographies engaging and informative
 
 ## Managing Facilities 🏛️
 
 ### Facility Types
-- Indoor Arena
-- Outdoor Arena
-- Barn/Stables
-- Paddocks
-- Trails
-- Amenities
+- **Indoor Arena**: Covered riding arena
+- **Outdoor Arena**: Outdoor riding rings
+- **Barn/Stables**: Horse housing and stalls
+- **Paddocks**: Turnout areas
+- **Trails**: Riding trails
+- **Amenity**: Other facility features
 
 ### Showcasing Facilities
-1. Create detailed descriptions
-2. Include dimensions and specifications
-3. List key features and amenities
-4. Add multiple high-quality photos
-5. Note availability for lessons/events
+1. Navigate to "🏛️ Facilities" collection
+2. Click "New Facility"
+3. Fill in:
+
+#### Basic Information
+- **Facility Name**: Name of the facility/feature
+- **Display Order**: Lower numbers appear first
+- **Facility Type**: Select appropriate category
+
+#### Facility Details
+- **Size/Dimensions**: e.g., "200ft x 80ft", "12 stalls"
+- **Surface/Footing**: e.g., "Premium sand blend", "grass"
+- **Features**: List key features (add multiple)
+
+#### Media
+- **Featured Image**: Main photo of the facility
+- **Photo Gallery**: Additional photos with captions
+
+#### Description
+- **Description**: Detailed description of the facility
+
+#### Availability
+- **Available for Events**: Check if available for special events
+- **Available for Lessons**: Check if available for lessons
+- **Booking Required**: Check if advance booking is needed
+
+### Facility Showcase Best Practices
+- Include high-quality photos showing the facility in use
+- Provide specific dimensions and specifications
+- Highlight unique features and amenities
+- Note availability for different types of use
+- Keep descriptions informative and engaging
 
 ## Managing Testimonials ⭐
 
 ### Collecting Testimonials
-1. Get written permission from clients
-2. Include client photo if available
-3. Note service type used
+1. Get written permission from clients before publishing
+2. Include client photo if available (with permission)
+3. Note service type and client relationship
 4. Keep testimonials authentic and specific
-5. Feature variety of client types
+5. Feature variety of client types (boarders, students, buyers)
 
-### Displaying Testimonials
+### Adding Testimonials
+1. Navigate to "⭐ Testimonials" collection
+2. Click "New Testimonial"
+3. Fill in:
+
+#### Client Information
+- **Client Name**: Full name of the client
+- **Client Photo**: Photo (optional, requires permission)
+- **Date**: When the testimonial was given
+- **Featured**: Check to show on homepage
+
+#### Client Details
+- **Client Type**: Boarder, Student, Parent, Horse Buyer, Training Client, or Multiple
+- **Service Type**: Boarding, Training, Lessons, Horse Purchase/Lease, or Multiple Services
+
+#### Testimonial Content
+- **Testimonial Text**: The actual testimonial
+- **Rating**: 1-5 star rating
+
+#### Permissions
+- **Permission to Display**: Must be checked (client permission obtained)
+
+### Testimonial Best Practices
+- Always get written permission before publishing
 - Feature best testimonials on homepage
 - Rotate featured testimonials regularly
-- Include mix of services represented
+- Include mix of services and client types
 - Update with recent testimonials
+- Keep testimonials authentic and specific
 
 ## Managing Pages 📄
 
 ### Static Pages
-- **Home Page**: Hero section, features, welcome content
-- **About Page**: Facility story, mission, values
-- **Contact Page**: Contact information, directions, hours
+- **Home Page**: Hero section, welcome content, features, call-to-action
+- **About Page**: Facility story, mission & values, history timeline
+- **Contact Page**: Contact information, location, contact form
 
 ### Updating Page Content
-1. Navigate to "Pages" collection
-2. Select page to edit
-3. Update relevant sections
-4. Preview changes before saving
-5. Save and publish
+
+#### Home Page
+1. Navigate to "📄 Pages" → "Home Page"
+2. Update sections:
+
+**Hero Section:**
+- Hero Title, Subtitle, Image, CTA Button Text/Link
+
+**Welcome Section:**
+- Section Title, Content, Image (optional)
+
+**Feature Highlights:**
+- Add up to 6 features with title, description, icon, link
+
+**Call to Action Section:**
+- Title, Description, Button Text, Button Link, Background Image
+
+#### About Page
+1. Navigate to "📄 Pages" → "About Page"
+2. Update sections:
+
+**Our Story:**
+- Title, Content, Image (optional)
+
+**Mission & Values:**
+- Mission Statement
+- Core Values (add multiple with descriptions)
+
+**History Timeline:**
+- Add milestones with year, description
+
+#### Contact Page
+1. Navigate to "📄 Pages" → "Contact Page"
+2. Update sections:
+
+**Contact Details:**
+- Phone, Email, Address, Hours, Emergency Contact
+
+**Location:**
+- Map Embed Code, Directions
+
+**Contact Form:**
+- Form Title, Success Message, Email Recipient
+
+### Page Editing Best Practices
+- Preview changes before saving
+- Use the editorial workflow for major updates
+- Test contact forms after changes
+- Update meta descriptions for SEO
+- Keep content current and accurate
 
 ## Site Settings ⚙️
 
 ### General Settings
-- Site title and description
-- Logo and favicon
-- Contact information
-- Business hours
-- Social media links
+1. Navigate to "⚙️ Settings" → "General Settings"
+2. Update:
+
+#### Site Information
+- **Site Title**: Main site title
+- **Site Description**: Brief site description
+- **Logo**: Site logo image
+- **Favicon**: Browser tab icon
+
+#### Business Information
+- **Business Name**: Official business name
+- **Established Year**: Year business was founded
+- **Registration Number**: Business registration
+- **Tax ID**: Business tax ID
+
+#### Contact Information
+- **Primary Phone**: Main business phone
+- **Secondary Phone**: Additional phone (optional)
+- **Email**: Business email
+- **Address**: Full business address
+- **City**: Newtonville (default)
+- **Province**: Ontario (default)
+- **Postal Code**: Postal code
+- **Country**: Canada (default)
+- **Hours of Operation**: Business hours text
+
+#### Social Media
+- **Facebook URL**: Facebook page URL
+- **Instagram URL**: Instagram profile URL
+- **Twitter URL**: Twitter profile URL (optional)
+- **YouTube URL**: YouTube channel URL (optional)
+- **TikTok URL**: TikTok profile URL (optional)
+- **LinkedIn URL**: LinkedIn profile URL (optional)
 
 ### SEO Settings
-- Default meta tags
-- Google Analytics ID
-- Facebook Pixel
-- Site keywords
+1. Navigate to "⚙️ Settings" → "SEO Settings"
+2. Update:
 
-### Updating Settings
-1. Go to "Settings" collection
-2. Choose "General" or "SEO" settings
-3. Update relevant fields
-4. Save changes
+#### Basic SEO
+- **Default Meta Title**: Default page title
+- **Default Meta Description**: Default page description
+- **Site Keywords**: SEO keywords (add multiple)
+
+#### Analytics
+- **Google Analytics ID**: GA4 tracking ID
+- **Google Tag Manager ID**: GTM container ID
+- **Facebook Pixel ID**: Facebook tracking pixel
+
+#### Open Graph / Social Sharing
+- **Default OG Image**: Default social sharing image
+- **Twitter Handle**: Twitter username
+- **Facebook App ID**: Facebook app ID
+
+#### Structured Data
+- **Business Type**: Usually "LocalBusiness"
+- **Price Range**: Business price range ($$)
+- **Latitude/Longitude**: Business location coordinates
+
+### Settings Best Practices
+- Update contact information promptly when it changes
+- Test social media links after updating
+- Use high-quality images for logo and OG image
+- Keep business information current and accurate
+- Review SEO settings periodically for optimization
 
 ## Best Practices
 
@@ -214,42 +428,66 @@
 - Include local keywords (Durham Region, Newtonville)
 - Update content regularly
 
+### Editorial Workflow Best Practices
+- Save work frequently as drafts during editing
+- Submit content for review when ready for publication
+- Include clear notes for reviewers when submitting
+- Address reviewer feedback promptly
+- Test content on different devices before submitting
+
 ### Regular Maintenance
 - Review and update horse listings weekly
-- Check for outdated information monthly
+- Check for outdated contact information monthly
 - Update testimonials quarterly
-- Refresh photos seasonally
-- Monitor broken links
+- Refresh facility photos seasonally
+- Monitor broken links and update URLs
+- Review and update pricing annually
 
 ### Content Calendar Suggestions
-- **Weekly**: Horse status updates, social media posts
-- **Bi-weekly**: Blog posts, news updates
-- **Monthly**: Featured horses, student spotlights
-- **Seasonal**: Care tips, facility updates
-- **Annual**: About page, team updates
+- **Weekly**: Horse status updates, facility maintenance
+- **Bi-weekly**: Team updates, service information
+- **Monthly**: Featured horses, client testimonials
+- **Seasonal**: Facility updates, seasonal services
+- **Annual**: About page updates, business information review
 
 ## Troubleshooting
 
 ### Common Issues
-1. **Images not appearing**: Check file size and format
+1. **Images not appearing**: Check file size (< 2MB) and format (JPEG/WebP)
 2. **Content not saving**: Ensure all required fields are filled
 3. **Preview not working**: Refresh browser or clear cache
-4. **Cannot log in**: Check GitHub credentials
+4. **Cannot access CMS**: Check if dev server is running (`npm run dev`)
+5. **Changes not persisting**: In test-repo mode, changes are temporary
+
+### Editorial Workflow Issues
+1. **Cannot submit for review**: Ensure content is saved as draft first
+2. **Content stuck in review**: Contact administrator for approval
+3. **Workflow status unclear**: Check the status indicator in CMS interface
+4. **Permission errors**: Ensure you have proper access rights
 
 ### Getting Help
 - Check this guide first
+- Review CMS_ACCESS.md for setup issues
 - Contact site administrator for technical issues
-- Review Decap CMS documentation for advanced features
-- Test changes in preview before publishing
+- Test changes in preview mode before submitting for review
+- Use the editorial workflow for all content changes
 
 ## Content Approval Workflow
 
-If editorial workflow is enabled:
-1. Create or edit content
-2. Save as "Draft"
-3. Submit for "Review"
-4. Administrator approves and publishes
-5. Content goes live on site
+The CMS uses editorial workflow for quality control:
+
+1. **Create/Edit Content**: Make your changes in the CMS
+2. **Save as Draft**: Save work-in-progress without submitting
+3. **Submit for Review**: Send content to administrator for approval
+4. **Administrator Review**: Admin reviews and provides feedback if needed
+5. **Approval & Publish**: Content is approved and goes live on site
+
+### Workflow Tips
+- Always save as draft while working
+- Include notes for reviewers when submitting
+- Address feedback promptly
+- Test content thoroughly before submission
+- Use preview mode to check appearance
 
 ## Security Best Practices
 
@@ -260,5 +498,10 @@ If editorial workflow is enabled:
 - Keep contact information up-to-date
 
 ---
+
+## Additional Resources
+- **CMS Access Guide**: See `CMS_ACCESS.md` for setup instructions
+- **Decap CMS Documentation**: https://decapcms.org/docs/
+- **Vue.js Content Loading**: Check `src/utils/contentLoader.js` for technical details
 
 For technical support or questions about the CMS, contact your website administrator.

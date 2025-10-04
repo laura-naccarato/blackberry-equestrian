@@ -56,9 +56,9 @@
             </div>
           </RouterLink>
         </div>
-        <div class="text-center mt-4">
-          <RouterLink to="/horses" class="btn btn-primary">View All Horses</RouterLink>
-        </div>
+         <div class="text-center mt-4">
+           <BaseButton tag="router-link" to="/horses" variant="primary">View All Horses</BaseButton>
+         </div>
       </div>
     </section>
     
@@ -66,9 +66,9 @@
       <div class="container">
         <h2>{{ pageData?.cta_section?.title || 'Ready to Join Our Community?' }}</h2>
         <p>{{ pageData?.cta_section?.description || 'Experience the Blackberry Equestrian difference' }}</p>
-        <RouterLink :to="pageData?.cta_section?.button_link || '/contact'" class="btn btn-primary">
-          {{ pageData?.cta_section?.button_text || 'Get Started' }}
-        </RouterLink>
+         <BaseButton tag="router-link" :to="pageData?.cta_section?.button_link || '/contact'" variant="primary">
+           {{ pageData?.cta_section?.button_text || 'Get Started' }}
+         </BaseButton>
       </div>
     </section>
   </div>
@@ -82,6 +82,7 @@ import { loadPage, loadHorses, getFeaturedContent } from '@/utils/contentLoader'
 import { HORSE_PLACEHOLDER, handleImageError } from '@/utils/images'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import FeaturedServices from '@/components/sections/FeaturedServices.vue'
+import BaseButton from '@/components/ui/BaseButton.vue'
 
 const pageData = ref(null)
 const featuredHorses = ref([])
@@ -126,36 +127,7 @@ onMounted(async () => {
   color: #444;
 }
 
-.btn {
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
 
-.btn-primary {
-  background-color: #8B4513;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #6B3410;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.btn-secondary:hover {
-  background-color: #fff;
-  color: #2c5530;
-}
 
 .features {
   padding: 4rem 0;
