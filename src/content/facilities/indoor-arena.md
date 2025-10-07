@@ -1,26 +1,18 @@
 ---
-title: "Indoor Arena"
+title: Indoor Arena
 order: 1
-facility_type: "indoor_arena"
-main_image: "/images/placeholder.svg"
-dimensions: "200ft x 80ft"
-footing: "Premium GGT footing blend with rubber and fiber"
-features:
-  - "Heated facility for year-round comfort"
-  - "LED lighting for optimal visibility"
-  - "Full jump course available"
-  - "Viewing lounge with panoramic windows"
-  - "Sound system for lessons and clinics"
-  - "Dust-free watering system"
-  - "Emergency exits and safety equipment"
-  - "Wheelchair accessible viewing area"
+facility_type: indoor_arena
+main_image: /images/placeholder.svg
+dimensions: 200ft x 80ft
+footing: ""
+features: []
 gallery:
-  - image: "/images/placeholder.svg"
-    caption: "Full course set up for hunter/jumper training"
-  - image: "/images/placeholder.svg"
-    caption: "Group lesson in progress"
-  - image: "/images/placeholder.svg"
-    caption: "Heated viewing lounge"
+  - image: /images/placeholder.svg
+    caption: Full course set up for hunter/jumper training
+  - image: /images/placeholder.svg
+    caption: Group lesson in progress
+  - image: /images/placeholder.svg
+    caption: Heated viewing lounge
 available_events: true
 available_lessons: true
 booking_required: true
