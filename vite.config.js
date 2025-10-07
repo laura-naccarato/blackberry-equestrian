@@ -38,7 +38,7 @@ export default defineConfig({
       }
     })
   ],
-  base: '/',
+  base: '/blackberry-equestrian/',
   publicDir: 'public',
   server: {
     middlewareMode: false,
