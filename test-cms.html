@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #065f46;
+            border-bottom: 2px solid #065f46;
+            padding-bottom: 10px;
+        }
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+        }
+        .error {
+            background: #ef4444;
+            color: white;
+        }
+        .warning {
+            background: #f59e0b;
+            color: white;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #065f46;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 10px 10px 0;
+        }
+        .link-button:hover {
+            background: #047857;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐴 Blackberry Equestrian CMS Test</h1>
+    
+    <div class="section">
+        <h2>CMS Configuration Status</h2>
+        <div id="config-status"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Content Files Found</h2>
+        <div id="content-status"></div>
+    </div>
+    
+    <div class="section">
+        <h2>CMS Access Links</h2>
+        <a href="/blackberry-equestrian/admin/" class="link-button">Access CMS Admin Panel</a>
+        <a href="/blackberry-equestrian/" class="link-button">View Website</a>
+    </div>
+    
+    <div class="section">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Run <code>npm run dev</code> in the terminal</li>
+            <li>Click "Access CMS Admin Panel" above</li>
+            <li>In the CMS, you can:
+                <ul>
+                    <li>🐴 Manage horse listings (sales/lease)</li>
+                    <li>💼 Edit services and pricing</li>
+                    <li>🏛️ Update facility information</li>
+                    <li>📄 Edit page content</li>
+                    <li>⚙️ Configure site settings</li>
+                </ul>
+            </li>
+            <li>The test-repo backend allows local editing without GitHub authentication</li>
+        </ol>
+    </div>
+    
+    <script type="module">
+        // Test loading content files
+        async function testContentLoading() {
+            const configStatus = document.getElementById('config-status');
+            const contentStatus = document.getElementById('content-status');
+            
+            // Check if admin folder exists
+            try {
+                const adminResponse = await fetch('/blackberry-equestrian/admin/config.yml');
+                if (adminResponse.ok) {
+                    configStatus.innerHTML += '<span class="status success">✓ Admin config found</span><br>';
+                } else {
+                    configStatus.innerHTML += '<span class="status error">✗ Admin config not accessible</span><br>';
+                }
+            } catch (error) {
+                configStatus.innerHTML += '<span class="status error">✗ Error checking admin config</span><br>';
+            }
+            
+            // Test content directories
+            const contentTypes = [
+                { name: 'Horses', path: '/src/content/horses/*.json' },
+                { name: 'Services', path: '/src/content/services/*.json' },
+                { name: 'Facilities', path: '/src/content/facilities/*.json' },
+                { name: 'Pages', path: '/src/content/pages/*.json' },
+                { name: 'Settings', path: '/src/content/settings/*.json' }
+            ];
+            
+            // Import and test content loading
+            try {
+                const modules = import.meta.glob('/src/content/**/*.json');
+                const moduleKeys = Object.keys(modules);
+                
+                contentTypes.forEach(type => {
+                    const count = moduleKeys.filter(key => 
+                        key.includes(`/content/${type.name.toLowerCase()}/`)
+                    ).length;
+                    
+                    if (count > 0) {
+                        contentStatus.innerHTML += `<span class="status success">✓ ${type.name}: ${count} file(s)</span>`;
+                    } else {
+                        contentStatus.innerHTML += `<span class="status warning">⚠ ${type.name}: 0 files</span>`;
+                    }
+                });
+                
+                contentStatus.innerHTML += '<br><br><strong>Content files detected:</strong><br>';
+                contentStatus.innerHTML += '<pre>' + moduleKeys.join('\n') + '</pre>';
+                
+            } catch (error) {
+                contentStatus.innerHTML += '<span class="status error">✗ Error loading content files</span>';
+                console.error('Content loading error:', error);
+            }
+        }
+        
+        // Run tests on page load
+        testContentLoading();
+    </script>
+</body>
+</html>

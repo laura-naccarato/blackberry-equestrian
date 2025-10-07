@@ -1,0 +1,65 @@
+---
+name: "Midnight Star"
+featured: true
+date: 2024-01-15T10:00:00.000Z
+status: "Available"
+type: "Both"
+basic_info:
+  age: 8
+  height: "16.2 hands"
+  gender: "Gelding"
+  breed: "Hanoverian"
+  color: "Dark Bay"
+  registration: "Hanoverian Registry #123456"
+performance:
+  discipline: "Hunter/Jumper"
+  level: "Intermediate"
+  show_experience: "Successfully shown in 3'6\" hunters and 1.10m jumpers. Multiple championships at A-rated shows."
+  training_notes: "Excellent lead changes, comfortable with water jumps, trail rides quietly"
+pricing:
+  sale_price: 65000
+  lease_price: 1500
+  price_note: "Includes recent vetting and x-rays"
+main_image: "/images/horse-placeholder.svg"
+gallery:
+  - image: "/images/placeholder.svg"
+    caption: "Competing at the Royal Winter Fair"
+  - image: "/images/placeholder.svg"
+    caption: "Conformation shot"
+video_url: "https://www.youtube.com/watch?v=example"
+excerpt: "Beautiful 8-year-old Hanoverian gelding with extensive show experience. Perfect for an ambitious amateur or junior rider looking to compete in hunters or jumpers."
+contact:
+  person: "Sarah Mitchell"
+  email: "info@blackberryequestrian.com"
+  phone: "(905) 555-0123"
+meta_description: "Beautiful 8-year-old Hanoverian gelding for sale or lease. Successful show record in hunters and jumpers. Located in Newtonville, Ontario."
+keywords:
+  - "Hanoverian"
+  - "hunter jumper"
+  - "show horse"
+  - "horse for sale"
+  - "Ontario"
+---
+
+## About Midnight Star
+
+Midnight Star is an exceptional 8-year-old Hanoverian gelding standing at 16.2 hands. With his striking dark bay coat and refined features, he commands attention wherever he goes.
+
+### Training & Experience
+
+Professionally trained since age 3, Star has developed into a confident and capable competitor. He has extensive show mileage in both the hunter and jumper rings, consistently earning top ribbons at A-rated competitions. His smooth gaits and careful jumping style make him equally suited for the equitation ring.
+
+### Temperament
+
+Star combines athletic ability with a kind, willing temperament. He's the same horse whether at home or at a busy show ground. In the barn, he's easy to handle with excellent ground manners. He clips, bathes, loads, and stands quietly for the farrier and vet.
+
+### Perfect For
+
+- Competitive junior or amateur rider
+- Someone looking to move up the levels
+- Rider seeking a horse for hunters, jumpers, or equitation
+- Individual wanting a horse that can do it all
+
+### Health & Maintenance
+
+Up to date on all vaccinations and deworming. Recent clean vetting with x-rays available. Easy keeper with no special maintenance requirements.

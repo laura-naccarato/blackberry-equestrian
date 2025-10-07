@@ -39,6 +39,13 @@ export default defineConfig({
     })
   ],
   base: '/blackberry-equestrian/',
+  publicDir: 'public',
+  server: {
+    middlewareMode: false,
+    fs: {
+      allow: ['..']
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
