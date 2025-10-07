@@ -99,7 +99,7 @@ const goToService = (service) => {
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c5530;
+  color: #1B3A57; /* Navy */
   margin-bottom: 1rem;
   font-family: serif;
 }

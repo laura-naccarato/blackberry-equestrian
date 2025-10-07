@@ -16,26 +16,26 @@
         >
       </div>
       <div v-else class="mb-4">
-        <div class="w-12 h-12 bg-warm-gold/10 rounded-lg flex items-center justify-center">
-          <HomeModernIcon class="w-6 h-6 text-warm-gold" />
+        <div class="w-12 h-12 bg-tan/10 rounded-lg flex items-center justify-center">
+          <HomeModernIcon class="w-6 h-6 text-tan" />
         </div>
       </div>
       
       <!-- Content -->
-      <h3 class="text-xl font-semibold text-deep-forest mb-2 group-hover:text-warm-gold transition-colors">
+      <h3 class="text-xl font-semibold text-navy mb-2 group-hover:text-tan transition-colors">
         {{ service.title }}
       </h3>
       
-      <p class="text-warm-gray mb-4 flex-grow">
+      <p class="text-gray mb-4 flex-grow">
         {{ service.description || service.excerpt }}
       </p>
       
       <!-- Price Display -->
       <div v-if="service.price" class="mb-4">
-        <div class="text-2xl font-bold text-hunter-green">
+        <div class="text-2xl font-bold text-burgundy">
           {{ formatPrice(service.price) }}
         </div>
-        <div v-if="service.price_note" class="text-sm text-warm-gray">
+        <div v-if="service.price_note" class="text-sm text-gray">
           {{ service.price_note }}
         </div>
       </div>
@@ -47,13 +47,13 @@
           :key="index"
           class="flex items-start text-sm"
         >
-          <CheckIcon class="w-4 h-4 text-hunter-green mr-2 flex-shrink-0 mt-0.5" />
+          <CheckIcon class="w-4 h-4 text-success mr-2 flex-shrink-0 mt-0.5" />
           <span class="text-charcoal">{{ feature }}</span>
         </li>
       </ul>
       
       <!-- Call to Action -->
-      <div class="flex items-center text-deep-forest font-medium mt-auto pt-4 border-t border-warm-gray/20">
+      <div class="flex items-center text-navy font-medium mt-auto pt-4 border-t border-gray/20">
         Learn More 
         <ArrowRightIcon class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
       </div>

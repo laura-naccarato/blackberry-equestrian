@@ -3,10 +3,10 @@
     <div class="container-wide">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="heading-hero text-deep-forest mb-4">
+        <h1 class="heading-hero text-navy mb-4">
           Blackberry Equestrian Design System
         </h1>
-        <p class="text-lead text-warm-gray max-w-3xl mx-auto">
+        <p class="text-lead text-gray max-w-3xl mx-auto">
           A professional, accessible, and mobile-first design system for our Hunter/Jumper boarding facility
         </p>
       </div>
@@ -21,7 +21,7 @@
               :style="`background-color: ${color.hex}`"
             ></div>
             <p class="text-sm font-medium text-charcoal">{{ color.label }}</p>
-            <p class="text-xs text-warm-gray">{{ color.hex }}</p>
+            <p class="text-xs text-gray">{{ color.hex }}</p>
           </div>
         </div>
       </section>
@@ -31,24 +31,24 @@
         <h2 class="heading-section">Typography</h2>
         <div class="space-y-6 bg-white p-8 rounded-xl shadow-soft">
           <div>
-            <h1 class="font-serif text-6xl text-deep-forest">Hero Heading</h1>
-            <p class="text-sm text-warm-gray mt-2">font-serif text-6xl</p>
+            <h1 class="font-serif text-6xl text-navy">Hero Heading</h1>
+            <p class="text-sm text-gray mt-2">font-serif text-6xl</p>
           </div>
           <div>
-            <h2 class="font-serif text-4xl text-rich-brown">Section Heading</h2>
-            <p class="text-sm text-warm-gray mt-2">font-serif text-4xl</p>
+            <h2 class="font-serif text-4xl text-burgundy">Section Heading</h2>
+            <p class="text-sm text-gray mt-2">font-serif text-4xl</p>
           </div>
           <div>
             <h3 class="font-sans text-2xl text-charcoal">Subsection Heading</h3>
-            <p class="text-sm text-warm-gray mt-2">font-sans text-2xl</p>
+            <p class="text-sm text-gray mt-2">font-sans text-2xl</p>
           </div>
           <div>
             <p class="text-lg text-charcoal">Lead paragraph text for emphasis</p>
-            <p class="text-sm text-warm-gray mt-2">text-lg</p>
+            <p class="text-sm text-gray mt-2">text-lg</p>
           </div>
           <div>
             <p class="text-base text-charcoal">Body text for regular content</p>
-            <p class="text-sm text-warm-gray mt-2">text-base</p>
+            <p class="text-sm text-gray mt-2">text-base</p>
           </div>
         </div>
       </section>
@@ -97,7 +97,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Basic Card -->
           <BaseCard title="Basic Card">
-            <p class="text-warm-gray">This is a basic card with some content inside.</p>
+            <p class="text-gray">This is a basic card with some content inside.</p>
           </BaseCard>
 
           <!-- Card with Badge -->
@@ -107,7 +107,7 @@
             badge-color="success"
             interactive
           >
-            <p class="text-warm-gray">16.2hh Bay Gelding, excellent hunter prospect.</p>
+            <p class="text-gray">16.2hh Bay Gelding, excellent hunter prospect.</p>
             <template #footer>
               <BaseButton variant="primary" size="sm" full-width>
                 View Details
@@ -123,7 +123,7 @@
             interactive
           >
             <h3 class="font-semibold text-charcoal mb-2">Premium Show Horse</h3>
-            <p class="text-warm-gray">Championship experience at A-rated shows.</p>
+            <p class="text-gray">Championship experience at A-rated shows.</p>
           </BaseCard>
         </div>
       </section>
@@ -215,19 +215,19 @@
         <div class="grid md:grid-cols-4 gap-6">
           <div class="bg-white p-8 rounded-lg shadow-soft text-center">
             <BaseLoading size="sm" show-text />
-            <p class="text-sm text-warm-gray mt-4">Small</p>
+            <p class="text-sm text-gray mt-4">Small</p>
           </div>
           <div class="bg-white p-8 rounded-lg shadow-soft text-center">
             <BaseLoading size="md" show-text />
-            <p class="text-sm text-warm-gray mt-4">Medium</p>
+            <p class="text-sm text-gray mt-4">Medium</p>
           </div>
           <div class="bg-white p-8 rounded-lg shadow-soft text-center">
             <BaseLoading size="lg" show-text />
-            <p class="text-sm text-warm-gray mt-4">Large</p>
+            <p class="text-sm text-gray mt-4">Large</p>
           </div>
           <div class="bg-white p-8 rounded-lg shadow-soft text-center">
             <BaseLoading size="xl" :show-text="false" />
-            <p class="text-sm text-warm-gray mt-4">Extra Large</p>
+            <p class="text-sm text-gray mt-4">Extra Large</p>
           </div>
         </div>
       </section>
@@ -247,7 +247,7 @@
             size="md"
           >
             <div class="space-y-4">
-              <p class="text-warm-gray">
+              <p class="text-gray">
                 We'd love to show you around our Hunter/Jumper facility. Tours are available daily by appointment.
               </p>
               <BaseInput
@@ -281,7 +281,7 @@
         <h2 class="heading-section">Responsive Grid System</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <div v-for="i in 8" :key="i" class="bg-white p-6 rounded-lg shadow-soft text-center">
-            <div class="w-12 h-12 bg-warm-gold rounded-full mx-auto mb-3"></div>
+            <div class="w-12 h-12 bg-tan rounded-full mx-auto mb-3"></div>
             <p class="font-medium text-charcoal">Grid Item {{ i }}</p>
           </div>
         </div>
@@ -293,31 +293,31 @@
         <div class="bg-white p-8 rounded-xl shadow-soft">
           <ul class="space-y-3 text-charcoal">
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-hunter-green mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-success mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <span>WCAG 2.2 AA color contrast compliance</span>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-hunter-green mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-success mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <span>44px minimum touch targets for mobile</span>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-hunter-green mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-success mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <span>Semantic HTML structure</span>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-hunter-green mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-success mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <span>Focus management and keyboard navigation</span>
             </li>
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-hunter-green mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-6 h-6 text-success mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <span>Screen reader compatible components</span>
@@ -340,18 +340,18 @@ import BaseLoading from '@/components/ui/BaseLoading.vue'
 
 // Color palette data
 const colors = [
-  { name: 'mocha-mousse', label: 'Mocha Mousse', hex: '#A67B5B', bgClass: 'bg-mocha-mousse' },
-  { name: 'deep-forest', label: 'Deep Forest', hex: '#2D4A3E', bgClass: 'bg-deep-forest' },
-  { name: 'warm-gold', label: 'Warm Gold', hex: '#D4AF37', bgClass: 'bg-warm-gold' },
-  { name: 'rich-brown', label: 'Rich Brown', hex: '#6B4423', bgClass: 'bg-rich-brown' },
-  { name: 'sage-green', label: 'Sage Green', hex: '#9CAF88', bgClass: 'bg-sage-green' },
+  { name: 'tan', label: 'Mocha Mousse', hex: '#A67B5B', bgClass: 'bg-tan' },
+  { name: 'navy', label: 'Deep Forest', hex: '#2D4A3E', bgClass: 'bg-navy' },
+  { name: 'tan', label: 'Tan', hex: '#D2B48C', bgClass: 'bg-tan' },
+  { name: 'burgundy', label: 'Rich Brown', hex: '#6B4423', bgClass: 'bg-burgundy' },
+  { name: 'tan-light', label: 'Sage Green', hex: '#9CAF88', bgClass: 'bg-tan-light' },
   { name: 'cream', label: 'Cream', hex: '#FAF7F0', bgClass: 'bg-cream' },
   { name: 'charcoal', label: 'Charcoal', hex: '#36454F', bgClass: 'bg-charcoal' },
-  { name: 'warm-gray', label: 'Warm Gray', hex: '#8B7D7B', bgClass: 'bg-warm-gray' },
-  { name: 'hunter-green', label: 'Hunter Green', hex: '#355E3B', bgClass: 'bg-hunter-green' },
-  { name: 'barn-red', label: 'Barn Red', hex: '#8B3A3A', bgClass: 'bg-barn-red' },
-  { name: 'hay-gold', label: 'Hay Gold', hex: '#F4E4C1', bgClass: 'bg-hay-gold' },
-  { name: 'sky-blue', label: 'Sky Blue', hex: '#87CEEB', bgClass: 'bg-sky-blue' },
+  { name: 'gray', label: 'Warm Gray', hex: '#8B7D7B', bgClass: 'bg-gray' },
+  { name: 'success', label: 'Hunter Green', hex: '#355E3B', bgClass: 'bg-success' },
+  { name: 'error', label: 'Barn Red', hex: '#8B3A3A', bgClass: 'bg-error' },
+  { name: 'warning', label: 'Hay Gold', hex: '#F4E4C1', bgClass: 'bg-warning' },
+  { name: 'info', label: 'Sky Blue', hex: '#87CEEB', bgClass: 'bg-info' },
 ]
 
 // Form data
@@ -373,7 +373,7 @@ const showModal = ref(false)
 }
 
 .heading-section {
-  @apply font-serif text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-rich-brown mb-6;
+  @apply font-serif text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-burgundy mb-6;
 }
 
 .text-lead {

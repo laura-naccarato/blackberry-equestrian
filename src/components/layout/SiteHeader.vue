@@ -6,14 +6,14 @@
         <div class="flex-shrink-0">
           <RouterLink to="/" class="flex items-center group">
             <!-- Logo placeholder - can be replaced with actual logo image -->
-            <div class="w-10 h-10 lg:w-12 lg:h-12 bg-warm-gold rounded-full flex items-center justify-center mr-3 group-hover:bg-rich-brown transition-colors">
-              <span class="text-rich-brown font-bold text-lg lg:text-xl group-hover:text-warm-gold transition-colors">BE</span>
+            <div class="w-10 h-10 lg:w-12 lg:h-12 bg-tan rounded-full flex items-center justify-center mr-3 group-hover:bg-burgundy transition-colors">
+              <span class="text-burgundy font-bold text-lg lg:text-xl group-hover:text-tan transition-colors">BE</span>
             </div>
             <div>
-              <h1 class="font-serif text-xl lg:text-2xl font-bold text-deep-forest">
+              <h1 class="font-serif text-xl lg:text-2xl font-bold text-navy">
                 Blackberry Equestrian
               </h1>
-              <p class="text-xs text-warm-gray hidden sm:block">Hunter/Jumper Excellence</p>
+              <p class="text-xs text-gray hidden sm:block">Hunter/Jumper Excellence</p>
             </div>
           </RouterLink>
         </div>
@@ -35,7 +35,7 @@
         <div class="hidden lg:flex items-center space-x-4">
           <a
             href="tel:905-555-0123"
-            class="flex items-center text-deep-forest hover:text-warm-gold transition-colors group"
+            class="flex items-center text-navy hover:text-tan transition-colors group"
             aria-label="Call us"
           >
             <PhoneIcon class="h-5 w-5 mr-2" />
@@ -46,7 +46,7 @@
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMenu"
-          class="lg:hidden p-2 rounded-lg text-charcoal hover:text-deep-forest hover:bg-sage-green/20 transition-all min-h-[44px] min-w-[44px]"
+          class="lg:hidden p-2 rounded-lg text-charcoal hover:text-navy hover:bg-tan-light/20 transition-all min-h-[44px] min-w-[44px]"
           :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'"
           :aria-expanded="isMenuOpen"
         >
@@ -60,7 +60,7 @@
     <Transition name="slide-down">
       <div
         v-if="isMenuOpen"
-        class="lg:hidden bg-white border-t border-warm-gray/20"
+        class="lg:hidden bg-white border-t border-gray/20"
       >
         <nav class="px-4 py-4 space-y-1" aria-label="Mobile navigation">
           <RouterLink
@@ -76,7 +76,7 @@
           </RouterLink>
 
           <!-- Mobile Contact -->
-          <div class="pt-4 mt-4 border-t border-warm-gray/20">
+          <div class="pt-4 mt-4 border-t border-gray/20">
             <a
               href="tel:905-555-0123"
               class="mobile-nav-link"
@@ -94,7 +94,7 @@
           </div>
 
           <!-- Quick Actions -->
-          <div class="pt-4 mt-4 border-t border-warm-gray/20">
+          <div class="pt-4 mt-4 border-t border-gray/20">
             <BaseButton
               variant="primary"
               size="md"
@@ -152,21 +152,21 @@ const navigation = [
 /* Desktop navigation link styles */
 .nav-link {
   @apply px-4 py-2 text-sm font-medium text-charcoal rounded-lg transition-all duration-200;
-  @apply hover:text-deep-forest hover:bg-sage-green/20;
+  @apply hover:text-navy hover:bg-tan-light/20;
 }
 
 .nav-link.router-link-active {
-  @apply text-warm-gold bg-deep-forest/10;
+  @apply text-tan bg-navy/10;
 }
 
 /* Mobile navigation link styles */
 .mobile-nav-link {
   @apply flex items-center px-4 py-3 text-base font-medium text-charcoal rounded-lg transition-all duration-200;
-  @apply hover:text-deep-forest hover:bg-sage-green/20 min-h-[44px];
+  @apply hover:text-navy hover:bg-tan-light/20 min-h-[44px];
 }
 
 .mobile-nav-link.router-link-active {
-  @apply text-warm-gold bg-deep-forest/10;
+  @apply text-tan bg-navy/10;
 }
 
 /* Slide down animation for mobile menu */

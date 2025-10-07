@@ -16,7 +16,7 @@
           @error="handleImageError($event, HORSE_PLACEHOLDER)"
         >
         <div v-if="horse.featured" class="absolute top-4 right-4">
-          <span class="bg-warm-gold text-rich-brown px-3 py-1 rounded-full text-sm font-semibold shadow-medium">
+          <span class="bg-tan text-burgundy px-3 py-1 rounded-full text-sm font-semibold shadow-medium">
             Featured
           </span>
         </div>
@@ -29,25 +29,25 @@
     </template>
     
     <div class="p-6">
-      <h3 class="text-xl font-semibold text-deep-forest mb-2 group-hover:text-warm-gold transition-colors">
+      <h3 class="text-xl font-semibold text-navy mb-2 group-hover:text-tan transition-colors">
         {{ horse.name }}
       </h3>
       
       <div class="grid grid-cols-2 gap-2 text-sm mb-4">
         <div>
-          <span class="text-warm-gray">Age:</span>
+          <span class="text-gray">Age:</span>
           <span class="ml-1 text-charcoal font-medium">{{ horse.basic_info?.age }} years</span>
         </div>
         <div>
-          <span class="text-warm-gray">Height:</span>
+          <span class="text-gray">Height:</span>
           <span class="ml-1 text-charcoal font-medium">{{ horse.basic_info?.height }}</span>
         </div>
         <div>
-          <span class="text-warm-gray">Breed:</span>
+          <span class="text-gray">Breed:</span>
           <span class="ml-1 text-charcoal font-medium">{{ horse.basic_info?.breed }}</span>
         </div>
         <div>
-          <span class="text-warm-gray">Gender:</span>
+          <span class="text-gray">Gender:</span>
           <span class="ml-1 text-charcoal font-medium">{{ horse.basic_info?.gender }}</span>
         </div>
       </div>
@@ -58,28 +58,28 @@
       
       <div v-if="horse.performance" class="mb-4">
         <div class="flex items-center text-sm">
-          <TrophyIcon class="w-4 h-4 text-warm-gold mr-2" />
+          <TrophyIcon class="w-4 h-4 text-tan mr-2" />
           <span class="text-charcoal">{{ horse.performance.discipline }}</span>
         </div>
         <div v-if="horse.performance.level" class="flex items-center text-sm mt-1">
-          <ChartBarIcon class="w-4 h-4 text-warm-gold mr-2" />
+          <ChartBarIcon class="w-4 h-4 text-tan mr-2" />
           <span class="text-charcoal">{{ horse.performance.level }}</span>
         </div>
       </div>
       
-      <div v-if="horse.pricing" class="pt-4 border-t border-warm-gray/20">
-        <div v-if="horse.pricing.sale_price" class="text-lg font-bold text-hunter-green">
+      <div v-if="horse.pricing" class="pt-4 border-t border-gray/20">
+        <div v-if="horse.pricing.sale_price" class="text-lg font-bold text-burgundy">
           {{ formatPrice(horse.pricing.sale_price) }}
         </div>
-        <div v-if="horse.pricing.lease_price" class="text-sm text-warm-gray">
+        <div v-if="horse.pricing.lease_price" class="text-sm text-gray">
           Lease: {{ formatPrice(horse.pricing.lease_price) }}/month
         </div>
-        <div v-if="!horse.pricing.sale_price && !horse.pricing.lease_price" class="text-warm-gray">
+        <div v-if="!horse.pricing.sale_price && !horse.pricing.lease_price" class="text-gray">
           Contact for pricing
         </div>
       </div>
       
-      <div class="flex items-center text-deep-forest font-medium mt-4 group-hover:text-warm-gold transition-colors">
+      <div class="flex items-center text-navy font-medium mt-4 group-hover:text-tan transition-colors">
         View Details
         <ArrowRightIcon class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
       </div>

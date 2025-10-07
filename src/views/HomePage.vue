@@ -116,7 +116,7 @@ onMounted(async () => {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #2c5530;
+  color: #1B3A57;
 }
 
 .welcome .content {
@@ -138,7 +138,7 @@ onMounted(async () => {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #2c5530;
+  color: #1B3A57;
 }
 
 .features-grid {
@@ -161,7 +161,7 @@ onMounted(async () => {
 }
 
 .feature-card h3 {
-  color: #2c5530;
+  color: #722F37; /* Burgundy */
   margin-bottom: 1rem;
 }
 
@@ -179,7 +179,7 @@ onMounted(async () => {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #2c5530;
+  color: #1B3A57;
 }
 
 .horses-grid {
@@ -214,7 +214,7 @@ onMounted(async () => {
 }
 
 .horse-info h3 {
-  color: #2c5530;
+  color: #1B3A57;
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
@@ -259,7 +259,7 @@ onMounted(async () => {
 .cta {
   padding: 4rem 0;
   text-align: center;
-  background-color: #2c5530;
+  background-color: #1B3A57;
   color: #fff;
 }
 

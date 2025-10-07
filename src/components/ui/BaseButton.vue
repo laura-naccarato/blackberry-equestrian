@@ -142,11 +142,11 @@ const buttonClasses = computed(() => {
   // Variant classes
   const variantClasses = {
     primary: [
-      'bg-warm-gold',
-      'text-rich-brown',
-      'hover:bg-rich-brown',
-      'hover:text-warm-gold',
-      'focus:ring-warm-gold',
+      'bg-tan',
+      'text-burgundy',
+      'hover:bg-burgundy',
+      'hover:text-tan',
+      'focus:ring-tan',
       'shadow-md',
       'hover:shadow-lg',
       'transform',
@@ -154,10 +154,10 @@ const buttonClasses = computed(() => {
       'active:translate-y-0'
     ],
     secondary: [
-      'bg-deep-forest',
+      'bg-navy',
       'text-white',
       'hover:bg-charcoal',
-      'focus:ring-deep-forest',
+      'focus:ring-navy',
       'shadow-md',
       'hover:shadow-lg',
       'transform',
@@ -166,25 +166,25 @@ const buttonClasses = computed(() => {
     ],
     outline: [
       'border-2',
-      'border-deep-forest',
-      'text-deep-forest',
-      'hover:bg-deep-forest',
+      'border-navy',
+      'text-navy',
+      'hover:bg-navy',
       'hover:text-white',
-      'focus:ring-deep-forest',
+      'focus:ring-navy',
       'bg-transparent'
     ],
     ghost: [
-      'text-deep-forest',
-      'hover:bg-sage-green/20',
+      'text-navy',
+      'hover:bg-tan-light/20',
       'hover:text-charcoal',
-      'focus:ring-sage-green',
+      'focus:ring-tan-light',
       'bg-transparent'
     ],
     danger: [
-      'bg-barn-red',
+      'bg-error',
       'text-white',
       'hover:bg-red-700',
-      'focus:ring-barn-red',
+      'focus:ring-error',
       'shadow-md',
       'hover:shadow-lg',
       'transform',

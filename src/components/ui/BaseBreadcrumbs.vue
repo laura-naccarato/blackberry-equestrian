@@ -62,8 +62,8 @@ defineProps({
 }
 
 .breadcrumb-link {
-  @apply text-warm-gray hover:text-deep-forest transition-colors duration-200
-         focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2
+  @apply text-gray hover:text-navy transition-colors duration-200
+         focus:outline-none focus:ring-2 focus:ring-tan focus:ring-offset-2
          rounded px-1 py-0.5 min-h-[44px] flex items-center gap-2;
 }
 
@@ -80,7 +80,7 @@ defineProps({
 }
 
 .breadcrumb-separator {
-  @apply w-4 h-4 text-warm-gray/50 flex-shrink-0;
+  @apply w-4 h-4 text-gray/50 flex-shrink-0;
 }
 
 /* Responsive */
@@ -95,7 +95,7 @@ defineProps({
 
   .breadcrumb-item.is-last::before {
     content: '...';
-    @apply text-warm-gray/50 mr-2;
+    @apply text-gray/50 mr-2;
   }
 }
 </style>

@@ -110,7 +110,7 @@ const tooltipClasses = computed(() => {
 
   const themeClasses = {
     dark: 'bg-charcoal text-white',
-    light: 'bg-white text-charcoal border border-warm-gray/20'
+    light: 'bg-white text-charcoal border border-gray/20'
   }
 
   return [
@@ -130,7 +130,7 @@ const arrowClasses = computed(() => {
 
   const themeClasses = {
     dark: 'bg-charcoal',
-    light: 'bg-white border-warm-gray/20'
+    light: 'bg-white border-gray/20'
   }
 
   const placementClasses = {

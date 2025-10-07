@@ -95,23 +95,23 @@ const badgeClasses = computed(() => {
   if (props.outlined) {
     // Outlined variants
     const outlinedVariants = {
-      default: 'border border-warm-gray/50 text-charcoal bg-transparent',
-      primary: 'border border-warm-gold text-warm-gold bg-transparent',
-      success: 'border border-hunter-green text-hunter-green bg-transparent',
-      warning: 'border border-hay-gold text-rich-brown bg-transparent',
-      error: 'border border-barn-red text-barn-red bg-transparent',
-      info: 'border border-sky-blue text-deep-forest bg-transparent'
+      default: 'border border-gray/50 text-charcoal bg-transparent',
+      primary: 'border border-tan text-tan bg-transparent',
+      success: 'border border-success text-success bg-transparent',
+      warning: 'border border-warning text-burgundy bg-transparent',
+      error: 'border border-error text-error bg-transparent',
+      info: 'border border-info text-navy bg-transparent'
     }
     variantClasses = outlinedVariants[props.variant].split(' ')
   } else {
     // Filled variants
     const filledVariants = {
-      default: 'bg-warm-gray/10 text-charcoal',
-      primary: 'bg-warm-gold text-rich-brown',
-      success: 'bg-hunter-green/10 text-hunter-green',
-      warning: 'bg-hay-gold text-rich-brown',
-      error: 'bg-barn-red/10 text-barn-red',
-      info: 'bg-sky-blue/20 text-deep-forest'
+      default: 'bg-gray/10 text-charcoal',
+      primary: 'bg-tan text-burgundy',
+      success: 'bg-success/10 text-success',
+      warning: 'bg-warning text-burgundy',
+      error: 'bg-error/10 text-error',
+      info: 'bg-info/20 text-navy'
     }
     variantClasses = filledVariants[props.variant].split(' ')
   }
@@ -133,11 +133,11 @@ const dotClasses = computed(() => {
 
   const colorClasses = {
     default: 'bg-charcoal',
-    primary: 'bg-warm-gold',
-    success: 'bg-hunter-green',
-    warning: 'bg-rich-brown',
-    error: 'bg-barn-red',
-    info: 'bg-deep-forest'
+    primary: 'bg-tan',
+    success: 'bg-success',
+    warning: 'bg-burgundy',
+    error: 'bg-error',
+    info: 'bg-navy'
   }
 
   return [

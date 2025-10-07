@@ -20,7 +20,7 @@
     <!-- Service Details -->
     <div v-else-if="service">
       <!-- Hero Section -->
-      <section class="service-hero bg-gradient-to-br from-deep-forest to-hunter-green text-white relative overflow-hidden">
+      <section class="service-hero bg-gradient-to-br from-navy to-navy-dark text-white relative overflow-hidden">
         <!-- Background pattern overlay -->
         <div class="absolute inset-0 opacity-5">
           <div class="absolute inset-0" style="background-image: url('/images/pattern-overlay.svg'); background-repeat: repeat;"></div>
@@ -31,19 +31,19 @@
           <nav aria-label="Breadcrumb" class="mb-6">
             <ol class="flex items-center space-x-2 text-sm">
               <li>
-                <router-link to="/" class="text-cream hover:text-warm-gold transition-colors">
+                <router-link to="/" class="text-cream hover:text-tan transition-colors">
                   Home
                 </router-link>
               </li>
               <li class="text-cream/60">/</li>
               <li>
-                <router-link to="/services" class="text-cream hover:text-warm-gold transition-colors">
+                <router-link to="/services" class="text-cream hover:text-tan transition-colors">
                   Services
                 </router-link>
               </li>
               <li class="text-cream/60">/</li>
               <li>
-                <span class="text-warm-gold" aria-current="page">{{ service.title }}</span>
+                <span class="text-tan" aria-current="page">{{ service.title }}</span>
               </li>
             </ol>
           </nav>
@@ -93,7 +93,7 @@
                 <BaseButton 
                   variant="outline" 
                   size="lg"
-                  class="text-white border-white hover:bg-white hover:text-deep-forest"
+                  class="text-white border-white hover:bg-white hover:text-navy"
                   @click="openBookingModal"
                 >
                   <CalendarIcon class="w-5 h-5 mr-2" />
@@ -123,7 +123,7 @@
           <div class="lg:col-span-2 space-y-8">
             <!-- Service Description -->
             <BaseCard>
-              <h2 class="text-2xl font-semibold text-deep-forest mb-4">
+              <h2 class="text-2xl font-semibold text-navy mb-4">
                 About This Service
               </h2>
               <div v-if="service.body" class="prose prose-lg max-w-none text-charcoal service-content">
@@ -133,7 +133,7 @@
 
             <!-- Pricing Packages -->
             <div ref="pricingSection" v-if="service.pricing_options && service.pricing_options.length > 0">
-              <h2 class="text-2xl font-semibold text-deep-forest mb-6">
+              <h2 class="text-2xl font-semibold text-navy mb-6">
                 Pricing & Packages
               </h2>
               
@@ -146,26 +146,26 @@
                 >
                   <!-- Popular Badge -->
                   <div v-if="option.popular" class="absolute top-0 right-0">
-                    <div class="bg-warm-gold text-deep-forest px-4 py-1 text-sm font-bold rounded-bl-lg">
+                    <div class="bg-tan text-navy px-4 py-1 text-sm font-bold rounded-bl-lg">
                       MOST POPULAR
                     </div>
                   </div>
 
                   <div class="p-6">
-                    <h3 class="text-xl font-semibold text-hunter-green mb-2">
+                    <h3 class="text-xl font-semibold text-navy mb-2">
                       {{ option.name }}
                     </h3>
                     
                     <div class="flex items-baseline mb-4">
-                      <span class="text-3xl font-bold text-deep-forest">
+                      <span class="text-3xl font-bold text-navy">
                         ${{ option.price.toLocaleString() }}
                       </span>
-                      <span class="text-warm-gray ml-2">
+                      <span class="text-gray ml-2">
                         / {{ option.period || 'month' }}
                       </span>
                     </div>
 
-                    <p v-if="option.note" class="text-sm text-warm-gray italic mb-4">
+                    <p v-if="option.note" class="text-sm text-gray italic mb-4">
                       {{ option.note }}
                     </p>
 
@@ -176,18 +176,18 @@
                         :key="fIndex"
                         class="flex items-start"
                       >
-                        <CheckCircleIcon class="w-5 h-5 text-hunter-green mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircleIcon class="w-5 h-5 text-success mr-2 flex-shrink-0 mt-0.5" />
                         <span class="text-charcoal text-sm">{{ feature }}</span>
                       </div>
                     </div>
 
                     <!-- Availability Status -->
-                    <div class="pt-4 border-t border-sage-green/20">
-                      <div v-if="option.available !== false" class="flex items-center text-hunter-green">
+                    <div class="pt-4 border-t border-tan-light/20">
+                      <div v-if="option.available !== false" class="flex items-center text-success">
                         <CheckIcon class="w-4 h-4 mr-2" />
                         <span class="text-sm font-medium">Available Now</span>
                       </div>
-                      <div v-else class="flex items-center text-warm-gray">
+                      <div v-else class="flex items-center text-gray">
                         <XMarkIcon class="w-4 h-4 mr-2" />
                         <span class="text-sm">Currently Full - Join Waitlist</span>
                       </div>
@@ -199,8 +199,8 @@
 
             <!-- What's Included -->
             <BaseCard v-if="service.includes && service.includes.length > 0">
-              <h2 class="text-2xl font-semibold text-deep-forest mb-6 flex items-center">
-                <SparklesIcon class="w-6 h-6 mr-2 text-warm-gold" />
+              <h2 class="text-2xl font-semibold text-navy mb-6 flex items-center">
+                <SparklesIcon class="w-6 h-6 mr-2 text-tan" />
                 What's Included
               </h2>
               
@@ -210,8 +210,8 @@
                   :key="index"
                   class="flex items-start p-3 bg-cream/30 rounded-lg"
                 >
-                  <div class="bg-hunter-green/10 p-2 rounded-full mr-3">
-                    <CheckIcon class="w-4 h-4 text-hunter-green" />
+                  <div class="bg-success/10 p-2 rounded-full mr-3">
+                    <CheckIcon class="w-4 h-4 text-success" />
                   </div>
                   <span class="text-charcoal">{{ item }}</span>
                 </div>
@@ -220,8 +220,8 @@
 
             <!-- Requirements -->
             <BaseCard v-if="service.requirements && service.requirements.length > 0">
-              <h2 class="text-2xl font-semibold text-deep-forest mb-4 flex items-center">
-                <DocumentTextIcon class="w-6 h-6 mr-2 text-warm-gold" />
+              <h2 class="text-2xl font-semibold text-navy mb-4 flex items-center">
+                <DocumentTextIcon class="w-6 h-6 mr-2 text-tan" />
                 Requirements
               </h2>
               
@@ -244,7 +244,7 @@
 
             <!-- Additional Services -->
             <BaseCard v-if="service.add_ons && service.add_ons.length > 0">
-              <h2 class="text-2xl font-semibold text-deep-forest mb-4">
+              <h2 class="text-2xl font-semibold text-navy mb-4">
                 Additional Services Available
               </h2>
               
@@ -252,17 +252,17 @@
                 <div 
                   v-for="(addon, index) in service.add_ons" 
                   :key="index"
-                  class="flex items-center justify-between p-3 bg-sage-green/10 rounded-lg"
+                  class="flex items-center justify-between p-3 bg-tan-light/10 rounded-lg"
                 >
                   <span class="text-charcoal font-medium">{{ addon }}</span>
-                  <span class="text-sm text-warm-gray">Contact for pricing</span>
+                  <span class="text-sm text-gray">Contact for pricing</span>
                 </div>
               </div>
             </BaseCard>
 
             <!-- Facility Gallery -->
             <div v-if="facilityImages.length > 0">
-              <h2 class="text-2xl font-semibold text-deep-forest mb-6">
+              <h2 class="text-2xl font-semibold text-navy mb-6">
                 Facility Photos
               </h2>
               
@@ -295,16 +295,16 @@
             <!-- Quick Contact Card - Sticky -->
             <BaseCard variant="elevated" class="sticky top-24">
               <div class="p-6 bg-gradient-to-br from-cream to-white rounded-lg">
-                <h3 class="text-xl font-semibold text-deep-forest mb-4">
+                <h3 class="text-xl font-semibold text-navy mb-4">
                   Ready to Get Started?
                 </h3>
                 
                 <!-- Starting Price Display -->
-                <div v-if="lowestPrice" class="mb-6 text-center py-4 border-y border-sage-green/20">
-                  <span class="text-sm text-warm-gray block mb-1">Starting at</span>
-                  <div class="text-3xl font-bold text-hunter-green">
+                <div v-if="lowestPrice" class="mb-6 text-center py-4 border-y border-tan-light/20">
+                  <span class="text-sm text-gray block mb-1">Starting at</span>
+                  <div class="text-3xl font-bold text-burgundy">
                     ${{ lowestPrice.toLocaleString() }}
-                    <span class="text-lg text-warm-gray font-normal">/{{ lowestPeriod }}</span>
+                    <span class="text-lg text-gray font-normal">/{{ lowestPeriod }}</span>
                   </div>
                 </div>
 
@@ -343,8 +343,8 @@
                 </div>
 
                 <!-- Business Hours -->
-                <div class="mt-6 pt-6 border-t border-warm-gray/20">
-                  <h4 class="text-sm font-semibold text-deep-forest mb-3">
+                <div class="mt-6 pt-6 border-t border-gray/20">
+                  <h4 class="text-sm font-semibold text-navy mb-3">
                     Office Hours
                   </h4>
                   <div class="space-y-1 text-sm text-charcoal">
@@ -364,9 +364,9 @@
                 </div>
 
                 <!-- Location -->
-                <div class="mt-4 pt-4 border-t border-warm-gray/20">
+                <div class="mt-4 pt-4 border-t border-gray/20">
                   <div class="flex items-start text-sm text-charcoal">
-                    <MapPinIcon class="w-4 h-4 mr-2 flex-shrink-0 text-hunter-green mt-0.5" />
+                    <MapPinIcon class="w-4 h-4 mr-2 flex-shrink-0 text-tan mt-0.5" />
                     <span>Newtonville, Ontario</span>
                   </div>
                 </div>
@@ -376,7 +376,7 @@
             <!-- Testimonial Card -->
             <BaseCard v-if="featuredTestimonial">
               <div class="p-4">
-                <QuoteIcon class="w-8 h-8 text-warm-gold/30 mb-3" />
+                <QuoteIcon class="w-8 h-8 text-tan/30 mb-3" />
                 <blockquote class="text-charcoal italic mb-4">
                   "{{ featuredTestimonial.text }}"
                 </blockquote>
@@ -390,10 +390,10 @@
                     />
                   </div>
                   <div>
-                    <div class="font-semibold text-deep-forest text-sm">
+                    <div class="font-semibold text-navy text-sm">
                       {{ featuredTestimonial.author }}
                     </div>
-                    <div class="text-xs text-warm-gray">
+                    <div class="text-xs text-gray">
                       {{ featuredTestimonial.role }}
                     </div>
                   </div>
@@ -404,8 +404,8 @@
             <!-- Download Brochure -->
             <BaseCard>
               <div class="p-4 text-center">
-                <DocumentArrowDownIcon class="w-12 h-12 text-hunter-green mx-auto mb-3" />
-                <h4 class="font-semibold text-deep-forest mb-2">
+                <DocumentArrowDownIcon class="w-12 h-12 text-navy mx-auto mb-3" />
+                <h4 class="font-semibold text-navy mb-2">
                   Service Information
                 </h4>
                 <p class="text-sm text-charcoal mb-4">
@@ -427,7 +427,7 @@
 
         <!-- Related Services -->
         <section v-if="relatedServices.length > 0" class="mt-12">
-          <h2 class="text-2xl font-semibold text-deep-forest mb-6">
+          <h2 class="text-2xl font-semibold text-navy mb-6">
             You May Also Be Interested In
           </h2>
           <div class="grid md:grid-cols-3 gap-6">
@@ -440,8 +440,8 @@
         </section>
 
         <!-- Bottom CTA Section -->
-        <section class="mt-12 bg-gradient-to-br from-sage-green/10 to-cream/20 rounded-2xl p-8 md:p-12 text-center">
-          <h2 class="text-3xl font-bold text-deep-forest mb-4">
+        <section class="mt-12 bg-gradient-to-br from-tan-light/10 to-cream/20 rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl font-bold text-navy mb-4">
             Experience Excellence at Blackberry Equestrian
           </h2>
           <p class="text-lg text-charcoal mb-8 max-w-2xl mx-auto">
@@ -476,8 +476,8 @@
       size="md"
     >
       <form @submit.prevent="submitInquiry" class="space-y-4">
-        <div class="bg-sage-green/10 p-4 rounded-lg mb-4">
-          <h4 class="font-semibold text-deep-forest mb-1">{{ service?.title }}</h4>
+        <div class="bg-tan-light/10 p-4 rounded-lg mb-4">
+          <h4 class="font-semibold text-navy mb-1">{{ service?.title }}</h4>
           <p class="text-sm text-charcoal">{{ service?.excerpt }}</p>
         </div>
 
@@ -552,7 +552,7 @@
       size="md"
     >
       <form @submit.prevent="submitBooking" class="space-y-4">
-        <div class="bg-sage-green/10 p-4 rounded-lg mb-4">
+        <div class="bg-tan-light/10 p-4 rounded-lg mb-4">
           <p class="text-sm text-charcoal">
             Tour our facilities and learn more about our {{ service?.title }} service.
           </p>
@@ -1048,9 +1048,9 @@ const renderMarkdown = (markdown) => {
   // Basic markdown to HTML conversion
   let html = markdown
     // Headers
-    .replace(/^### (.*?)$/gm, '<h3 class="text-xl font-semibold text-hunter-green mb-2 mt-4">$1</h3>')
-    .replace(/^## (.*?)$/gm, '<h2 class="text-2xl font-bold text-deep-forest mb-3 mt-6">$1</h2>')
-    .replace(/^# (.*?)$/gm, '<h1 class="text-3xl font-bold text-deep-forest mb-4 mt-6">$1</h1>')
+    .replace(/^### (.*?)$/gm, '<h3 class="text-xl font-semibold text-burgundy mb-2 mt-4">$1</h3>')
+    .replace(/^## (.*?)$/gm, '<h2 class="text-2xl font-bold text-navy mb-3 mt-6">$1</h2>')
+    .replace(/^# (.*?)$/gm, '<h1 class="text-3xl font-bold text-navy mb-4 mt-6">$1</h1>')
     // Bold and italic
     .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -1115,11 +1115,11 @@ watch(lightboxOpen, (isOpen) => {
 
 /* Service Content Styling */
 .service-content :deep(h2) {
-  @apply text-2xl font-bold text-deep-forest mb-3 mt-6;
+  @apply text-2xl font-bold text-navy mb-3 mt-6;
 }
 
 .service-content :deep(h3) {
-  @apply text-xl font-semibold text-hunter-green mb-2 mt-4;
+  @apply text-xl font-semibold text-burgundy mb-2 mt-4;
 }
 
 .service-content :deep(p) {
@@ -1191,6 +1191,6 @@ html {
 /* Focus Styles for Accessibility */
 button:focus-visible,
 a:focus-visible {
-  @apply outline-2 outline-offset-2 outline-warm-gold;
+  @apply outline-2 outline-offset-2 outline-tan;
 }
 </style>

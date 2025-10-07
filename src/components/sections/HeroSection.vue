@@ -112,8 +112,8 @@ defineProps({
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(44, 85, 48, 0.7),
-    rgba(44, 85, 48, 0.8)
+    rgba(27, 58, 87, 0.7),  /* Navy blue */
+    rgba(27, 58, 87, 0.85)
   );
 }
 

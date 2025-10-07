@@ -20,7 +20,7 @@
 
       <!-- Price overlay -->
       <div v-if="price" class="absolute bottom-4 right-4">
-        <span class="bg-white/95 backdrop-blur-sm text-deep-forest font-semibold px-3 py-1.5 rounded-lg shadow-lg">
+        <span class="bg-white/95 backdrop-blur-sm text-navy font-semibold px-3 py-1.5 rounded-lg shadow-lg">
           {{ price }}
         </span>
       </div>
@@ -29,7 +29,7 @@
     <!-- Card Header -->
     <header
       v-if="$slots.header || title"
-      class="px-6 py-4 border-b border-warm-gray/20"
+      class="px-6 py-4 border-b border-gray/20"
     >
       <slot name="header">
         <h3 v-if="title" class="text-lg font-semibold text-charcoal">
@@ -46,7 +46,7 @@
     <!-- Card Footer -->
     <footer
       v-if="$slots.footer"
-      class="px-6 py-4 border-t border-warm-gray/20 bg-cream/30"
+      class="px-6 py-4 border-t border-gray/20 bg-cream/30"
     >
       <slot name="footer" />
     </footer>
@@ -120,8 +120,8 @@ const cardClasses = computed(() => {
   const variantClasses = {
     default: 'shadow-soft',
     elevated: 'shadow-medium',
-    bordered: 'border border-warm-gray/20 shadow-sm',
-    flat: 'shadow-none border border-warm-gray/10'
+    bordered: 'border border-gray/20 shadow-sm',
+    flat: 'shadow-none border border-gray/10'
   }
 
   const classes = [
@@ -136,7 +136,7 @@ const cardClasses = computed(() => {
       'duration-200',
       'focus:outline-none',
       'focus:ring-2',
-      'focus:ring-warm-gold',
+      'focus:ring-tan',
       'focus:ring-offset-2',
       'focus:ring-offset-cream'
     )
@@ -152,7 +152,7 @@ const cardClasses = computed(() => {
   if (props.selected) {
     classes.push(
       'ring-2',
-      'ring-warm-gold',
+      'ring-tan',
       'ring-offset-2',
       'ring-offset-cream'
     )
@@ -172,11 +172,11 @@ const badgeClasses = computed(() => {
   ]
 
   const colorClasses = {
-    primary: 'bg-warm-gold text-rich-brown',
-    success: 'bg-hunter-green/10 text-hunter-green',
-    warning: 'bg-hay-gold text-rich-brown',
-    error: 'bg-barn-red/10 text-barn-red',
-    info: 'bg-sky-blue/20 text-deep-forest'
+    primary: 'bg-tan text-burgundy',
+    success: 'bg-success/10 text-success',
+    warning: 'bg-warning/10 text-warning',
+    error: 'bg-error/10 text-error',
+    info: 'bg-info/20 text-navy'
   }
 
   return [...baseClasses, colorClasses[props.badgeColor]].join(' ')

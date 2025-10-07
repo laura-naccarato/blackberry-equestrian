@@ -1,7 +1,7 @@
 <template>
   <div class="horses-page">
     <!-- Page Header -->
-    <section class="bg-gradient-to-br from-deep-forest to-hunter-green text-white py-12 md:py-16">
+    <section class="bg-gradient-to-br from-navy to-navy-dark text-white py-12 md:py-16">
       <div class="container-wide">
         <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Horses for Sale & Lease</h1>
         <p class="text-xl opacity-95 max-w-3xl">Discover your perfect equine partner at Blackberry Equestrian</p>
@@ -59,18 +59,18 @@
                 @error="handleImageError($event, HORSE_PLACEHOLDER)"
               >
               <div v-if="horse.featured" class="absolute top-4 right-4">
-                <span class="bg-warm-gold text-rich-brown px-3 py-1 rounded-full text-sm font-semibold">
+                <span class="bg-tan text-burgundy px-3 py-1 rounded-full text-sm font-semibold">
                   Featured
                 </span>
               </div>
             </div>
           </template>
           
-          <h3 class="text-xl font-semibold text-deep-forest mb-2">
+          <h3 class="text-xl font-semibold text-navy mb-2">
             {{ horse.name }}
           </h3>
           
-          <div class="space-y-2 text-sm text-warm-gray mb-4">
+          <div class="space-y-2 text-sm text-gray mb-4">
             <p><span class="font-medium text-charcoal">Age:</span> {{ horse.basic_info?.age }} years</p>
             <p><span class="font-medium text-charcoal">Height:</span> {{ horse.basic_info?.height }}</p>
             <p><span class="font-medium text-charcoal">Breed:</span> {{ horse.basic_info?.breed }}</p>
@@ -82,15 +82,15 @@
           <template #footer>
             <div>
               <div v-if="horse.pricing">
-                <p v-if="horse.pricing.lease_price" class="text-sm text-warm-gray">
+                <p v-if="horse.pricing.lease_price" class="text-sm text-gray">
                   Lease: {{ formatPrice(horse.pricing.lease_price) }}/month
                 </p>
-                <p v-if="horse.pricing.price_note" class="text-sm text-warm-gray italic">
+                <p v-if="horse.pricing.price_note" class="text-sm text-gray italic">
                   {{ horse.pricing.price_note }}
                 </p>
               </div>
               <div v-else>
-                <p class="text-warm-gray">Contact for pricing</p>
+                <p class="text-gray">Contact for pricing</p>
               </div>
             </div>
           </template>
@@ -100,7 +100,7 @@
       <!-- No Results -->
       <div v-else-if="!loading" class="bg-cream rounded-xl p-12 text-center">
         <h3 class="text-xl font-semibold text-charcoal mb-2">No horses found</h3>
-        <p class="text-warm-gray">
+        <p class="text-gray">
           {{ horses.length === 0 ? 'No horses are currently listed.' : 'Try adjusting your filters to see more results.' }}
         </p>
       </div>

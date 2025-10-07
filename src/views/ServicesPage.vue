@@ -166,7 +166,7 @@ onMounted(async () => {
 <style scoped>
 /* Page Header */
 .page-header {
-  background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)),
+  background: linear-gradient(rgba(27, 58, 87, 0.9), rgba(27, 58, 87, 0.9)),
               url('/images/placeholder.svg') center/cover;
   padding: 6rem 0;
   text-align: center;
@@ -219,7 +219,7 @@ onMounted(async () => {
 
 .services-intro h2 {
   font-size: 2.5rem;
-  color: #2c5530;
+  color: #1B3A57;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
 }
@@ -264,7 +264,7 @@ onMounted(async () => {
   position: relative;
   height: 250px;
   overflow: hidden;
-  background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+  background: linear-gradient(135deg, #1B3A57 0%, #2B4F6F 100%);
 }
 
 .service-image {
@@ -284,8 +284,8 @@ onMounted(async () => {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #D4AF37;
-  color: #2c5530;
+  background: #D2B48C;
+  color: #722F37;
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -303,7 +303,7 @@ onMounted(async () => {
 
 .service-title {
   font-size: 1.75rem;
-  color: #2c5530;
+  color: #1B3A57;
   margin-bottom: 0.75rem;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -347,14 +347,14 @@ onMounted(async () => {
 
 .currency {
   font-size: 1.25rem;
-  color: #8B4513;
+  color: #722F37;
   font-weight: 600;
 }
 
 .amount {
   font-size: 2rem;
   font-weight: 700;
-  color: #2c5530;
+  color: #1B3A57;
 }
 
 .period {
@@ -391,7 +391,7 @@ onMounted(async () => {
 .check-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #4CAF50;
+  color: #355E3B;
   flex-shrink: 0;
 }
 
@@ -419,12 +419,12 @@ onMounted(async () => {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #4CAF50;
+  color: #355E3B;
   font-weight: bold;
 }
 
 .more-items {
-  color: #8B4513;
+  color: #722F37;
   font-size: 0.875rem;
   margin-top: 0.5rem;
   font-weight: 500;
@@ -442,7 +442,7 @@ onMounted(async () => {
 .services-cta {
   text-align: center;
   padding: 4rem 3rem;
-  background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+  background: linear-gradient(135deg, #722F37 0%, #8B4049 100%);
   border-radius: 16px;
   color: white;
   position: relative;

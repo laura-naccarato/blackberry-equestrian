@@ -8,23 +8,28 @@ export default {
     extend: {
       colors: {
         // Primary Brand Colors - Professional Equestrian Palette
-        'mocha-mousse': '#CDB891',     // Warm, sophisticated primary (corrected from design spec)
-        'deep-forest': '#2D4A3E',      // Professional, trustworthy
-        'warm-gold': '#D4AF37',        // Premium accent
-        'rich-brown': '#8B4513',        // Traditional equestrian (corrected from design spec)
+        'burgundy': '#722F37',          // Rich burgundy primary
+        'burgundy-dark': '#5C252A',     // Darker burgundy variant
+        'burgundy-light': '#8B4049',    // Lighter burgundy variant
+        'tan': '#D2B48C',               // Warm tan secondary
+        'tan-light': '#E5D4B1',         // Light tan for backgrounds
+        'tan-dark': '#B8986B',          // Darker tan variant
+        'navy': '#1B3A57',              // Deep navy blue
+        'navy-dark': '#0F2238',         // Darker navy variant
+        'navy-light': '#2B4F6F',        // Lighter navy variant
         
         // Supporting Colors
-        'sage-green': '#9CAF88',       // Natural, calming
-        'cream': '#F5F5DC',             // Light backgrounds (corrected from design spec)
-        'charcoal': '#36454F',          // Primary text
-        'warm-gray': '#8B7D7B',         // Secondary text
-        'sand': '#E8DCC4',             // Alternative light background
+        'cream': '#FAF6F0',             // Soft cream for backgrounds
+        'charcoal': '#2C2C2C',          // Primary text
+        'gray': '#6B6B6B',              // Secondary text
+        'sand': '#F0E6D8',              // Alternative light background
+        'white': '#FFFFFF',             // Pure white
         
         // Semantic Colors
-        'hunter-green': '#355E3B',      // Success states
-        'barn-red': '#8B3A3A',          // Error/danger states
-        'hay-gold': '#F4E4C1',          // Warning states
-        'sky-blue': '#87CEEB',          // Info states
+        'success': '#355E3B',           // Success states (kept hunter green)
+        'error': '#9B2C2C',             // Error/danger states (adjusted burgundy)
+        'warning': '#D4A574',           // Warning states (warm tan/gold)
+        'info': '#4A6FA5',              // Info states (adjusted to navy blue)
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

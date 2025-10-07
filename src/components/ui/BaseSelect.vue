@@ -4,10 +4,10 @@
     <label
       v-if="label"
       :for="selectId"
-      class="block text-sm font-medium text-rich-brown mb-2"
+      class="block text-sm font-medium text-burgundy mb-2"
     >
       {{ label }}
-      <span v-if="required" class="text-barn-red ml-1" aria-label="required">*</span>
+      <span v-if="required" class="text-error ml-1" aria-label="required">*</span>
     </label>
 
     <!-- Select wrapper -->
@@ -51,7 +51,7 @@
       <!-- Icon right (dropdown arrow) -->
       <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
         <svg
-          class="h-5 w-5 text-warm-gray"
+          class="h-5 w-5 text-gray"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -65,7 +65,7 @@
     <p
       v-if="error"
       :id="`${selectId}-error`"
-      class="mt-2 text-sm text-barn-red"
+      class="mt-2 text-sm text-error"
       role="alert"
     >
       {{ error }}
@@ -75,7 +75,7 @@
     <p
       v-else-if="hint"
       :id="`${selectId}-hint`"
-      class="mt-2 text-sm text-warm-gray"
+      class="mt-2 text-sm text-gray"
     >
       {{ hint }}
     </p>
@@ -161,7 +161,7 @@ const selectClasses = computed(() => {
     'duration-200',
     'focus:outline-none',
     'focus:ring-2',
-    'focus:ring-warm-gold',
+    'focus:ring-tan',
     'focus:border-transparent',
     'text-charcoal',
     'bg-white',
@@ -186,17 +186,17 @@ const selectClasses = computed(() => {
   let stateClasses = []
   if (props.error) {
     stateClasses = [
-      'border-barn-red',
+      'border-error',
       'bg-red-50',
-      'focus:ring-barn-red',
-      'focus:border-barn-red'
+      'focus:ring-error',
+      'focus:border-error'
     ]
   } else if (isFocused.value) {
-    stateClasses = ['border-warm-gold']
+    stateClasses = ['border-tan']
   } else {
     stateClasses = [
-      'border-warm-gray/30',
-      'hover:border-warm-gray/50'
+      'border-gray/30',
+      'hover:border-gray/50'
     ]
   }
 

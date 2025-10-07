@@ -113,23 +113,23 @@ watch(() => props.modelValue, (newValue) => {
 }
 
 .tab-list {
-  @apply flex border-b border-warm-gray/20 mb-4;
+  @apply flex border-b border-gray/20 mb-4;
 }
 
 .tab-button {
-  @apply relative px-4 py-3 text-sm font-medium text-warm-gray border-b-2 border-transparent
-         hover:text-charcoal hover:border-warm-gray/30 transition-all duration-200
-         focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2
+  @apply relative px-4 py-3 text-sm font-medium text-gray border-b-2 border-transparent
+         hover:text-charcoal hover:border-gray/30 transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-tan focus:ring-offset-2
          min-h-[44px] flex items-center gap-2;
 }
 
 .tab-button.active {
-  @apply text-deep-forest border-warm-gold;
+  @apply text-navy border-tan;
 }
 
 .tab-button.active::after {
   content: '';
-  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-warm-gold;
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-tan;
 }
 
 .tab-icon {
@@ -137,7 +137,7 @@ watch(() => props.modelValue, (newValue) => {
 }
 
 .tab-badge {
-  @apply bg-warm-gold text-rich-brown px-2 py-0.5 rounded-full text-xs font-semibold;
+  @apply bg-tan text-burgundy px-2 py-0.5 rounded-full text-xs font-semibold;
 }
 
 .tab-panels {

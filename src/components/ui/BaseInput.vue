@@ -4,10 +4,10 @@
     <label
       v-if="label"
       :for="inputId"
-      class="block text-sm font-medium text-rich-brown mb-2"
+      class="block text-sm font-medium text-burgundy mb-2"
     >
       {{ label }}
-      <span v-if="required" class="text-barn-red ml-1" aria-label="required">*</span>
+      <span v-if="required" class="text-error ml-1" aria-label="required">*</span>
     </label>
 
     <!-- Input wrapper -->
@@ -55,7 +55,7 @@
         <button
           v-if="showClear && internalValue"
           type="button"
-          class="text-warm-gray hover:text-charcoal transition-colors"
+          class="text-gray hover:text-charcoal transition-colors"
           @click="clearInput"
           aria-label="Clear input"
         >
@@ -80,7 +80,7 @@
       <!-- Character count -->
       <div
         v-if="showCount && maxlength"
-        class="absolute bottom-2 right-2 text-xs text-warm-gray pointer-events-none"
+        class="absolute bottom-2 right-2 text-xs text-gray pointer-events-none"
       >
         {{ internalValue?.length || 0 }} / {{ maxlength }}
       </div>
@@ -90,7 +90,7 @@
     <p
       v-if="error"
       :id="`${inputId}-error`"
-      class="mt-2 text-sm text-barn-red"
+      class="mt-2 text-sm text-error"
       role="alert"
     >
       {{ error }}
@@ -100,7 +100,7 @@
     <p
       v-else-if="hint"
       :id="`${inputId}-hint`"
-      class="mt-2 text-sm text-warm-gray"
+      class="mt-2 text-sm text-gray"
     >
       {{ hint }}
     </p>
@@ -226,9 +226,9 @@ const inputClasses = computed(() => {
     'duration-200',
     'focus:outline-none',
     'focus:ring-2',
-    'focus:ring-warm-gold',
+    'focus:ring-tan',
     'focus:border-transparent',
-    'placeholder-warm-gray',
+    'placeholder-gray',
     'text-charcoal',
     'bg-white'
   ]
@@ -253,17 +253,17 @@ const inputClasses = computed(() => {
   let stateClasses = []
   if (props.error) {
     stateClasses = [
-      'border-barn-red',
+      'border-error',
       'bg-red-50',
-      'focus:ring-barn-red',
-      'focus:border-barn-red'
+      'focus:ring-error',
+      'focus:border-error'
     ]
   } else if (isFocused.value) {
-    stateClasses = ['border-warm-gold']
+    stateClasses = ['border-tan']
   } else {
     stateClasses = [
-      'border-warm-gray/30',
-      'hover:border-warm-gray/50'
+      'border-gray/30',
+      'hover:border-gray/50'
     ]
   }
 

@@ -129,14 +129,14 @@ const endItem = computed(() => {
 
 .pagination-button {
   @apply inline-flex items-center justify-center px-3 py-2 text-sm font-medium
-         text-charcoal bg-white border border-warm-gray/30 rounded-lg
-         hover:bg-warm-gray/5 hover:border-warm-gray/50 transition-all duration-200
-         focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2
+         text-charcoal bg-white border border-gray/30 rounded-lg
+         hover:bg-gray/5 hover:border-gray/50 transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-tan focus:ring-offset-2
          min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white;
 }
 
 .pagination-page.active {
-  @apply bg-warm-gold text-rich-brown border-warm-gold font-semibold;
+  @apply bg-tan text-burgundy border-tan font-semibold;
 }
 
 .pagination-prev,
@@ -149,7 +149,7 @@ const endItem = computed(() => {
 }
 
 .pagination-info {
-  @apply text-center text-sm text-warm-gray mt-4;
+  @apply text-center text-sm text-gray mt-4;
 }
 
 /* Responsive */

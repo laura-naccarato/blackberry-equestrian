@@ -100,30 +100,30 @@ let autoCloseTimer = null
 const variantConfig = {
   success: {
     icon: CheckCircleIcon,
-    bgClass: 'bg-hunter-green/10 border-hunter-green/30',
-    iconClass: 'text-hunter-green',
-    titleClass: 'text-hunter-green',
-    messageClass: 'text-hunter-green/90'
+    bgClass: 'bg-success/10 border-success/30',
+    iconClass: 'text-success',
+    titleClass: 'text-success',
+    messageClass: 'text-success/90'
   },
   warning: {
     icon: ExclamationTriangleIcon,
-    bgClass: 'bg-hay-gold/30 border-warm-gold/50',
-    iconClass: 'text-rich-brown',
-    titleClass: 'text-rich-brown',
-    messageClass: 'text-rich-brown/90'
+    bgClass: 'bg-warning/30 border-tan/50',
+    iconClass: 'text-burgundy',
+    titleClass: 'text-burgundy',
+    messageClass: 'text-burgundy/90'
   },
   error: {
     icon: XCircleIcon,
-    bgClass: 'bg-barn-red/10 border-barn-red/30',
-    iconClass: 'text-barn-red',
-    titleClass: 'text-barn-red',
-    messageClass: 'text-barn-red/90'
+    bgClass: 'bg-error/10 border-error/30',
+    iconClass: 'text-error',
+    titleClass: 'text-error',
+    messageClass: 'text-error/90'
   },
   info: {
     icon: InformationCircleIcon,
-    bgClass: 'bg-sky-blue/10 border-sky-blue/30',
-    iconClass: 'text-deep-forest',
-    titleClass: 'text-deep-forest',
+    bgClass: 'bg-info/10 border-info/30',
+    iconClass: 'text-navy',
+    titleClass: 'text-navy',
     messageClass: 'text-charcoal'
   }
 }

@@ -32,7 +32,7 @@
             <button
               v-if="showClose"
               type="button"
-              class="absolute top-4 right-4 text-warm-gray hover:text-charcoal transition-colors z-10"
+              class="absolute top-4 right-4 text-gray hover:text-charcoal transition-colors z-10"
               @click="close"
               aria-label="Close modal"
             >
@@ -54,7 +54,7 @@
             <!-- Header -->
             <div
               v-if="$slots.header || title"
-              class="px-6 pt-6 pb-4 border-b border-warm-gray/20"
+              class="px-6 pt-6 pb-4 border-b border-gray/20"
             >
               <slot name="header">
                 <h3
@@ -63,7 +63,7 @@
                 >
                   {{ title }}
                 </h3>
-                <p v-if="subtitle" class="mt-1 text-sm text-warm-gray">
+                <p v-if="subtitle" class="mt-1 text-sm text-gray">
                   {{ subtitle }}
                 </p>
               </slot>
@@ -77,7 +77,7 @@
             <!-- Footer -->
             <div
               v-if="$slots.footer"
-              class="px-6 pb-6 pt-4 border-t border-warm-gray/20 bg-cream/30"
+              class="px-6 pb-6 pt-4 border-t border-gray/20 bg-cream/30"
             >
               <slot name="footer" />
             </div>

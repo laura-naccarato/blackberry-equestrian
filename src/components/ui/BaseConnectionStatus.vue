@@ -24,7 +24,7 @@
           <p class="text-sm font-medium text-charcoal">
             {{ statusText }}
           </p>
-          <p v-if="connectionType !== 'unknown'" class="text-xs text-warm-gray">
+          <p v-if="connectionType !== 'unknown'" class="text-xs text-gray">
             {{ connectionTypeText }}
           </p>
         </div>
@@ -33,7 +33,7 @@
         <button
           v-if="dismissible"
           @click="dismiss"
-          class="flex-shrink-0 text-warm-gray hover:text-charcoal transition-colors p-1"
+          class="flex-shrink-0 text-gray hover:text-charcoal transition-colors p-1"
           aria-label="Dismiss connection status"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,8 +43,8 @@
       </div>
 
       <!-- Offline Actions -->
-      <div v-if="!isOnline" class="mt-3 pt-3 border-t border-warm-gray/20">
-        <p class="text-xs text-warm-gray mb-2">
+      <div v-if="!isOnline" class="mt-3 pt-3 border-t border-gray/20">
+        <p class="text-xs text-gray mb-2">
           Some features may be limited while offline
         </p>
         <div class="flex space-x-2">
@@ -112,10 +112,10 @@ const connectionIcon = computed(() => {
 })
 
 const connectionIconClass = computed(() => {
-  if (!isOnline.value) return 'bg-barn-red text-white'
-  if (isSlowConnection.value) return 'bg-hay-gold text-rich-brown'
-  if (isFastConnection.value) return 'bg-hunter-green text-white'
-  return 'bg-sage-green text-white'
+  if (!isOnline.value) return 'bg-error text-white'
+  if (isSlowConnection.value) return 'bg-warning text-burgundy'
+  if (isFastConnection.value) return 'bg-success text-white'
+  return 'bg-tan-light text-white'
 })
 
 const dismiss = () => {

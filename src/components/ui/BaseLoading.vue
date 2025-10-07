@@ -89,15 +89,15 @@ const spinnerClasses = computed(() => {
   }
   
   const colorClasses = {
-    primary: 'text-warm-gold',
-    secondary: 'text-deep-forest',
+    primary: 'text-tan',
+    secondary: 'text-navy',
     white: 'text-white',
     current: 'text-current'
   }
   
   return [
     sizeClasses[props.size],
-    colorClasses[props.color] || 'text-warm-gold'
+    colorClasses[props.color] || 'text-tan'
   ].join(' ')
 })
 
@@ -110,7 +110,7 @@ const textClasses = computed(() => {
   }
   
   return [
-    'text-warm-gray',
+    'text-gray',
     sizeClasses[props.size]
   ].join(' ')
 })

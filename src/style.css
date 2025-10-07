@@ -129,11 +129,11 @@ a:hover {
 @layer components {
   /* Typography Classes - Mobile-First with Better Scaling */
   .heading-hero {
-    @apply font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-deep-forest;
+    @apply font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-navy;
   }
   
   .heading-section {
-    @apply font-serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-rich-brown mb-4 md:mb-6;
+    @apply font-serif text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight text-burgundy mb-4 md:mb-6;
   }
   
   .heading-subsection {
@@ -145,11 +145,11 @@ a:hover {
   }
   
   .text-lead {
-    @apply font-sans text-lg sm:text-xl leading-relaxed text-warm-gray;
+    @apply font-sans text-lg sm:text-xl leading-relaxed text-gray;
   }
   
   .text-caption {
-    @apply font-sans text-xs sm:text-sm uppercase tracking-wider font-medium text-warm-gray;
+    @apply font-sans text-xs sm:text-sm uppercase tracking-wider font-medium text-gray;
   }
   
   /* Container Styles - Mobile-First with Better Padding */
@@ -187,34 +187,34 @@ a:hover {
   }
   
   .btn-primary {
-    @apply btn bg-warm-gold text-rich-brown hover:bg-rich-brown hover:text-warm-gold;
-    @apply focus:ring-warm-gold shadow-md hover:shadow-lg;
+    @apply btn bg-tan text-burgundy hover:bg-burgundy hover:text-tan;
+    @apply focus:ring-tan shadow-md hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply btn bg-deep-forest text-white hover:bg-charcoal;
-    @apply focus:ring-deep-forest shadow-md hover:shadow-lg;
+    @apply btn bg-navy text-white hover:bg-charcoal;
+    @apply focus:ring-navy shadow-md hover:shadow-lg;
   }
   
   .btn-outline {
-    @apply btn border-2 border-deep-forest text-deep-forest hover:bg-deep-forest hover:text-white;
-    @apply focus:ring-deep-forest;
+    @apply btn border-2 border-navy text-navy hover:bg-navy hover:text-white;
+    @apply focus:ring-navy;
   }
   
   /* Form Input Styles */
   .form-input {
-    @apply block w-full px-4 py-3 border border-warm-gray/30 rounded-lg;
-    @apply focus:outline-none focus:ring-2 focus:ring-warm-gold focus:border-transparent;
-    @apply placeholder-warm-gray text-charcoal bg-white;
+    @apply block w-full px-4 py-3 border border-gray/30 rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-tan focus:border-transparent;
+    @apply placeholder-gray text-charcoal bg-white;
     @apply min-h-[44px]; /* Touch-friendly sizing */
   }
   
   .form-label {
-    @apply block text-sm font-medium text-rich-brown mb-2;
+    @apply block text-sm font-medium text-burgundy mb-2;
   }
   
   .form-error {
-    @apply text-sm text-barn-red mt-1;
+    @apply text-sm text-error mt-1;
   }
   
   /* Badge Styles */
@@ -223,15 +223,15 @@ a:hover {
   }
   
   .badge-success {
-    @apply badge bg-hunter-green/10 text-hunter-green;
+    @apply badge bg-success/10 text-success;
   }
   
   .badge-warning {
-    @apply badge bg-hay-gold text-rich-brown;
+    @apply badge bg-warning text-burgundy;
   }
   
   .badge-error {
-    @apply badge bg-barn-red/10 text-barn-red;
+    @apply badge bg-error/10 text-error;
   }
 }
 
@@ -295,11 +295,11 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-warm-gray/50 rounded-lg;
+  @apply bg-gray/50 rounded-lg;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-warm-gray/70;
+  @apply bg-gray/70;
 }
 
 /* Loading Spinner */

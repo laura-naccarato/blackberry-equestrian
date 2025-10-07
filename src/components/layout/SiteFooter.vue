@@ -1,17 +1,17 @@
 <template>
-  <footer class="bg-deep-forest text-white mt-auto">
+  <footer class="bg-navy text-white mt-auto">
     <!-- Main Footer Content -->
     <div class="container-wide py-12 lg:py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
         <!-- Brand Section -->
         <div class="space-y-4">
           <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-warm-gold rounded-full flex items-center justify-center mr-3">
-              <span class="text-rich-brown font-bold text-xl">BE</span>
+            <div class="w-12 h-12 bg-tan rounded-full flex items-center justify-center mr-3">
+              <span class="text-burgundy font-bold text-xl">BE</span>
             </div>
             <div>
               <h3 class="font-serif text-xl font-bold">Blackberry</h3>
-              <p class="text-sm text-sage-green">Equestrian</p>
+              <p class="text-sm text-tan-light">Equestrian</p>
             </div>
           </div>
           <p class="text-cream/80 leading-relaxed">
@@ -91,13 +91,13 @@
           <h4 class="footer-heading">Contact Us</h4>
           <div class="space-y-3">
             <div v-if="siteSettings.contact.address" class="flex items-start">
-              <MapPinIcon class="w-5 h-5 text-warm-gold mt-0.5 mr-2 flex-shrink-0" />
+              <MapPinIcon class="w-5 h-5 text-tan mt-0.5 mr-2 flex-shrink-0" />
               <address class="text-cream/80 not-italic">
                 {{ siteSettings.contact.address }}
               </address>
             </div>
             <div v-if="siteSettings.contact.phone" class="flex items-center">
-              <PhoneIcon class="w-5 h-5 text-warm-gold mr-2 flex-shrink-0" />
+              <PhoneIcon class="w-5 h-5 text-tan mr-2 flex-shrink-0" />
               <a
                 :href="`tel:${siteSettings.contact.phone}`"
                 class="footer-link"
@@ -106,7 +106,7 @@
               </a>
             </div>
             <div v-if="siteSettings.contact.email" class="flex items-center">
-              <EnvelopeIcon class="w-5 h-5 text-warm-gold mr-2 flex-shrink-0" />
+              <EnvelopeIcon class="w-5 h-5 text-tan mr-2 flex-shrink-0" />
               <a
                 :href="`mailto:${siteSettings.contact.email}`"
                 class="footer-link"
@@ -187,14 +187,14 @@ const { siteSettings, hasContactInfo, hasSocialMedia } = storeToRefs(mainStore)
 
 <style scoped>
 .footer-heading {
-  @apply text-warm-gold font-semibold text-lg mb-4;
+  @apply text-tan font-semibold text-lg mb-4;
 }
 
 .footer-link {
-  @apply text-cream/80 hover:text-warm-gold transition-colors duration-200;
+  @apply text-cream/80 hover:text-tan transition-colors duration-200;
 }
 
 .social-link {
-  @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-cream hover:bg-warm-gold hover:text-rich-brown transition-all duration-200 transform hover:scale-110;
+  @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-cream hover:bg-tan hover:text-burgundy transition-all duration-200 transform hover:scale-110;
 }
 </style>

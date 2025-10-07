@@ -256,7 +256,7 @@ const handleProfessionalImageError = (event) => {
 <style scoped>
 /* Page Header */
 .page-header {
-  background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)),
+  background: linear-gradient(rgba(27, 58, 87, 0.9), rgba(27, 58, 87, 0.9)),
               url('/images/placeholder.svg') center/cover;
   padding: 6rem 0;
   text-align: center;
@@ -299,7 +299,7 @@ const handleProfessionalImageError = (event) => {
 
 .section-title {
   font-size: 2.5rem;
-  color: #2c5530;
+  color: #1B3A57; /* Navy */
   margin-bottom: 1.5rem;
   font-family: serif;
   font-weight: 600;
@@ -354,7 +354,7 @@ const handleProfessionalImageError = (event) => {
   width: 60px;
   height: 60px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #8B4513, #D2691E);
+  background: linear-gradient(135deg, #722F37, #8B4049); /* Burgundy gradient */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -368,7 +368,7 @@ const handleProfessionalImageError = (event) => {
 }
 
 .value-card h3 {
-  color: #2c5530;
+  color: #722F37; /* Burgundy */
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
@@ -400,13 +400,13 @@ const handleProfessionalImageError = (event) => {
 .check-icon {
   width: 24px;
   height: 24px;
-  color: #4CAF50;
+  color: #355E3B; /* Success green */
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .feature-content h4 {
-  color: #2c5530;
+  color: #1B3A57; /* Navy */
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
   font-weight: 600;
@@ -503,13 +503,13 @@ const handleProfessionalImageError = (event) => {
 }
 
 .team-info h3 {
-  color: #2c5530;
+  color: #1B3A57;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .role {
-  color: #8B4513;
+  color: #722F37;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -560,12 +560,12 @@ const handleProfessionalImageError = (event) => {
 .award-icon {
   width: 48px;
   height: 48px;
-  color: #D2691E;
+  color: #8B4049;
   margin: 0 auto 1rem;
 }
 
 .award-item h4 {
-  color: #2c5530;
+  color: #1B3A57;
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
 }
@@ -578,7 +578,7 @@ const handleProfessionalImageError = (event) => {
 /* CTA Section */
 .cta-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #2c5530, #3a6b3e);
+  background: linear-gradient(135deg, #1B3A57, #2B4F6F);
   color: white;
 }
 
@@ -613,7 +613,7 @@ const handleProfessionalImageError = (event) => {
 }
 
 .btn-primary {
-  background: #8B4513;
+  background: #722F37;
   color: white;
 }
 
@@ -630,7 +630,7 @@ const handleProfessionalImageError = (event) => {
 
 .btn-secondary:hover {
   background: white;
-  color: #2c5530;
+  color: #1B3A57;
 }
 
 .text-center {

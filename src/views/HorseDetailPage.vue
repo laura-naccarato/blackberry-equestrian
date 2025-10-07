@@ -20,25 +20,25 @@
     <!-- Horse Details -->
     <div v-else-if="horse">
       <!-- Hero Section with Image Gallery -->
-      <section class="bg-gradient-to-br from-deep-forest to-hunter-green text-white">
+      <section class="bg-gradient-to-br from-navy to-navy-dark text-white">
         <div class="container-wide py-8 md:py-12">
           <!-- Breadcrumbs - Accessibility -->
           <nav aria-label="Breadcrumb" class="mb-6">
             <ol class="flex items-center space-x-2 text-sm">
               <li>
-                <router-link to="/" class="text-cream hover:text-warm-gold transition-colors">
+                <router-link to="/" class="text-cream hover:text-tan transition-colors">
                   Home
                 </router-link>
               </li>
               <li class="text-cream/60">/</li>
               <li>
-                <router-link to="/horses" class="text-cream hover:text-warm-gold transition-colors">
+                <router-link to="/horses" class="text-cream hover:text-tan transition-colors">
                   Horses
                 </router-link>
               </li>
               <li class="text-cream/60">/</li>
               <li>
-                <span class="text-warm-gold" aria-current="page">{{ horse.name }}</span>
+                <span class="text-tan" aria-current="page">{{ horse.name }}</span>
               </li>
             </ol>
           </nav>
@@ -111,7 +111,7 @@
                       :class="[
                         'w-3 h-3 rounded-full transition-all duration-200 touch-target flex items-center justify-center',
                         currentImageIndex === index 
-                          ? 'bg-warm-gold scale-125' 
+                          ? 'bg-tan scale-125' 
                           : 'bg-white/60 hover:bg-white/80'
                       ]"
                       :aria-label="`View image ${index + 1}`"
@@ -137,7 +137,7 @@
                     :class="[
                       'relative overflow-hidden rounded-lg transition-all duration-200',
                       currentImageIndex === index 
-                        ? 'ring-2 ring-warm-gold ring-offset-2' 
+                        ? 'ring-2 ring-tan ring-offset-2' 
                         : 'hover:opacity-80'
                     ]"
                     :aria-label="`Select image ${index + 1}`"
@@ -156,8 +156,8 @@
             <!-- Video Player -->
             <BaseCard v-if="horse.video_url" variant="elevated" class="overflow-hidden">
               <div class="p-4">
-                <h3 class="text-lg font-semibold text-deep-forest mb-3 flex items-center">
-                  <PlayIcon class="w-5 h-5 mr-2 text-warm-gold" />
+                <h3 class="text-lg font-semibold text-navy mb-3 flex items-center">
+                  <PlayIcon class="w-5 h-5 mr-2 text-tan" />
                   Video of {{ horse.name }}
                 </h3>
                 <div class="aspect-video bg-charcoal rounded-lg overflow-hidden">
@@ -193,21 +193,21 @@
             <!-- Performance & Experience -->
             <div v-if="horse.performance" class="grid md:grid-cols-2 gap-6">
               <BaseCard>
-                <h3 class="text-xl font-semibold text-deep-forest mb-4 flex items-center">
-                  <TrophyIcon class="w-5 h-5 mr-2 text-warm-gold" />
+                <h3 class="text-xl font-semibold text-navy mb-4 flex items-center">
+                  <TrophyIcon class="w-5 h-5 mr-2 text-tan" />
                   Performance
                 </h3>
                 <dl class="space-y-3">
                   <div v-if="horse.performance.discipline">
-                    <dt class="text-sm font-medium text-warm-gray">Discipline</dt>
+                    <dt class="text-sm font-medium text-gray">Discipline</dt>
                     <dd class="text-charcoal font-medium">{{ horse.performance.discipline }}</dd>
                   </div>
                   <div v-if="horse.performance.level">
-                    <dt class="text-sm font-medium text-warm-gray">Competition Level</dt>
+                    <dt class="text-sm font-medium text-gray">Competition Level</dt>
                     <dd class="text-charcoal font-medium">{{ horse.performance.level }}</dd>
                   </div>
                   <div v-if="horse.performance.achievements">
-                    <dt class="text-sm font-medium text-warm-gray mb-2">Achievements</dt>
+                    <dt class="text-sm font-medium text-gray mb-2">Achievements</dt>
                     <dd>
                       <ul class="list-disc list-inside space-y-1 text-charcoal">
                         <li v-for="(achievement, index) in horse.performance.achievements" :key="index">
@@ -220,17 +220,17 @@
               </BaseCard>
 
               <BaseCard>
-                <h3 class="text-xl font-semibold text-deep-forest mb-4 flex items-center">
-                  <AcademicCapIcon class="w-5 h-5 mr-2 text-warm-gold" />
+                <h3 class="text-xl font-semibold text-navy mb-4 flex items-center">
+                  <AcademicCapIcon class="w-5 h-5 mr-2 text-tan" />
                   Training
                 </h3>
                 <dl class="space-y-3">
                   <div v-if="horse.training">
-                    <dt class="text-sm font-medium text-warm-gray">Training Level</dt>
+                    <dt class="text-sm font-medium text-gray">Training Level</dt>
                     <dd class="text-charcoal font-medium">{{ horse.training.level }}</dd>
                   </div>
                   <div v-if="horse.training?.specialties">
-                    <dt class="text-sm font-medium text-warm-gray mb-2">Specialties</dt>
+                    <dt class="text-sm font-medium text-gray mb-2">Specialties</dt>
                     <dd>
                       <div class="flex flex-wrap gap-2">
                         <span 
@@ -250,29 +250,29 @@
             <!-- Health & Temperament -->
             <div class="grid md:grid-cols-2 gap-6">
               <BaseCard v-if="horse.health">
-                <h3 class="text-xl font-semibold text-deep-forest mb-4 flex items-center">
-                  <HeartIcon class="w-5 h-5 mr-2 text-warm-gold" />
+                <h3 class="text-xl font-semibold text-navy mb-4 flex items-center">
+                  <HeartIcon class="w-5 h-5 mr-2 text-tan" />
                   Health
                 </h3>
                 <dl class="space-y-3">
                   <div>
-                    <dt class="text-sm font-medium text-warm-gray">Vaccinations</dt>
+                    <dt class="text-sm font-medium text-gray">Vaccinations</dt>
                     <dd class="text-charcoal font-medium">{{ horse.health.vaccinations || 'Up to date' }}</dd>
                   </div>
                   <div>
-                    <dt class="text-sm font-medium text-warm-gray">Coggins</dt>
+                    <dt class="text-sm font-medium text-gray">Coggins</dt>
                     <dd class="text-charcoal font-medium">{{ horse.health.coggins || 'Current' }}</dd>
                   </div>
                   <div v-if="horse.health.notes">
-                    <dt class="text-sm font-medium text-warm-gray">Notes</dt>
+                    <dt class="text-sm font-medium text-gray">Notes</dt>
                     <dd class="text-charcoal">{{ horse.health.notes }}</dd>
                   </div>
                 </dl>
               </BaseCard>
 
               <BaseCard v-if="horse.temperament">
-                <h3 class="text-xl font-semibold text-deep-forest mb-4 flex items-center">
-                  <SparklesIcon class="w-5 h-5 mr-2 text-warm-gold" />
+                <h3 class="text-xl font-semibold text-navy mb-4 flex items-center">
+                  <SparklesIcon class="w-5 h-5 mr-2 text-tan" />
                   Temperament
                 </h3>
                 <div class="space-y-3">
@@ -281,7 +281,7 @@
                     <span 
                       v-for="trait in horse.temperament.traits" 
                       :key="trait"
-                      class="badge bg-sage-green/20 text-deep-forest"
+                      class="badge bg-tan-light/20 text-navy"
                     >
                       {{ trait }}
                     </span>
@@ -292,7 +292,7 @@
 
             <!-- Suitability -->
             <BaseCard v-if="horse.suitability">
-              <h3 class="text-xl font-semibold text-deep-forest mb-4">
+              <h3 class="text-xl font-semibold text-navy mb-4">
                 Ideal For
               </h3>
               <div class="grid sm:grid-cols-2 gap-4">
@@ -302,7 +302,7 @@
                   v-if="suitable"
                   class="flex items-start"
                 >
-                  <CheckCircleIcon class="w-5 h-5 text-hunter-green mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircleIcon class="w-5 h-5 text-success mr-2 flex-shrink-0 mt-0.5" />
                   <span class="text-charcoal">{{ formatSuitability(type) }}</span>
                 </div>
               </div>
@@ -314,35 +314,35 @@
             <!-- Pricing Card -->
             <BaseCard variant="elevated" class="sticky top-24">
               <div class="p-6 bg-gradient-to-br from-cream to-white rounded-lg">
-                <h3 class="text-xl font-semibold text-deep-forest mb-4">
+                <h3 class="text-xl font-semibold text-navy mb-4">
                   Pricing & Availability
                 </h3>
                 
                 <div class="space-y-4">
                   <!-- Sale Price -->
                   <div v-if="horse.pricing?.sale_price">
-                    <span class="text-sm text-warm-gray block mb-1">Sale Price</span>
-                    <div class="text-3xl font-bold text-hunter-green">
+                    <span class="text-sm text-gray block mb-1">Sale Price</span>
+                    <div class="text-3xl font-bold text-burgundy">
                       {{ formatPrice(horse.pricing.sale_price) }}
                     </div>
                   </div>
 
                   <!-- Lease Price -->
                   <div v-if="horse.pricing?.lease_price">
-                    <span class="text-sm text-warm-gray block mb-1">Monthly Lease</span>
-                    <div class="text-2xl font-semibold text-deep-forest">
+                    <span class="text-sm text-gray block mb-1">Monthly Lease</span>
+                    <div class="text-2xl font-semibold text-navy">
                       {{ formatPrice(horse.pricing.lease_price) }}
                     </div>
                   </div>
 
                   <!-- Price Note -->
-                  <p v-if="horse.pricing?.price_note" class="text-sm text-warm-gray italic">
+                  <p v-if="horse.pricing?.price_note" class="text-sm text-gray italic">
                     {{ horse.pricing.price_note }}
                   </p>
 
                   <!-- No pricing available -->
                   <div v-if="!horse.pricing?.sale_price && !horse.pricing?.lease_price">
-                    <p class="text-lg text-warm-gray">Contact for pricing</p>
+                    <p class="text-lg text-gray">Contact for pricing</p>
                   </div>
                 </div>
 
@@ -382,29 +382,29 @@
                 </div>
 
                 <!-- Share Buttons -->
-                <div class="mt-6 pt-6 border-t border-warm-gray/20">
-                  <p class="text-sm text-warm-gray mb-3">Share this horse:</p>
+                <div class="mt-6 pt-6 border-t border-gray/20">
+                  <p class="text-sm text-gray mb-3">Share this horse:</p>
                   <div class="flex gap-2">
                     <button
                       @click="shareHorse('facebook')"
-                      class="p-2 rounded-lg bg-sage-green/20 hover:bg-sage-green/30 transition-colors touch-target flex items-center justify-center"
+                      class="p-2 rounded-lg bg-tan-light/20 hover:bg-tan-light/30 transition-colors touch-target flex items-center justify-center"
                       aria-label="Share on Facebook"
                     >
-                      <ShareIcon class="w-5 h-5 text-deep-forest" />
+                      <ShareIcon class="w-5 h-5 text-navy" />
                     </button>
                     <button
                       @click="shareHorse('email')"
-                      class="p-2 rounded-lg bg-sage-green/20 hover:bg-sage-green/30 transition-colors touch-target flex items-center justify-center"
+                      class="p-2 rounded-lg bg-tan-light/20 hover:bg-tan-light/30 transition-colors touch-target flex items-center justify-center"
                       aria-label="Share via Email"
                     >
-                      <EnvelopeIcon class="w-5 h-5 text-deep-forest" />
+                      <EnvelopeIcon class="w-5 h-5 text-navy" />
                     </button>
                     <button
                       @click="printPage"
-                      class="p-2 rounded-lg bg-sage-green/20 hover:bg-sage-green/30 transition-colors touch-target flex items-center justify-center"
+                      class="p-2 rounded-lg bg-tan-light/20 hover:bg-tan-light/30 transition-colors touch-target flex items-center justify-center"
                       aria-label="Print this page"
                     >
-                      <PrinterIcon class="w-5 h-5 text-deep-forest" />
+                      <PrinterIcon class="w-5 h-5 text-navy" />
                     </button>
                   </div>
                 </div>
@@ -413,18 +413,18 @@
 
             <!-- Contact Card -->
             <BaseCard>
-              <h3 class="text-lg font-semibold text-deep-forest mb-3">
+              <h3 class="text-lg font-semibold text-navy mb-3">
                 Questions?
               </h3>
               <p class="text-charcoal mb-4">
                 Our team is here to help you find your perfect equine partner.
               </p>
               <div class="space-y-2 text-sm">
-                <div class="flex items-center text-warm-gray">
+                <div class="flex items-center text-gray">
                   <MapPinIcon class="w-4 h-4 mr-2 flex-shrink-0" />
                   <span>Newtonville, Ontario</span>
                 </div>
-                <div class="flex items-center text-warm-gray">
+                <div class="flex items-center text-gray">
                   <ClockIcon class="w-4 h-4 mr-2 flex-shrink-0" />
                   <span>Mon-Sat: 8am-6pm</span>
                 </div>
@@ -1012,9 +1012,9 @@ const renderMarkdown = (markdown) => {
   // In production, consider using a library like marked.js
   let html = markdown
     // Headers
-    .replace(/^### (.*?)$/gm, '<h3 class="text-xl font-semibold text-hunter-green mb-2 mt-4">$1</h3>')
-    .replace(/^## (.*?)$/gm, '<h2 class="text-2xl font-bold text-deep-forest mb-3 mt-6">$1</h2>')
-    .replace(/^# (.*?)$/gm, '<h1 class="text-3xl font-bold text-deep-forest mb-4 mt-6">$1</h1>')
+    .replace(/^### (.*?)$/gm, '<h3 class="text-xl font-semibold text-burgundy mb-2 mt-4">$1</h3>')
+    .replace(/^## (.*?)$/gm, '<h2 class="text-2xl font-bold text-navy mb-3 mt-6">$1</h2>')
+    .replace(/^# (.*?)$/gm, '<h1 class="text-3xl font-bold text-navy mb-4 mt-6">$1</h1>')
     // Bold and italic
     .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -1123,6 +1123,6 @@ watch(lightboxOpen, (isOpen) => {
 }
 
 .badge-success {
-  @apply bg-hunter-green/10 text-hunter-green;
+  @apply bg-success/10 text-success;
 }
 </style>
