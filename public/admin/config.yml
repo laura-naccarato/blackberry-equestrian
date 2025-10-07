@@ -30,7 +30,7 @@ public_folder: "/images/uploads"
 # Site configuration
 site_url: http://localhost:5173/
 display_url: https://laura-naccarato.github.io/blackberry-equestrian
-logo_url: /blackberry-equestrian/images/logo.png
+logo_url: /images/logo.png
 
 # Enable editorial workflow for content approval
 publish_mode: editorial_workflow

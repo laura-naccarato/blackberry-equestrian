@@ -18,8 +18,8 @@ export default defineConfig({
         background_color: '#F5F5DC',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/blackberry-equestrian/',
-        start_url: '/blackberry-equestrian/',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: 'images/icon-192.png',
@@ -38,7 +38,7 @@ export default defineConfig({
       }
     })
   ],
-  base: '/blackberry-equestrian/',
+  base: '/',
   publicDir: 'public',
   server: {
     middlewareMode: false,
