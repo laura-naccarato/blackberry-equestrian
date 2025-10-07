@@ -73,7 +73,7 @@ Build a professional Hunter/Jumper boarding facility website for Blackberry Eque
 **Deliverables**:
 ```
 - static/admin/config.yml (complete CMS config)
-- Content collections: horses, services, team, blog, pages
+- Content collections: horses, services, facilities, pages, settings
 - Image upload and optimization workflow
 - Content validation and preview templates
 ```

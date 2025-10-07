@@ -49,19 +49,6 @@ export async function loadServices() {
   }
 }
 
-// Load team members
-export async function loadTeamMembers() {
-  try {
-    const team = await loadContentFromDirectory('/team/')
-    return team.sort((a, b) => (a.order || 0) - (b.order || 0))
-  } catch (error) {
-    console.error('Error loading team members:', error)
-    return []
-  }
-}
-
-
-
 // Load facilities
 export async function loadFacilities() {
   try {
@@ -69,17 +56,6 @@ export async function loadFacilities() {
     return facilities.sort((a, b) => (a.order || 0) - (b.order || 0))
   } catch (error) {
     console.error('Error loading facilities:', error)
-    return []
-  }
-}
-
-// Load testimonials
-export async function loadTestimonials() {
-  try {
-    const testimonials = await loadContentFromDirectory('/testimonials/')
-    return testimonials.sort((a, b) => new Date(b.date) - new Date(a.date))
-  } catch (error) {
-    console.error('Error loading testimonials:', error)
     return []
   }
 }
@@ -186,9 +162,7 @@ export function formatPrice(price, currency = 'CAD') {
 export default {
   loadHorses,
   loadServices,
-  loadTeamMembers,
   loadFacilities,
-  loadTestimonials,
   loadPage,
   loadSettings,
   getContentBySlug,

@@ -2,9 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import {
   loadServices,
-  loadTeamMembers,
   loadFacilities,
-  loadTestimonials,
   loadPage,
   loadSettings
 } from '../utils/contentLoader'
@@ -12,9 +10,7 @@ import {
 export const useContentStore = defineStore('content', () => {
   // State
   const services = ref([])
-  const teamMembers = ref([])
   const facilities = ref([])
-  const testimonials = ref([])
   const pages = ref({})
   const settings = ref({})
   const isLoading = ref(false)
@@ -29,20 +25,6 @@ export const useContentStore = defineStore('content', () => {
     return services.value.filter(service => service.featured)
   })
 
-  const sortedTeamMembers = computed(() => {
-    return [...teamMembers.value].sort((a, b) => (a.order || 0) - (b.order || 0))
-  })
-
-  const featuredTeamMembers = computed(() => {
-    return teamMembers.value.filter(member => member.featured)
-  })
-
-
-
-  const featuredTestimonials = computed(() => {
-    return testimonials.value.filter(testimonial => testimonial.featured)
-  })
-
   // Methods
   const loadContent = async (contentType) => {
     isLoading.value = true
@@ -52,15 +34,8 @@ export const useContentStore = defineStore('content', () => {
         case 'services':
           services.value = await loadServices()
           break
-        case 'team':
-          teamMembers.value = await loadTeamMembers()
-          break
-
         case 'facilities':
           facilities.value = await loadFacilities()
-          break
-        case 'testimonials':
-          testimonials.value = await loadTestimonials()
           break
         case 'pages':
           // Load all pages
@@ -86,10 +61,7 @@ export const useContentStore = defineStore('content', () => {
           // Load all content types
           await Promise.all([
             loadContent('services'),
-            loadContent('team'),
-            loadContent('blog'),
             loadContent('facilities'),
-            loadContent('testimonials'),
             loadContent('pages'),
             loadContent('settings')
           ])
@@ -110,15 +82,6 @@ export const useContentStore = defineStore('content', () => {
     })
   }
 
-
-
-  const getTeamMemberBySlug = (slug) => {
-    return teamMembers.value.find(member => {
-      const memberSlug = member.slug || member.name?.toLowerCase().replace(/\s+/g, '-')
-      return memberSlug === slug
-    })
-  }
-
   const getFacilityBySlug = (slug) => {
     return facilities.value.find(facility => {
       const facilitySlug = facility.slug || facility.title?.toLowerCase().replace(/\s+/g, '-')
@@ -129,9 +92,7 @@ export const useContentStore = defineStore('content', () => {
   return {
     // State
     services,
-    teamMembers,
     facilities,
-    testimonials,
     pages,
     settings,
     isLoading,
@@ -140,14 +101,10 @@ export const useContentStore = defineStore('content', () => {
     // Computed
     sortedServices,
     featuredServices,
-    sortedTeamMembers,
-    featuredTeamMembers,
-    featuredTestimonials,
     
     // Methods
     loadContent,
     getServiceBySlug,
-    getTeamMemberBySlug,
     getFacilityBySlug
   }
 })

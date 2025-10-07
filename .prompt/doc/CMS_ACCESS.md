@@ -25,9 +25,7 @@ http://localhost:5173/admin/
 ### Content Collections Available:
 - **🐴 Horses for Sale/Lease** - Manage horse listings with detailed profiles, pricing, and photos
 - **💼 Services** - Edit boarding, training, and lesson services with pricing options
-- **👥 Team Members** - Update staff profiles with certifications and specialties
 - **🏛️ Facilities** - Showcase facility features with photo galleries
-- **⭐ Testimonials** - Manage client testimonials with ratings and permissions
 - **📄 Pages** - Edit static pages (Home, About, Contact) with structured content
 - **⚙️ Settings** - Configure site settings, SEO, and business information
 
@@ -116,9 +114,7 @@ To enable persistent content editing with GitHub integration:
 src/content/
 ├── horses/           # Horse listings (JSON files)
 ├── services/         # Service pages (JSON files)
-├── team/            # Team member profiles (JSON files)
 ├── facilities/      # Facility information (JSON files)
-├── testimonials/    # Client testimonials (JSON files)
 ├── pages/           # Static pages (JSON files)
 │   ├── home.json
 │   ├── about.json

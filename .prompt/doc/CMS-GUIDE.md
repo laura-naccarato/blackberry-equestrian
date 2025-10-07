@@ -5,9 +5,7 @@
 - [Editorial Workflow](#editorial-workflow)
 - [Managing Horses](#managing-horses)
 - [Managing Services](#managing-services)
-- [Managing Team Members](#managing-team-members)
 - [Managing Facilities](#managing-facilities)
-- [Managing Testimonials](#managing-testimonials)
 - [Managing Pages](#managing-pages)
 - [Site Settings](#site-settings)
 - [Best Practices](#best-practices)
@@ -27,7 +25,7 @@
 3. You'll see the main dashboard with all content collections
 
 ### CMS Interface Overview
-- **Collections**: Different types of content (Horses, Services, Team, Facilities, etc.)
+- **Collections**: Different types of content (Horses, Services, Facilities, Pages, Settings)
 - **Media Library**: Upload and manage images (currently configured for local storage)
 - **Editorial Workflow**: Content approval process before publishing
 - **Quick Add**: Create new content using the "New" button
@@ -156,45 +154,6 @@ Add multiple pricing tiers with:
 - Update prices promptly when they change
 - Use clear, descriptive package names
 
-## Managing Team Members 👥
-
-### Adding Staff Profiles
-1. Go to "👥 Team Members" collection
-2. Click "New Team Member"
-3. Fill in:
-
-#### Basic Information
-- **Full Name**: Staff member's complete name
-- **Position/Title**: Their role (e.g., Head Trainer, Barn Manager)
-- **Display Order**: Lower numbers appear first
-- **Featured**: Check to show on homepage
-- **Profile Photo**: Professional headshot or action photo
-
-#### Professional Information
-- **Years of Experience**: Number of years in the industry
-- **Specialties**: Areas of expertise (add multiple)
-- **Certifications**: Professional qualifications with organization and year
-- **Competition Achievements**: Notable competition results
-- **Biography**: Full biography including background and philosophy
-
-#### Contact & Availability
-- **Available for Lessons**: Check if they offer lessons
-- **Email**: Professional email (optional)
-- **Phone**: Professional phone (optional)
-
-#### Social Media (Optional)
-- **Instagram**: Instagram profile URL
-- **Facebook**: Facebook profile URL
-- **LinkedIn**: LinkedIn profile URL
-
-### Team Profile Best Practices
-- Use professional, friendly photos that show personality
-- Highlight relevant experience and achievements
-- Include teaching philosophy or training approach
-- Update certifications as they are renewed
-- Feature key instructors prominently on the homepage
-- Keep biographies engaging and informative
-
 ## Managing Facilities 🏛️
 
 ### Facility Types
@@ -238,45 +197,6 @@ Add multiple pricing tiers with:
 - Highlight unique features and amenities
 - Note availability for different types of use
 - Keep descriptions informative and engaging
-
-## Managing Testimonials ⭐
-
-### Collecting Testimonials
-1. Get written permission from clients before publishing
-2. Include client photo if available (with permission)
-3. Note service type and client relationship
-4. Keep testimonials authentic and specific
-5. Feature variety of client types (boarders, students, buyers)
-
-### Adding Testimonials
-1. Navigate to "⭐ Testimonials" collection
-2. Click "New Testimonial"
-3. Fill in:
-
-#### Client Information
-- **Client Name**: Full name of the client
-- **Client Photo**: Photo (optional, requires permission)
-- **Date**: When the testimonial was given
-- **Featured**: Check to show on homepage
-
-#### Client Details
-- **Client Type**: Boarder, Student, Parent, Horse Buyer, Training Client, or Multiple
-- **Service Type**: Boarding, Training, Lessons, Horse Purchase/Lease, or Multiple Services
-
-#### Testimonial Content
-- **Testimonial Text**: The actual testimonial
-- **Rating**: 1-5 star rating
-
-#### Permissions
-- **Permission to Display**: Must be checked (client permission obtained)
-
-### Testimonial Best Practices
-- Always get written permission before publishing
-- Feature best testimonials on homepage
-- Rotate featured testimonials regularly
-- Include mix of services and client types
-- Update with recent testimonials
-- Keep testimonials authentic and specific
 
 ## Managing Pages 📄
 
@@ -438,15 +358,14 @@ Add multiple pricing tiers with:
 ### Regular Maintenance
 - Review and update horse listings weekly
 - Check for outdated contact information monthly
-- Update testimonials quarterly
 - Refresh facility photos seasonally
 - Monitor broken links and update URLs
 - Review and update pricing annually
 
 ### Content Calendar Suggestions
 - **Weekly**: Horse status updates, facility maintenance
-- **Bi-weekly**: Team updates, service information
-- **Monthly**: Featured horses, client testimonials
+- **Bi-weekly**: Service information updates
+- **Monthly**: Featured horses, new content additions
 - **Seasonal**: Facility updates, seasonal services
 - **Annual**: About page updates, business information review
 

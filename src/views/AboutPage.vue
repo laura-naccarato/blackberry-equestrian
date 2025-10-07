@@ -133,41 +133,42 @@
       </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- Professional Team Section -->
+    <section class="professional-section">
       <div class="container">
-        <h2 class="section-title text-center">Meet Our Team</h2>
+        <h2 class="section-title text-center">Our Professional Team</h2>
         <p class="section-subtitle text-center">
           Dedicated professionals committed to your equestrian journey
         </p>
         
-        <div class="team-highlight">
+        <div class="professional-highlight">
           <img 
-            :src="teamLeadImage" 
-            alt="Lead Instructor"
-            class="team-photo"
-            @error="handleTeamImageError"
+            :src="professionalImage" 
+            alt="Professional Team"
+            class="professional-photo"
+            @error="handleProfessionalImageError"
           >
-          <div class="team-info">
-            <h3>Sarah Mitchell</h3>
-            <p class="role">Owner & Head Trainer</p>
-            <p class="bio">
-              With over 25 years of experience in the hunter/jumper discipline, Sarah has 
-              trained numerous horses and riders to success at provincial and national levels. 
-              Her philosophy centers on building strong foundations, developing confidence, 
-              and creating positive partnerships between horses and riders.
+          <div class="professional-info">
+            <h3>Excellence in Instruction & Care</h3>
+            <p class="description">
+              Our facility is staffed by experienced equestrian professionals with decades of combined 
+              experience in the hunter/jumper discipline. Our team has trained numerous horses and 
+              riders to success at provincial and national levels, with a philosophy centered on 
+              building strong foundations, developing confidence, and creating positive partnerships 
+              between horses and riders.
             </p>
             <div class="credentials">
-              <span class="credential">Equine Canada Certified</span>
-              <span class="credential">NCCP Level 2 Coach</span>
-              <span class="credential">First Aid Certified</span>
+              <span class="credential">Equine Canada Certified Instructors</span>
+              <span class="credential">NCCP Certified Coaches</span>
+              <span class="credential">First Aid & Safety Certified</span>
             </div>
           </div>
         </div>
         
-        <p class="team-note">
-          Our team also includes experienced barn staff, grooms, and assistant instructors 
-          who share our commitment to excellence in horse care and rider education.
+        <p class="professional-note">
+          Our dedicated barn staff, grooms, and assistant instructors share our commitment 
+          to excellence in horse care and rider education, ensuring every horse and rider 
+          receives the attention they deserve.
         </p>
       </div>
     </section>
@@ -241,13 +242,13 @@ const RibbonIcon = TrophyIcon
 
 // Image handling - using placeholders to avoid build issues
 const facilityImage = ref(PLACEHOLDER_IMAGE)
-const teamLeadImage = ref(PLACEHOLDER_IMAGE)
+const professionalImage = ref(PLACEHOLDER_IMAGE)
 
 const handleImageError = (event) => {
   handleImgError(event)
 }
 
-const handleTeamImageError = (event) => {
+const handleProfessionalImageError = (event) => {
   handleImgError(event)
 }
 </script>
@@ -416,10 +417,64 @@ const handleTeamImageError = (event) => {
   line-height: 1.6;
 }
 
-/* Team Section */
-.team-section {
+/* Professional Team Section */
+.professional-section {
   padding: 4rem 0;
-  background: #f9f9f9;
+  background: #f9fafb;
+}
+
+.professional-highlight {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.professional-photo {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.professional-info h3 {
+  font-size: 1.75rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.professional-info .description {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.credential {
+  padding: 0.5rem 1rem;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.professional-note {
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
 .section-subtitle {
@@ -593,8 +648,12 @@ const handleTeamImageError = (event) => {
     gap: 2rem;
   }
   
-  .team-highlight {
+  .professional-highlight {
     grid-template-columns: 1fr;
+  }
+  
+  .professional-photo {
+    height: 250px;
   }
   
   .features-list {

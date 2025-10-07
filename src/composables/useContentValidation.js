@@ -154,40 +154,6 @@ export function useContentValidation() {
     }
   }
 
-  // Validate team member
-  const validateTeamMember = (member) => {
-    errors.value = []
-    warnings.value = []
-
-    if (!member.name) {
-      errors.value.push('Full name is required')
-    }
-    
-    if (!member.position) {
-      errors.value.push('Position/title is required')
-    }
-    
-    if (!member.photo) {
-      errors.value.push('Profile photo is required')
-    }
-    
-    if (!member.bio) {
-      errors.value.push('Biography is required')
-    } else if (member.bio.length < 100) {
-      warnings.value.push('Biography should be at least 100 characters')
-    }
-    
-    if (!member.specialties || member.specialties.length === 0) {
-      warnings.value.push('At least one specialty recommended')
-    }
-    
-    return {
-      isValid: errors.value.length === 0,
-      errors: errors.value,
-      warnings: warnings.value
-    }
-  }
-
 
 
   // Validate facility
@@ -226,47 +192,6 @@ export function useContentValidation() {
     }
   }
 
-  // Validate testimonial
-  const validateTestimonial = (testimonial) => {
-    errors.value = []
-    warnings.value = []
-
-    if (!testimonial.client_name) {
-      errors.value.push('Client name is required')
-    }
-    
-    if (!testimonial.date) {
-      errors.value.push('Date is required')
-    }
-    
-    if (!testimonial.client_type) {
-      errors.value.push('Client type is required')
-    }
-    
-    if (!testimonial.service_type) {
-      errors.value.push('Service type is required')
-    }
-    
-    if (!testimonial.testimonial) {
-      errors.value.push('Testimonial text is required')
-    } else if (testimonial.testimonial.length < 50) {
-      warnings.value.push('Testimonial should be at least 50 characters')
-    }
-    
-    if (!testimonial.rating || testimonial.rating < 1 || testimonial.rating > 5) {
-      errors.value.push('Valid rating (1-5) is required')
-    }
-    
-    if (!testimonial.permission) {
-      errors.value.push('Permission to display must be confirmed')
-    }
-    
-    return {
-      isValid: errors.value.length === 0,
-      errors: errors.value,
-      warnings: warnings.value
-    }
-  }
 
   // Generic validation
   const validateContent = (content, contentType) => {
@@ -275,13 +200,8 @@ export function useContentValidation() {
         return validateHorseListing(content)
       case 'service':
         return validateService(content)
-      case 'team':
-        return validateTeamMember(content)
-
       case 'facility':
         return validateFacility(content)
-      case 'testimonial':
-        return validateTestimonial(content)
       default:
         return {
           isValid: true,
@@ -339,9 +259,7 @@ export function useContentValidation() {
   return {
     validateHorseListing,
     validateService,
-    validateTeamMember,
     validateFacility,
-    validateTestimonial,
     validateContent,
     validateImage,
     validateSEO,
