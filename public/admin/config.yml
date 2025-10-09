@@ -11,11 +11,6 @@ backend:
   name: github
   repo: laura-naccarato/blackberry-equestrian
   branch: main
-  base_url: https://blackberry-equestrian.netlify.app
-  auth_endpoint: auth
-  # Once you set up OAuth, add your provider's base_url:
-  # base_url: https://your-oauth-provider.netlify.app
-  # auth_endpoint: api/auth
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
@@ -30,9 +25,9 @@ public_folder: "/images/uploads"
 # Media library uses default file system
 
 # Site configuration
-site_url: http://localhost:5173/
+site_url: https://laura-naccarato.github.io/blackberry-equestrian
 display_url: https://laura-naccarato.github.io/blackberry-equestrian
-logo_url: /images/logo.png
+logo_url: /blackberry-equestrian/images/logo.png
 
 # Enable editorial workflow for content approval
 publish_mode: editorial_workflow
