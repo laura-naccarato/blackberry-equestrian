@@ -4,11 +4,12 @@
 # For local testing, use test-repo backend
 # Switch to github backend for production
 backend:
-  name: github
-  repo: laura-naccarato/blackberry-equestrian
+  name: git-gateway
   branch: main
-  base_url: https://blackberry-equestrian.netlify.app
-  auth_endpoint: auth
+
+# Enable Netlify Identity widget
+identity:
+  url: https://blackberry-equestrian.netlify.app/.netlify/identity
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
