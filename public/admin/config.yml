@@ -4,13 +4,11 @@
 # For local testing, use test-repo backend
 # Switch to github backend for production
 backend:
-  # For local testing, uncomment the line below:
-  # name: test-repo
-  
-  # Production GitHub backend:
   name: github
   repo: laura-naccarato/blackberry-equestrian
   branch: main
+  base_url: https://blackberry-equestrian.netlify.app
+  auth_endpoint: auth
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
