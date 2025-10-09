@@ -11,6 +11,8 @@ backend:
   name: github
   repo: laura-naccarato/blackberry-equestrian
   branch: main
+  base_url: https://blackberry-equestrian.netlify.app
+  auth_endpoint: auth
   # Once you set up OAuth, add your provider's base_url:
   # base_url: https://your-oauth-provider.netlify.app
   # auth_endpoint: api/auth
